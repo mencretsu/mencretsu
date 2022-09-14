@@ -2,4 +2,4 @@
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=mencretsu&layout=compact)](https://github.com/mencretsu/github-readme-stats)
 
-<img src="https://i.ibb.co/XCCFD5p/download.gif" alt="download" border="0" /></a>
+<img src="https://i.ibb.co/XCCFD5p/download.gif" width="50">
