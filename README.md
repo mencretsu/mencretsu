@@ -2,4 +2,4 @@
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=mencretsu&layout=compact)](https://github.com/mencretsu/github-readme-stats)
 
-<marquee behavior="scroll" direction="left">![Swimming fish](//www.html.am/images/html-codes/marquees/fish-swimming.gif)</marquee>
+<img src="https://c.tenor.com/8Qlx6iFGFrMAAAAi/goose-pepe-the-frog.gif" width="80">
