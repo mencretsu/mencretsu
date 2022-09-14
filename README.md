@@ -1,2 +1,1 @@
-
-[![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=mencretsu&theme=dark&background=000000)](https://git.io/streak-stats)
+<img height="180em" src="https://github-readme-stats.vercel.app/api?username=mencretsu&show_icons=true&hide_border=true&&count_private=true&include_all_commits=true" />
