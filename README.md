@@ -5,7 +5,7 @@
   <img src="https://c.tenor.com/8Qlx6iFGFrMAAAAi/goose-pepe-the-frog.gif" width="100"/>
 </div>
 
-## Stats
+## 📈 Stats:
 
 <div align="center">
 <img height="150em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mencretsu&layout=compact&show_icon=true&theme=algolia" alt="mencretsu-langs"/>
