@@ -2,4 +2,4 @@
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=mencretsu&layout=compact)](https://github.com/mencretsu/github-readme-stats)
 
-<img src="https://tenor.com/bnsWB.gif" width="50">
+<img src="https://tenor.com/bnsWB.gif" width="100">
