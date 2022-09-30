@@ -13,5 +13,5 @@
 </div>
 <div align="center">
   <img src="http://github-readme-streak-stats.herokuapp.com?user=mencretsu&theme=algolia&background=0d1117&hide_border=true" />
-  <!-- <img src="https://peaceful-beyond-61134.herokuapp.com/graph?username=mencretsutheme=react-dark"/> -->
+  <!-- <img src="https://peaceful-beyond-61134.herokuapp.com/graph?username=mencretsu&theme=react-dark"/> -->
 </div>
