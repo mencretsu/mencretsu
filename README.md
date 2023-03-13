@@ -15,5 +15,7 @@
   <img src="http://github-readme-streak-stats.herokuapp.com?user=mencretsu&theme=algolia&background=0d1117&hide_border=true" />
   <!-- <img src="https://peaceful-beyond-61134.herokuapp.com/graph?username=mencretsu&theme=react-dark"/> -->
 </div><br><br>
+
 <a href="https://www.buymeacoffee.com/mencretsu" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-1.svg" alt="Buy Me A Coffee" style="height: 36px !important;width: 134px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+
 
