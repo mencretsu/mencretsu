@@ -13,7 +13,7 @@
 <img height="160em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mencretsu&layout=compact&show_icon=true&theme=algolia" alt="mencretsu-langs"/>
 </div>
 <div align="center">
-  <img src="http://github-readme-streak-stats.herokuapp.com?user=mencretsu&theme=algolia&background=0d1117&hide_border=true" />
+  <img src="http://github-readme-streak-stats.herokuapp.com?user=mencretsu&theme=algolia&background=0d1117&hide_border=false" />
   <!-- <img src="https://peaceful-beyond-61134.herokuapp.com/graph?username=mencretsu&theme=react-dark"/> -->
 </div><br><br>
 
