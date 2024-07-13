@@ -7,10 +7,8 @@
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?color=3D85C6&size=34&multiline=true&width=700&lines=Welcome+To+~iz's+GitHub+Profile)](https://git.io/typing-svg)
 
 ## 
-<a href="https://github.com/mencretsu/github-readme-stats">
+<a 
   <img height=200 align="center" src="https://github-readme-stats.vercel.app/api?username=mencretsu&layout=compact&show_icons=true&theme=algolia" alt="mencretsu-stats"/" />
-</a>
-<a href="https://github.com/mencretsu/convoychat">
   <img height=200 align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=mencretsu&layout=compact&theme=algolia&langs_count=8" />
 </a>
 <a href="https://git.io/streak-stats"><img align="center" src="http://github-readme-streak-stats.herokuapp.com?user=mencretsu&theme=algolia&card_width=600%" alt="GitHub Streak" /></a><br><br>
