@@ -11,7 +11,7 @@
   <img height=200 align="center" src="https://github-readme-stats.vercel.app/api?username=mencretsu&layout=compact&show_icons=true&theme=algolia" alt="mencretsu-stats"/" />
 </a>
 <a href="https://github.com/mencretsu/convoychat">
-  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=mencretsu&layout=compact&theme=algolia&langs_count=8&card_width=320" />
+  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=mencretsu&layout=compact&theme=algolia&langs_count=8" />
 </a>
 <a href="https://git.io/streak-stats"><img align="center" src="http://github-readme-streak-stats.herokuapp.com?user=mencretsu&theme=algolia&card_width=600%" alt="GitHub Streak" /></a><br><br>
 
