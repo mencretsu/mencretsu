@@ -9,8 +9,8 @@
 
 ## 
 <div align="center">
-<img height="160em" src="https://github-readme-stats.vercel.app/api/?username=mencretsu&layout=compact&show_icons=true&theme=algolia" alt="mencretsu-stats"/>
-<img height="160em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mencretsu&layout=compact&show_icon=true&theme=algolia" alt="mencretsu-langs"/>
+<img height="160em" src="https://github-readme-stats.vercel.app/api/?username=mencretsu&layout=compact&show_icons=true&theme=algolia&hide_border=true" alt="mencretsu-stats"/>
+<img height="160em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mencretsu&layout=compact&show_icon=true&theme=algolia&hide_border=true" alt="mencretsu-langs"/>
 </div>
 <div align="center">
     <a href="https://github.com/mencretsu/github-readme-streak-stats">
