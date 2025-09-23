@@ -5,10 +5,7 @@
 <img alt="GitHub followers" src="https://img.shields.io/github/followers/mencretsu?style=social"> &nbsp;&nbsp; 
 <img alt="GitHub User's stars" src="https://img.shields.io/github/stars/mencretsu?style=social"/>
 
-<!-- <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Ubuntu&size=20&duration=2000&pause=1200&random=false&width=750&lines=welcome+to...;welcome+hello...;welcome+hi...;welcome+to+iz's+Github+profile.">
-</a> -->
-
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Ubuntu&size=20&duration=1000&pause=4000&random=false&width=435&lines=Welcome+to+iz's+Github+profile." alt="Typing SVG" /></a>
 
 ## 
 <div align="center">
