@@ -1,10 +1,3 @@
-"""
-generate.py — versi bersih
-- ch1: The Numbers (sama)
-- ch2: The Grind — candlestick chart commit (naik turun kayak saham)
-         + radial clock di bawah dengan ruang lega
-- ch3, ch4: dihapus
-"""
 
 import math
 import os
