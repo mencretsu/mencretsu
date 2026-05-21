@@ -203,13 +203,13 @@
 <line x1="425.0" y1="438.3" x2="425.0" y2="438.3" stroke="#1a4fbb" stroke-width="2" stroke-linecap="round"><animate attributeName="x2" to="431.0" dur="0.3s" begin="2.2s" fill="freeze"/><animate attributeName="y2" to="448.7" dur="0.3s" begin="2.2s" fill="freeze"/></line>
 <line x1="412.9" y1="443.3" x2="412.9" y2="443.3" stroke="#1a4fbb" stroke-width="2" stroke-linecap="round"><animate attributeName="x2" to="416.3" dur="0.3s" begin="2.24s" fill="freeze"/><animate attributeName="y2" to="455.9" dur="0.3s" begin="2.24s" fill="freeze"/></line>
 <line x1="400.0" y1="445.0" x2="400.0" y2="445.0" stroke="#1a4fbb" stroke-width="2" stroke-linecap="round"><animate attributeName="x2" to="400.0" dur="0.3s" begin="2.28s" fill="freeze"/><animate attributeName="y2" to="455.0" dur="0.3s" begin="2.28s" fill="freeze"/></line>
-<line x1="387.1" y1="443.3" x2="387.1" y2="443.3" stroke="#1a4fbb" stroke-width="2" stroke-linecap="round"><animate attributeName="x2" to="382.1" dur="0.3s" begin="2.32s" fill="freeze"/><animate attributeName="y2" to="461.6" dur="0.3s" begin="2.32s" fill="freeze"/></line>
-<line x1="375.0" y1="438.3" x2="375.0" y2="438.3" stroke="#1a4fbb" stroke-width="2" stroke-linecap="round"><animate attributeName="x2" to="361.5" dur="0.3s" begin="2.36s" fill="freeze"/><animate attributeName="y2" to="461.7" dur="0.3s" begin="2.36s" fill="freeze"/></line>
+<line x1="387.1" y1="443.3" x2="387.1" y2="443.3" stroke="#1a4fbb" stroke-width="2" stroke-linecap="round"><animate attributeName="x2" to="381.6" dur="0.3s" begin="2.32s" fill="freeze"/><animate attributeName="y2" to="463.6" dur="0.3s" begin="2.32s" fill="freeze"/></line>
+<line x1="375.0" y1="438.3" x2="375.0" y2="438.3" stroke="#1a4fbb" stroke-width="2" stroke-linecap="round"><animate attributeName="x2" to="360.5" dur="0.3s" begin="2.36s" fill="freeze"/><animate attributeName="y2" to="463.4" dur="0.3s" begin="2.36s" fill="freeze"/></line>
 <line x1="364.6" y1="430.4" x2="364.6" y2="430.4" stroke="#388bfd" stroke-width="5" stroke-linecap="round"><animate attributeName="x2" to="342.7" dur="0.3s" begin="2.4s" fill="freeze"/><animate attributeName="y2" to="452.3" dur="0.3s" begin="2.4s" fill="freeze"/><animate attributeName="stroke-opacity" values="1;0.4;1" dur="1.8s" begin="2.4s" repeatCount="indefinite"/></line>
-<line x1="356.7" y1="420.0" x2="356.7" y2="420.0" stroke="#1a4fbb" stroke-width="2" stroke-linecap="round"><animate attributeName="x2" to="337.6" dur="0.3s" begin="2.44s" fill="freeze"/><animate attributeName="y2" to="431.0" dur="0.3s" begin="2.44s" fill="freeze"/></line>
+<line x1="356.7" y1="420.0" x2="356.7" y2="420.0" stroke="#1a4fbb" stroke-width="2" stroke-linecap="round"><animate attributeName="x2" to="338.5" dur="0.3s" begin="2.44s" fill="freeze"/><animate attributeName="y2" to="430.5" dur="0.3s" begin="2.44s" fill="freeze"/></line>
 <line x1="351.7" y1="407.9" x2="351.7" y2="407.9" stroke="#1a4fbb" stroke-width="2" stroke-linecap="round"><animate attributeName="x2" to="341.1" dur="0.3s" begin="2.48s" fill="freeze"/><animate attributeName="y2" to="410.8" dur="0.3s" begin="2.48s" fill="freeze"/></line>
 <line x1="350.0" y1="395.0" x2="350.0" y2="395.0" stroke="#1a4fbb" stroke-width="2" stroke-linecap="round"><animate attributeName="x2" to="336.0" dur="0.3s" begin="2.52s" fill="freeze"/><animate attributeName="y2" to="395.0" dur="0.3s" begin="2.52s" fill="freeze"/></line>
-<line x1="351.7" y1="382.1" x2="351.7" y2="382.1" stroke="#1a4fbb" stroke-width="2" stroke-linecap="round"><animate attributeName="x2" to="332.4" dur="0.3s" begin="2.56s" fill="freeze"/><animate attributeName="y2" to="376.9" dur="0.3s" begin="2.56s" fill="freeze"/></line>
+<line x1="351.7" y1="382.1" x2="351.7" y2="382.1" stroke="#1a4fbb" stroke-width="2" stroke-linecap="round"><animate attributeName="x2" to="333.4" dur="0.3s" begin="2.56s" fill="freeze"/><animate attributeName="y2" to="377.1" dur="0.3s" begin="2.56s" fill="freeze"/></line>
 <line x1="356.7" y1="370.0" x2="356.7" y2="370.0" stroke="#1a4fbb" stroke-width="2" stroke-linecap="round"><animate attributeName="x2" to="342.8" dur="0.3s" begin="2.6s" fill="freeze"/><animate attributeName="y2" to="362.0" dur="0.3s" begin="2.6s" fill="freeze"/></line>
 <line x1="364.6" y1="359.6" x2="364.6" y2="359.6" stroke="#1a4fbb" stroke-width="2" stroke-linecap="round"><animate attributeName="x2" to="356.2" dur="0.3s" begin="2.64s" fill="freeze"/><animate attributeName="y2" to="351.2" dur="0.3s" begin="2.64s" fill="freeze"/></line>
 <line x1="375.0" y1="351.7" x2="375.0" y2="351.7" stroke="#1a4fbb" stroke-width="2" stroke-linecap="round"><animate attributeName="x2" to="367.5" dur="0.3s" begin="2.68s" fill="freeze"/><animate attributeName="y2" to="338.7" dur="0.3s" begin="2.68s" fill="freeze"/></line>
@@ -223,12 +223,12 @@
 
 
   <text x="100" y="389" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="22" font-weight="700"
-        fill="#a371f7" text-anchor="middle">20%</text>
+        fill="#a371f7" text-anchor="middle">19%</text>
   <text x="100" y="407" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9" fill="#8b949e"
         text-anchor="middle" letter-spacing="1">night commits</text>
 
   <text x="700" y="389" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="22" font-weight="700"
-        fill="#f0883e" text-anchor="middle">30%</text>
+        fill="#f0883e" text-anchor="middle">29%</text>
   <text x="700" y="407" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9" fill="#8b949e"
         text-anchor="middle" letter-spacing="1">weekend commits</text>
 </svg>
