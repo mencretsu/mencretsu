@@ -14,7 +14,7 @@
         fill="#21262d" opacity="0.28" text-anchor="end">&rdquo;</text>
 
   <text x="400" y="110" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="15" font-weight="600" fill="#e6edf3" text-anchor="middle" opacity="0">
-    Refactor webhook to improve transaction status handling
+    Implement webhook handler for payment notifications
     <animate attributeName="opacity" values="0;0;1;1;0;0"
              keyTimes="0.0;0.0;0.017;0.1259;0.1429;1.0" dur="22.4s" repeatCount="indefinite"/>
   </text>
@@ -26,7 +26,7 @@
   </text>
 
   <text x="400" y="110" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="15" font-weight="600" fill="#e6edf3" text-anchor="middle" opacity="0">
-    Rename project from VIOLET to WTF CHAN
+    Update token references from VLT to WTF
     <animate attributeName="opacity" values="0;0;1;1;0;0"
              keyTimes="0.0;0.1429;0.1598;0.2688;0.2857;1.0" dur="22.4s" repeatCount="indefinite"/>
   </text>
@@ -38,7 +38,7 @@
   </text>
 
   <text x="400" y="110" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="15" font-weight="600" fill="#e6edf3" text-anchor="middle" opacity="0">
-    Implement webhook handler for payment notifications
+    Rename project from VIOLET to WTF CHAN
     <animate attributeName="opacity" values="0;0;1;1;0;0"
              keyTimes="0.0;0.2857;0.3027;0.4116;0.4286;1.0" dur="22.4s" repeatCount="indefinite"/>
   </text>
@@ -50,7 +50,7 @@
   </text>
 
   <text x="400" y="110" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="15" font-weight="600" fill="#e6edf3" text-anchor="middle" opacity="0">
-    Update token references from VLT to WTF
+    Add grok trading analyst link to index.html
     <animate attributeName="opacity" values="0;0;1;1;0;0"
              keyTimes="0.0;0.4286;0.4455;0.5545;0.5714;1.0" dur="22.4s" repeatCount="indefinite"/>
   </text>
@@ -62,7 +62,7 @@
   </text>
 
   <text x="400" y="110" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="15" font-weight="600" fill="#e6edf3" text-anchor="middle" opacity="0">
-    Add grok trading analyst link to index.html
+    Refactor webhook to improve transaction status handling
     <animate attributeName="opacity" values="0;0;1;1;0;0"
              keyTimes="0.0;0.5714;0.5884;0.6973;0.7143;1.0" dur="22.4s" repeatCount="indefinite"/>
   </text>
@@ -74,7 +74,7 @@
   </text>
 
   <text x="400" y="110" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="15" font-weight="600" fill="#e6edf3" text-anchor="middle" opacity="0">
-    first commit
+    reapply gitignore
     <animate attributeName="opacity" values="0;0;1;1;0;0"
              keyTimes="0.0;0.7143;0.7312;0.8402;0.8571;1.0" dur="22.4s" repeatCount="indefinite"/>
   </text>

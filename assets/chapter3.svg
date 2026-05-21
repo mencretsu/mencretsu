@@ -54,14 +54,14 @@
     <!-- commit bar fill — animates in -->
     <rect x="152" y="134" width="0" height="3"
           fill="#388bfd" rx="1.5">
-      <animate attributeName="width" from="0" to="21" dur="0.65s"
+      <animate attributeName="width" from="0" to="23" dur="0.65s"
                begin="0.18s" fill="freeze"
                calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/>
     </rect>
 
     <!-- meta row -->
     <text x="152" y="153" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
-          fill="#388bfd">24 commits</text>
+          fill="#388bfd">26 commits</text>
     <circle cx="230" cy="149" r="4" fill="#3572A5"/>
     <text x="238" y="153" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
           fill="#8b949e">Python</text>
