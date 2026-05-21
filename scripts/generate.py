@@ -225,7 +225,7 @@ def ch2(data):
     by_hour = data["commits_by_hour"]
     total   = data["total_commits"]
 
-    W, H = 800, 480  # FIX: tambah height biar clock gak kepotong
+    W, H = 800, 480
 
     today     = datetime.now(timezone.utc).date()
     start_raw = today - timedelta(days=363)
@@ -237,62 +237,93 @@ def ch2(data):
         week_counts = [cbd.get(d.strftime("%Y-%m-%d"), 0) for d in week_days]
         total_w     = sum(week_counts)
         nonzero     = [c for c in week_counts if c > 0]
-        wk_max      = max(nonzero) if nonzero else 0
         weeks.append({
             "total": total_w,
-            "max":   wk_max,
+            "open":  weeks[-1]["total"] if weeks else total_w,  # open = close minggu lalu
+            "close": total_w,
+            "high":  max(nonzero) if nonzero else 0,
+            "low":   min(nonzero) if nonzero else 0,
             "date":  week_days[0],
         })
 
+    # patch open minggu pertama
+    if weeks:
+        weeks[0]["open"] = weeks[0]["close"]
+
     CL_X1, CL_X2       = 36, 764
-    CL_Y_TOP, CL_Y_BOT = 72, 230
+    CL_Y_TOP, CL_Y_BOT = 72, 235
     CL_H                = CL_Y_BOT - CL_Y_TOP
 
-    max_total = max((w["total"] for w in weeks), default=1)
+    all_vals  = [w["total"] for w in weeks] + [w["high"] for w in weeks]
+    max_val   = max(all_vals) if any(v > 0 for v in all_vals) else 1
+
+    def to_y(v):
+        return CL_Y_BOT - int((v / max_val) * CL_H)
 
     cw_full = (CL_X2 - CL_X1) / len(weeks)
-    cw_body = max(cw_full * 0.55, 2)
+    cw_body = max(cw_full * 0.6, 3)
     cw_gap  = cw_full - cw_body
 
     candles_svg = ""
     for i, wk in enumerate(weeks):
         cx    = CL_X1 + i * cw_full + cw_gap / 2
-        delay = round(i * 0.03, 3)
-
-        # FIX: bandingkan total minggu ini vs rata-rata 3 minggu sebelumnya
-        # biar lebih representatif, bukan cuma 1 minggu sebelum
-        if i == 0:
-            is_up = wk["total"] > 0
-        else:
-            prev_avg = sum(weeks[j]["total"] for j in range(max(0, i-3), i)) / min(i, 3)
-            is_up    = wk["total"] >= prev_avg
-
-        col = GREEN if is_up else RED
-
-        body_h = max(int((wk["total"] / max_total) * CL_H), 2) if max_total else 2
-        body_y = CL_Y_BOT - body_h
-
-        if max_total > 0 and wk["max"] > 0:
-            wick_top = CL_Y_BOT - int((wk["max"] / max_total) * CL_H) - 3
-        else:
-            wick_top = body_y
-
         cx_mid = cx + cw_body / 2
+        delay = round(i * 0.025, 3)
 
+        o = wk["open"]
+        c = wk["close"]
+        h = wk["high"]
+        l = wk["low"]
+
+        is_up = c >= o
+        col   = GREEN if is_up else RED
+
+        # body: antara open dan close
+        open_y  = to_y(o)
+        close_y = to_y(c)
+        body_top = min(open_y, close_y)
+        body_bot = max(open_y, close_y)
+        body_h   = max(body_bot - body_top, 2)
+
+        # wick atas: dari high ke top of body
+        wick_top_y = to_y(h) if h > 0 else body_top
+        # wick bawah: dari bottom of body ke low
+        wick_bot_y = to_y(l) if l > 0 else body_bot
+
+        # kalau minggu kosong (total=0), gambar garis tipis aja
+        if wk["total"] == 0:
+            candles_svg += (
+                f'<line x1="{cx_mid:.1f}" y1="{CL_Y_BOT-1}" x2="{cx_mid:.1f}" y2="{CL_Y_BOT}" '
+                f'stroke="{BORDER}" stroke-width="{cw_body:.1f}" stroke-linecap="round" opacity="0.3"/>\n'
+            )
+            continue
+
+        # upper wick
         candles_svg += (
-            f'<line x1="{cx_mid:.1f}" y1="{wick_top}" x2="{cx_mid:.1f}" y2="{CL_Y_BOT}" '
-            f'stroke="{col}" stroke-width="1" opacity="0.35">'
-            f'<animate attributeName="opacity" from="0" to="0.35" dur="0.2s" '
-            f'begin="{delay}s" fill="freeze"/></line>\n'
+            f'<line x1="{cx_mid:.1f}" y1="{wick_top_y}" x2="{cx_mid:.1f}" y2="{body_top}" '
+            f'stroke="{col}" stroke-width="1.5" opacity="0.5">'
+            f'<animate attributeName="opacity" from="0" to="0.5" dur="0.15s" begin="{delay}s" fill="freeze"/>'
+            f'</line>\n'
         )
+
+        # lower wick
         candles_svg += (
-            f'<rect x="{cx:.1f}" y="{CL_Y_BOT}" width="{cw_body:.1f}" height="0" '
-            f'fill="{col}" rx="1" opacity="0.85">'
-            f'<animate attributeName="y" from="{CL_Y_BOT}" to="{body_y}" '
-            f'dur="0.35s" begin="{delay}s" fill="freeze" '
+            f'<line x1="{cx_mid:.1f}" y1="{body_bot}" x2="{cx_mid:.1f}" y2="{wick_bot_y}" '
+            f'stroke="{col}" stroke-width="1.5" opacity="0.5">'
+            f'<animate attributeName="opacity" from="0" to="0.5" dur="0.15s" begin="{delay}s" fill="freeze"/>'
+            f'</line>\n'
+        )
+
+        # body — animasi grow dari midpoint
+        mid_y = (body_top + body_bot) // 2
+        candles_svg += (
+            f'<rect x="{cx:.1f}" y="{mid_y}" width="{cw_body:.1f}" height="0" '
+            f'fill="{col}" rx="1" opacity="0.88">'
+            f'<animate attributeName="y" from="{mid_y}" to="{body_top}" '
+            f'dur="0.3s" begin="{delay}s" fill="freeze" '
             f'calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/>'
             f'<animate attributeName="height" from="0" to="{body_h}" '
-            f'dur="0.35s" begin="{delay}s" fill="freeze" '
+            f'dur="0.3s" begin="{delay}s" fill="freeze" '
             f'calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/>'
             f'</rect>\n'
         )
@@ -312,7 +343,7 @@ def ch2(data):
     grid_lines = ""
     for pct in [0.25, 0.5, 0.75, 1.0]:
         gy  = CL_Y_BOT - int(pct * CL_H)
-        val = int(pct * max_total)
+        val = int(pct * max_val)
         grid_lines += (
             f'<line x1="{CL_X1}" y1="{gy}" x2="{CL_X2}" y2="{gy}" '
             f'stroke="{BORDER}" stroke-width="1" opacity="0.4"/>\n'
@@ -320,10 +351,9 @@ def ch2(data):
             f'fill="{DIM}" text-anchor="end">{val}</text>\n'
         )
 
-    # FIX: clock posisi lebih bawah, radius diperkecil biar muat
     fav_hour    = max(by_hour, key=by_hour.get) if by_hour else 0
     max_h_count = max(by_hour.values(), default=1)
-    CX, CY, BASE_R = 400, 390, 44  # FIX: CY naik, radius kecilan
+    CX, CY, BASE_R = 400, 395, 44
 
     def _hlabel(h):
         if h == 0:  return "12 AM"
@@ -346,7 +376,7 @@ def ch2(data):
         x2 = CX + math.cos(angle) * (BASE_R + 6 + bar_l)
         y2 = CY + math.sin(angle) * (BASE_R + 6 + bar_l)
         is_peak = (h == fav_hour)
-        col = ACCENT if is_peak else ("#1a4fbb" if cnt_h > 0 else BORDER)
+        col_r = ACCENT if is_peak else ("#1a4fbb" if cnt_h > 0 else BORDER)
         sw  = 5 if is_peak else (2 if cnt_h > 0 else 1)
         delay_r = round(1.8 + h * 0.04, 3)
 
@@ -357,7 +387,7 @@ def ch2(data):
         )
         clock_svg += (
             f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x1:.1f}" y2="{y1:.1f}" '
-            f'stroke="{col}" stroke-width="{sw}" stroke-linecap="round">'
+            f'stroke="{col_r}" stroke-width="{sw}" stroke-linecap="round">'
             f'<animate attributeName="x2" to="{x2:.1f}" dur="0.3s" begin="{delay_r}s" fill="freeze"/>'
             f'<animate attributeName="y2" to="{y2:.1f}" dur="0.3s" begin="{delay_r}s" fill="freeze"/>'
             f'{anim}</line>\n'
@@ -384,7 +414,6 @@ def ch2(data):
     weekend_commits = sum(v for k,v in data["commits_by_dow"].items() if k>=5)
     wknd_p  = round(weekend_commits/total*100) if total else 0
 
-    # FIX: legend dipisah ke baris sendiri, gak tumpang tindih "52 WEEKS"
     return f'''\
 <svg width="{W}" height="{H}" viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -401,16 +430,14 @@ def ch2(data):
   <rect width="{W}" height="{H}" fill="{BG}" rx="12"/>
   <rect x="1" y="1" width="{W-2}" height="{H-2}" fill="none" stroke="{BORDER}" stroke-width="1" rx="11"/>
 
-  <!-- FIX: header — "THE GRIND" kiri, "52 WEEKS" kanan tanpa legend di sana -->
   <text x="36" y="44" font-family="{FONT}" font-size="11" fill="{DIM}" letter-spacing="3">THE GRIND</text>
   <text x="{W-36}" y="44" font-family="{FONT}" font-size="11" fill="{DIM}" letter-spacing="2" text-anchor="end">52 WEEKS</text>
   <rect x="36" y="54" width="110" height="1" fill="url(#hdrg)"/>
 
-  <!-- FIX: legend dipindah ke baris kedua, gak nabrak "52 WEEKS" -->
-  <rect x="{W-36-120}" y="58" width="10" height="10" fill="{GREEN}" rx="2" opacity="0.85"/>
-  <text x="{W-36-106}" y="68" font-family="{FONT}" font-size="9" fill="{DIM}">up week</text>
+  <rect x="{W-36-130}" y="58" width="10" height="10" fill="{GREEN}" rx="2" opacity="0.85"/>
+  <text x="{W-36-116}" y="68" font-family="{FONT}" font-size="9" fill="{DIM}">bullish week</text>
   <rect x="{W-36-55}" y="58" width="10" height="10" fill="{RED}" rx="2" opacity="0.85"/>
-  <text x="{W-36-41}" y="68" font-family="{FONT}" font-size="9" fill="{DIM}">down</text>
+  <text x="{W-36-41}" y="68" font-family="{FONT}" font-size="9" fill="{DIM}">bearish</text>
 
   <line x1="{CL_X1}" y1="{CL_Y_BOT}" x2="{CL_X2}" y2="{CL_Y_BOT}"
         stroke="{BORDER}" stroke-width="1"/>
@@ -419,8 +446,8 @@ def ch2(data):
   {candles_svg}
   {month_labels}
 
-  <line x1="36" y1="270" x2="764" y2="270" stroke="{BORDER}" stroke-width="1" opacity="0.4"/>
-  <text x="{CX}" y="294" font-family="{FONT}" font-size="9" fill="{DIM}"
+  <line x1="36" y1="272" x2="764" y2="272" stroke="{BORDER}" stroke-width="1" opacity="0.4"/>
+  <text x="{CX}" y="296" font-family="{FONT}" font-size="9" fill="{DIM}"
         text-anchor="middle" letter-spacing="3">24H ACTIVITY PATTERN</text>
 
   {clock_svg}
@@ -435,7 +462,6 @@ def ch2(data):
   <text x="700" y="{CY+12}" font-family="{FONT}" font-size="9" fill="{DIM}"
         text-anchor="middle" letter-spacing="1">weekend commits</text>
 </svg>'''
-
 
 # ─── Main ─────────────────────────────────────────────────────────────────────
 
