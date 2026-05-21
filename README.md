@@ -3,9 +3,6 @@
 </div>
 
 <br/>
-
-**mencretsu** &mdash; software person. writes code at weird hours. ships things. sometimes breaks things. usually fixes them.
-
 &nbsp;
 
 <!-- ── skills / badges  ─────────────────────────── -->
@@ -22,5 +19,10 @@
 &nbsp;
 
 ---
+**mencretsu** &mdash; software person. writes code at weird hours. ships things. sometimes breaks things. usually fixes them.
 
-<sub>auto-updated daily via github actions &nbsp;&middot;&nbsp; data pulled from github api &nbsp;&middot;&nbsp; all svgs hand-coded</sub>
+![followers](https://img.shields.io/github/followers/mencretsu?style=flat-square&color=gray&labelColor=0d1117&label=followers)
+&nbsp;
+![stars](https://img.shields.io/github/stars/mencretsu?style=flat-square&color=gray&labelColor=0d1117&label=stars)
+&nbsp;
+[![buymeacoffee](https://img.shields.io/badge/-coffee-gray?style=flat-square&logo=buymeacoffee&logoColor=yellow)](https://www.buymeacoffee.com/mencretsu)
