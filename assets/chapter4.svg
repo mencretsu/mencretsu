@@ -9,31 +9,31 @@
 
   <rect x="30" y="79" width="740" height="50" fill="#0d1117" rx="4"/>
   <text x="46" y="98" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" fill="#388bfd" opacity="0.65">#01</text>
-  <text x="77" y="98" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#e6edf3">Rename project from VIOLET to WTF CHAN</text>
+  <text x="77" y="98" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#e6edf3">Update payment info and remove DOKU settings</text>
   <text x="754" y="105" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="24" fill="#21262d" text-anchor="end" opacity="0.4">&quot;</text>
   <rect x="30" y="133" width="740" height="50" fill="#010409" rx="4"/>
   <text x="46" y="152" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" fill="#388bfd" opacity="0.65">#02</text>
-  <text x="77" y="152" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#e6edf3">Refactor webhook to improve transaction status handling</text>
+  <text x="77" y="152" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#e6edf3">Update token references from VLT to WTF</text>
   <text x="754" y="159" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="24" fill="#21262d" text-anchor="end" opacity="0.4">&quot;</text>
   <rect x="30" y="187" width="740" height="50" fill="#0d1117" rx="4"/>
   <text x="46" y="206" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" fill="#388bfd" opacity="0.65">#03</text>
-  <text x="77" y="206" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#e6edf3">Implement webhook handler for payment notifications</text>
+  <text x="77" y="206" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#e6edf3">Update siliconflowapichecker.html</text>
   <text x="754" y="213" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="24" fill="#21262d" text-anchor="end" opacity="0.4">&quot;</text>
   <rect x="30" y="241" width="740" height="50" fill="#010409" rx="4"/>
   <text x="46" y="260" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" fill="#388bfd" opacity="0.65">#04</text>
-  <text x="77" y="260" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#e6edf3">Update token references from VLT to WTF</text>
+  <text x="77" y="260" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#e6edf3">Refactor device update logic for totalSent handling</text>
   <text x="754" y="267" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="24" fill="#21262d" text-anchor="end" opacity="0.4">&quot;</text>
   <rect x="30" y="295" width="740" height="50" fill="#0d1117" rx="4"/>
   <text x="46" y="314" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" fill="#388bfd" opacity="0.65">#05</text>
-  <text x="77" y="314" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#e6edf3">Add grok trading analyst link to index.html</text>
+  <text x="77" y="314" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#e6edf3">Update crossrate_checker.html</text>
   <text x="754" y="321" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="24" fill="#21262d" text-anchor="end" opacity="0.4">&quot;</text>
   <rect x="30" y="349" width="740" height="50" fill="#010409" rx="4"/>
   <text x="46" y="368" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" fill="#388bfd" opacity="0.65">#06</text>
-  <text x="77" y="368" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#e6edf3">first commit</text>
+  <text x="77" y="368" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#e6edf3">Update dashboard labels and remove API keys count</text>
   <text x="754" y="375" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="24" fill="#21262d" text-anchor="end" opacity="0.4">&quot;</text>
   <rect x="30" y="403" width="740" height="50" fill="#0d1117" rx="4"/>
   <text x="46" y="422" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" fill="#388bfd" opacity="0.65">#07</text>
-  <text x="77" y="422" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#e6edf3">resolve conflicts</text>
+  <text x="77" y="422" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#e6edf3">Fix console.log syntax in doku-webhook.js</text>
   <text x="754" y="429" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="24" fill="#21262d" text-anchor="end" opacity="0.4">&quot;</text>
 
   <text x="400" y="491" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" fill="#8b949e"

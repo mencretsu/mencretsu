@@ -399,7 +399,7 @@
   <rect x="780" y="86" width="11" height="11" fill="#0e4429" rx="2"/>
   <rect x="780" y="100" width="11" height="11" fill="#0e4429" rx="2"/>
   <rect x="780" y="114" width="11" height="11" fill="#161b22" rx="2"/>
-  <rect x="780" y="128" width="11" height="11" fill="#0e4429" rx="2"/>
+  <rect x="780" y="128" width="11" height="11" fill="#006d32" rx="2"/>
 
-  <text x="52" y="192" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" fill="#8b949e">20% malam  ·  30% weekend  ·  pola yang cukup manusiawi</text>
+  <text x="52" y="192" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" fill="#8b949e">20% night commits  ·  30% weekend commits</text>
 </svg>

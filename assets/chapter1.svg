@@ -21,7 +21,7 @@
 
   <!-- stat 1 — total commits -->
   <text x="145" y="160" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="58" font-weight="700"
-        fill="#e6edf3" text-anchor="middle" filter="url(#glow1)">922</text>
+        fill="#e6edf3" text-anchor="middle" filter="url(#glow1)">923</text>
   <text x="145" y="182" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" fill="#8b949e"
         text-anchor="middle" letter-spacing="3">COMMITS</text>
 
@@ -33,7 +33,7 @@
   <text x="450" y="174" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" fill="#8b949e"
         text-anchor="middle" letter-spacing="3">PEAK HOUR</text>
   <text x="450" y="192" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" fill="#a371f7"
-        text-anchor="middle">— afternoon grind. efektif —</text>
+        text-anchor="middle">— afternoon grind —</text>
 
   <line x1="590" y1="105" x2="590" y2="200" stroke="#21262d" stroke-width="1"/>
 
@@ -46,7 +46,7 @@
   <!-- vibe divider -->
   <rect x="36" y="213" width="728" height="1" fill="#21262d"/>
   <text x="400" y="252" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="13" fill="#8b949e"
-        text-anchor="middle" font-style="italic">&quot;ngoding di jam orang kerja. kalkulasi risikonya.&quot;</text>
+        text-anchor="middle" font-style="italic">&quot;coding through work hours.&quot;</text>
 
   <!-- activity spread -->
   <text x="36" y="294" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" fill="#8b949e" letter-spacing="2">HOURLY ACTIVITY</text>
@@ -59,7 +59,7 @@
   <rect x="163" y="333" width="24" height="5" fill="#21262d" rx="3" opacity="0.65"/>
   <rect x="193" y="326" width="24" height="12" fill="#21262d" rx="3" opacity="0.65"/>
   <rect x="223" y="328" width="24" height="10" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="253" y="334" width="24" height="4" fill="#21262d" rx="3" opacity="0.65"/>
+  <rect x="253" y="333" width="24" height="5" fill="#21262d" rx="3" opacity="0.65"/>
   <rect x="283" y="333" width="24" height="5" fill="#21262d" rx="3" opacity="0.65"/>
   <rect x="313" y="333" width="24" height="5" fill="#21262d" rx="3" opacity="0.65"/>
   <rect x="343" y="330" width="24" height="8" fill="#21262d" rx="3" opacity="0.65"/>
