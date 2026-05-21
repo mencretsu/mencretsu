@@ -1,22 +1,50 @@
-<div id="header" align="left">
-  <img src="https://media.tenor.com/EKp21uU48CsAAAAi/discordtag.gif" width="100"/> 
-</div>
+<img src="./assets/header.svg" width="100%" alt="iz">
 
-<img alt="GitHub followers" src="https://img.shields.io/github/followers/mencretsu?style=social"> &nbsp;&nbsp; 
-<img alt="GitHub User's stars" src="https://img.shields.io/github/stars/mencretsu?style=social"/>
+&nbsp;
 
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Ubuntu&size=20&duration=1000&pause=4000&random=false&width=435&lines=Welcome+to+iz's+Github+profile." alt="Typing SVG" /></a>
+hey. i write code (sometimes it works, sometimes it doesn't) either way it ships.
 
-## 
-<div align="center">
-<img height="160em" src="https://github-readme-stats.vercel.app/api/?username=mencretsu&layout=compact&show_icons=true&theme=algolia&hide_border=true" alt="mencretsu-stats"/>
-<img height="160em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mencretsu&layout=compact&show_icon=true&theme=algolia&hide_border=true" alt="mencretsu-langs"/>
-</div>
-<div align="center">
-    <a href="https://github.com/mencretsu/github-readme-streak-stats">
-      <!-- Use https://streak-stats.demolab.com or self-host with your own Vercel app - visit https://git.io/streak-stats for instructions -->
-      <img title="🔥 Get streak stats for your profile at git.io/streak-stats" alt="mencretsu's streak" src="https://github-readme-streak-stats-eight.vercel.app/?user=mencretsu&theme=algolia&hide_border=true&short_numbers=true"/>
-    </a>
-</div><br><br>
+Probably awake. possibly debugging.
 
-<a href="https://www.buymeacoffee.com/mencretsu" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-1.svg" alt="Buy Me A Coffee" style="height: 36px !important;width: 134px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+&nbsp;
+
+[![skills](https://skillicons.dev/icons?i=py,js,ts,bash,linux,docker,git,vscode&theme=dark)](https://skillicons.dev)
+
+&nbsp;
+
+---
+
+&nbsp;
+
+```
+now    →  building [something]
+mood   →  why is this working
+fuel   →  coffee, probably
+```
+
+&nbsp;
+
+---
+
+&nbsp;
+
+<details>
+<summary><sub>stats, if you care about numbers</sub></summary>
+<br>
+<img height="155em" src="https://github-readme-stats.vercel.app/api/?username=mencretsu&show_icons=true&theme=github_dark&hide_border=true&bg_color=0d1117&hide_title=true"/>
+<img height="155em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mencretsu&layout=compact&theme=github_dark&hide_border=true&bg_color=0d1117"/>
+<br><br>
+<img src="https://github-readme-streak-stats-eight.vercel.app/?user=mencretsu&theme=github-dark-blue&hide_border=true&background=0d1117&short_numbers=true"/>
+</details>
+
+&nbsp;
+
+---
+
+&nbsp;
+
+[![buymeacoffee](https://img.shields.io/badge/-coffee-gray?style=flat-square&logo=buymeacoffee&logoColor=yellow)](https://www.buymeacoffee.com/mencretsu)
+&nbsp;
+![followers](https://img.shields.io/github/followers/mencretsu?style=flat-square&color=gray&labelColor=0d1117&label=followers)
+&nbsp;
+![stars](https://img.shields.io/github/stars/mencretsu?style=flat-square&color=gray&labelColor=0d1117&label=stars)
