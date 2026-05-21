@@ -21,7 +21,7 @@
 
   <!-- stat 1 — total commits -->
   <text x="145" y="160" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="58" font-weight="700"
-        fill="#e6edf3" text-anchor="middle" filter="url(#glow1)">89</text>
+        fill="#e6edf3" text-anchor="middle" filter="url(#glow1)">0</text>
   <text x="145" y="182" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" fill="#8b949e"
         text-anchor="middle" letter-spacing="3">COMMITS</text>
 
@@ -52,18 +52,6 @@
   <text x="36" y="294" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" fill="#8b949e" letter-spacing="2">HOURLY ACTIVITY</text>
   <rect x="36" y="300" width="728" height="1" fill="#21262d" opacity="0.35"/>
 
-  <rect x="43" y="313" width="24" height="25" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="73" y="310" width="24" height="28" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="103" y="306" width="24" height="32" fill="#388bfd" rx="3" opacity="1"/>
-  <rect x="133" y="310" width="24" height="28" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="163" y="313" width="24" height="25" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="193" y="316" width="24" height="22" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="223" y="319" width="24" height="19" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="253" y="322" width="24" height="16" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="283" y="326" width="24" height="12" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="313" y="329" width="24" height="9" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="343" y="332" width="24" height="6" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="373" y="335" width="24" height="3" fill="#21262d" rx="3" opacity="0.65"/>
   <text x="55" y="353" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9" fill="#8b949e" text-anchor="middle">00</text>
   <text x="235" y="353" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9" fill="#8b949e" text-anchor="middle">06</text>
   <text x="415" y="353" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9" fill="#8b949e" text-anchor="middle">12</text>
