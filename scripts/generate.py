@@ -180,21 +180,21 @@ def ch1(data: dict) -> str:
         return f"{h - 12} PM"
 
     def _hvibe(h: int) -> str:
-        if 0 <= h < 3:  return "dini hari. compiler jadi satu-satunya temen"
-        if 3 <= h < 6:  return "jam segini? lo baik-baik aja kan?"
-        if 6 <= h < 9:  return "pagi-pagi langsung ngoding. gila"
-        if 9 <= h < 12: return "jam normal. mencurigakan"
-        if 12 <= h < 14: return "ngoding sambil makan siang, lol"
-        if 14 <= h < 17: return "afternoon grind. efektif"
-        if 17 <= h < 20: return "pulang langsung buka editor"
-        if 20 <= h < 22: return "malam, tenang, flow state"
-        return "deep night. no distraction. pure chaos"
+        if 0 <= h < 3:  return "late night. just you and the compiler"
+        if 3 <= h < 6:  return "still awake at this hour?"
+        if 6 <= h < 9:  return "coding first thing in the morning"
+        if 9 <= h < 12: return "normal hours. suspicious"
+        if 12 <= h < 14: return "coding through lunch"
+        if 14 <= h < 17: return "afternoon grind"
+        if 17 <= h < 20: return "opened the editor right after work"
+        if 20 <= h < 22: return "nighttime. calm and focused"
+        return "deep night. zero distractions"
 
     def _vibe(h: int) -> str:
-        if 0 <= h < 6:  return "compiler jadi saksi bisu jam segini."
-        if 6 <= h < 12: return "workflow rapi. lo oke kok."
-        if 12 <= h < 18: return "ngoding di jam orang kerja. kalkulasi risikonya."
-        return "malam adalah canvas-mu. dan bug adalah teman lamamu."
+        if 0 <= h < 6:  return "still coding this late."
+        if 6 <= h < 12: return "clean workflow."
+        if 12 <= h < 18: return "coding through work hours."
+        return "night coding session."
 
     total_str = f"{total:,}"
     hour_str  = _hlabel(fav_hour)
@@ -365,11 +365,11 @@ def ch2(data: dict) -> str:
     weekend_p = round(weekend / total * 100) if total else 0
 
     if night_p > 50:
-        tagline = f"{night_p}% commit jam malam/dini hari. night owl confirmed."
+        tagline = f"{night_p}% of commits happen at night. consistent schedule."
     elif weekend_p > 40:
-        tagline = f"{weekend_p}% commit di weekend. weekday lo ngapain?"
+        tagline = f"{weekend_p}% of commits happen on weekends."
     else:
-        tagline = f"{night_p}% malam  ·  {weekend_p}% weekend  ·  pola yang cukup manusiawi"
+        tagline = f"{night_p}% night commits  ·  {weekend_p}% weekend commits"
 
     stats_y = TOP + 7 * STEP + 22
 
@@ -548,11 +548,10 @@ def ch4(data: dict) -> str:
         if any(c in m for c in "!?"): s += 2
         if "..." in m or "…" in m:    s += 1
         for w in (
-            "finally", "why", "wtf", "idk", "todo", "hmm", "ok ", "lol", "wkwk",
-            "??", "!!", "lupa", "coba", "nyoba", "tambahin", "benerin", "harusnya",
-            "kayak", "masih", "udah", "belum", "sorry", "gak tau", "nggak",
-            "waduh", "anjir", "aduh", "oops", "ugh", "dammit", "argh", "somehow",
-            "broken", "cursed", "no idea", "help", "please", "works on my machine",
+            "finally", "why", "wtf", "idk", "todo", "hmm", "ok", "lol",
+            "??", "!!", "fix", "retry", "check", "update", "remove",
+            "broken", "issue", "debug", "test", "refactor", "cleanup",
+            "temp", "hack", "works", "failed", "review", "optimize",
         ):
             if w in l: s += 4
         return s
@@ -562,8 +561,8 @@ def ch4(data: dict) -> str:
 
     if not best:
         best = [
-            "no interesting commits found. kamu terlalu rapi.",
-            "write chaotic commit messages. it builds character.",
+            "No interesting commits found LUL",
+            "Wayahe Turu Bos.",
         ]
 
     W      = 800
