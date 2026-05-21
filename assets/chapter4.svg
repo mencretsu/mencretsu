@@ -1,41 +1,158 @@
-<svg width="800" height="518" viewBox="0 0 800 518" xmlns="http://www.w3.org/2000/svg">
-  <rect width="800" height="518" fill="#010409" rx="12"/>
-  <rect x="1" y="1" width="798" height="516" fill="none" stroke="#21262d" stroke-width="1" rx="11"/>
+<svg width="800" height="195" viewBox="0 0 800 195" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="195" fill="#010409" rx="12"/>
+  <rect x="1" y="1" width="798" height="193" fill="none" stroke="#21262d" stroke-width="1" rx="11"/>
 
   <text x="36" y="48" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="11" fill="#8b949e" letter-spacing="3">IN YOUR OWN WORDS</text>
   <text x="764" y="48" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="11" fill="#8b949e"
-        letter-spacing="2" text-anchor="end">RAW COMMIT MESSAGES</text>
+        letter-spacing="2" text-anchor="end">RAW COMMIT LOG</text>
   <rect x="36" y="58" width="230" height="1" fill="#a371f7" opacity="0.4"/>
 
-  <rect x="30" y="79" width="740" height="50" fill="#0d1117" rx="4"/>
-  <text x="46" y="98" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" fill="#388bfd" opacity="0.65">#01</text>
-  <text x="77" y="98" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#e6edf3">Update payment info and remove DOKU settings</text>
-  <text x="754" y="105" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="24" fill="#21262d" text-anchor="end" opacity="0.4">&quot;</text>
-  <rect x="30" y="133" width="740" height="50" fill="#010409" rx="4"/>
-  <text x="46" y="152" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" fill="#388bfd" opacity="0.65">#02</text>
-  <text x="77" y="152" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#e6edf3">Update token references from VLT to WTF</text>
-  <text x="754" y="159" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="24" fill="#21262d" text-anchor="end" opacity="0.4">&quot;</text>
-  <rect x="30" y="187" width="740" height="50" fill="#0d1117" rx="4"/>
-  <text x="46" y="206" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" fill="#388bfd" opacity="0.65">#03</text>
-  <text x="77" y="206" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#e6edf3">Update title and loading messages in groktrade.html</text>
-  <text x="754" y="213" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="24" fill="#21262d" text-anchor="end" opacity="0.4">&quot;</text>
-  <rect x="30" y="241" width="740" height="50" fill="#010409" rx="4"/>
-  <text x="46" y="260" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" fill="#388bfd" opacity="0.65">#04</text>
-  <text x="77" y="260" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#e6edf3">Refactor webhook to improve transaction status handling</text>
-  <text x="754" y="267" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="24" fill="#21262d" text-anchor="end" opacity="0.4">&quot;</text>
-  <rect x="30" y="295" width="740" height="50" fill="#0d1117" rx="4"/>
-  <text x="46" y="314" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" fill="#388bfd" opacity="0.65">#05</text>
-  <text x="77" y="314" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#e6edf3">Update gemini_api_checker.html</text>
-  <text x="754" y="321" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="24" fill="#21262d" text-anchor="end" opacity="0.4">&quot;</text>
-  <rect x="30" y="349" width="740" height="50" fill="#010409" rx="4"/>
-  <text x="46" y="368" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" fill="#388bfd" opacity="0.65">#06</text>
-  <text x="77" y="368" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#e6edf3">Update leverage guide and remove old risk descriptions</text>
-  <text x="754" y="375" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="24" fill="#21262d" text-anchor="end" opacity="0.4">&quot;</text>
-  <rect x="30" y="403" width="740" height="50" fill="#0d1117" rx="4"/>
-  <text x="46" y="422" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" fill="#388bfd" opacity="0.65">#07</text>
-  <text x="77" y="422" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#e6edf3">Update crossrate_checker.html</text>
-  <text x="754" y="429" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="24" fill="#21262d" text-anchor="end" opacity="0.4">&quot;</text>
+  <!-- decorative quote marks -->
+  <text x="58" y="128" font-family="Georgia,serif" font-size="80"
+        fill="#21262d" opacity="0.28">&ldquo;</text>
+  <text x="742" y="134" font-family="Georgia,serif" font-size="80"
+        fill="#21262d" opacity="0.28" text-anchor="end">&rdquo;</text>
 
-  <text x="400" y="491" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" fill="#8b949e"
-        text-anchor="middle" font-style="italic">honest logs from an honest coder.</text>
+  <text x="400" y="110" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="15" font-weight="600" fill="#e6edf3" text-anchor="middle" opacity="0">
+    Rename project from VIOLET to WTF CHAN
+    <animate attributeName="opacity" values="0;0;1;1;0;0"
+             keyTimes="0.0;0.0;0.017;0.1259;0.1429;1.0" dur="22.4s" repeatCount="indefinite"/>
+  </text>
+
+  <text x="400" y="136" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9" fill="#8b949e" text-anchor="middle" letter-spacing="2" opacity="0">
+    01 / 07
+    <animate attributeName="opacity" values="0;0;0.5;0.5;0;0"
+             keyTimes="0.0;0.0;0.017;0.1259;0.1429;1.0" dur="22.4s" repeatCount="indefinite"/>
+  </text>
+
+  <text x="400" y="110" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="15" font-weight="600" fill="#e6edf3" text-anchor="middle" opacity="0">
+    Implement webhook handler for payment notifications
+    <animate attributeName="opacity" values="0;0;1;1;0;0"
+             keyTimes="0.0;0.1429;0.1598;0.2688;0.2857;1.0" dur="22.4s" repeatCount="indefinite"/>
+  </text>
+
+  <text x="400" y="136" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9" fill="#8b949e" text-anchor="middle" letter-spacing="2" opacity="0">
+    02 / 07
+    <animate attributeName="opacity" values="0;0;0.5;0.5;0;0"
+             keyTimes="0.0;0.1429;0.1598;0.2688;0.2857;1.0" dur="22.4s" repeatCount="indefinite"/>
+  </text>
+
+  <text x="400" y="110" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="15" font-weight="600" fill="#e6edf3" text-anchor="middle" opacity="0">
+    Update token references from VLT to WTF
+    <animate attributeName="opacity" values="0;0;1;1;0;0"
+             keyTimes="0.0;0.2857;0.3027;0.4116;0.4286;1.0" dur="22.4s" repeatCount="indefinite"/>
+  </text>
+
+  <text x="400" y="136" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9" fill="#8b949e" text-anchor="middle" letter-spacing="2" opacity="0">
+    03 / 07
+    <animate attributeName="opacity" values="0;0;0.5;0.5;0;0"
+             keyTimes="0.0;0.2857;0.3027;0.4116;0.4286;1.0" dur="22.4s" repeatCount="indefinite"/>
+  </text>
+
+  <text x="400" y="110" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="15" font-weight="600" fill="#e6edf3" text-anchor="middle" opacity="0">
+    Refactor webhook to improve transaction status handling
+    <animate attributeName="opacity" values="0;0;1;1;0;0"
+             keyTimes="0.0;0.4286;0.4455;0.5545;0.5714;1.0" dur="22.4s" repeatCount="indefinite"/>
+  </text>
+
+  <text x="400" y="136" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9" fill="#8b949e" text-anchor="middle" letter-spacing="2" opacity="0">
+    04 / 07
+    <animate attributeName="opacity" values="0;0;0.5;0.5;0;0"
+             keyTimes="0.0;0.4286;0.4455;0.5545;0.5714;1.0" dur="22.4s" repeatCount="indefinite"/>
+  </text>
+
+  <text x="400" y="110" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="15" font-weight="600" fill="#e6edf3" text-anchor="middle" opacity="0">
+    Add grok trading analyst link to index.html
+    <animate attributeName="opacity" values="0;0;1;1;0;0"
+             keyTimes="0.0;0.5714;0.5884;0.6973;0.7143;1.0" dur="22.4s" repeatCount="indefinite"/>
+  </text>
+
+  <text x="400" y="136" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9" fill="#8b949e" text-anchor="middle" letter-spacing="2" opacity="0">
+    05 / 07
+    <animate attributeName="opacity" values="0;0;0.5;0.5;0;0"
+             keyTimes="0.0;0.5714;0.5884;0.6973;0.7143;1.0" dur="22.4s" repeatCount="indefinite"/>
+  </text>
+
+  <text x="400" y="110" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="15" font-weight="600" fill="#e6edf3" text-anchor="middle" opacity="0">
+    first commit
+    <animate attributeName="opacity" values="0;0;1;1;0;0"
+             keyTimes="0.0;0.7143;0.7312;0.8402;0.8571;1.0" dur="22.4s" repeatCount="indefinite"/>
+  </text>
+
+  <text x="400" y="136" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9" fill="#8b949e" text-anchor="middle" letter-spacing="2" opacity="0">
+    06 / 07
+    <animate attributeName="opacity" values="0;0;0.5;0.5;0;0"
+             keyTimes="0.0;0.7143;0.7312;0.8402;0.8571;1.0" dur="22.4s" repeatCount="indefinite"/>
+  </text>
+
+  <text x="400" y="110" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="15" font-weight="600" fill="#e6edf3" text-anchor="middle" opacity="0">
+    pesan commit lo
+    <animate attributeName="opacity" values="0;0;1;1;0;0"
+             keyTimes="0.0;0.8571;0.8741;0.983;1.0;1.0" dur="22.4s" repeatCount="indefinite"/>
+  </text>
+
+  <text x="400" y="136" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9" fill="#8b949e" text-anchor="middle" letter-spacing="2" opacity="0">
+    07 / 07
+    <animate attributeName="opacity" values="0;0;0.5;0.5;0;0"
+             keyTimes="0.0;0.8571;0.8741;0.983;1.0;1.0" dur="22.4s" repeatCount="indefinite"/>
+  </text>
+
+
+  <circle cx="352" cy="173" r="3" fill="#21262d">
+    <animate attributeName="fill"
+             values="#21262d;#21262d;#388bfd;#388bfd;#21262d;#21262d"
+             keyTimes="0.0;0.0;0.017;0.1259;0.1429;1.0" dur="22.4s" repeatCount="indefinite"/>
+    <animate attributeName="r"
+             values="3;3;5;5;3;3"
+             keyTimes="0.0;0.0;0.017;0.1259;0.1429;1.0" dur="22.4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="368" cy="173" r="3" fill="#21262d">
+    <animate attributeName="fill"
+             values="#21262d;#21262d;#388bfd;#388bfd;#21262d;#21262d"
+             keyTimes="0.0;0.1429;0.1598;0.2688;0.2857;1.0" dur="22.4s" repeatCount="indefinite"/>
+    <animate attributeName="r"
+             values="3;3;5;5;3;3"
+             keyTimes="0.0;0.1429;0.1598;0.2688;0.2857;1.0" dur="22.4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="384" cy="173" r="3" fill="#21262d">
+    <animate attributeName="fill"
+             values="#21262d;#21262d;#388bfd;#388bfd;#21262d;#21262d"
+             keyTimes="0.0;0.2857;0.3027;0.4116;0.4286;1.0" dur="22.4s" repeatCount="indefinite"/>
+    <animate attributeName="r"
+             values="3;3;5;5;3;3"
+             keyTimes="0.0;0.2857;0.3027;0.4116;0.4286;1.0" dur="22.4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="400" cy="173" r="3" fill="#21262d">
+    <animate attributeName="fill"
+             values="#21262d;#21262d;#388bfd;#388bfd;#21262d;#21262d"
+             keyTimes="0.0;0.4286;0.4455;0.5545;0.5714;1.0" dur="22.4s" repeatCount="indefinite"/>
+    <animate attributeName="r"
+             values="3;3;5;5;3;3"
+             keyTimes="0.0;0.4286;0.4455;0.5545;0.5714;1.0" dur="22.4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="416" cy="173" r="3" fill="#21262d">
+    <animate attributeName="fill"
+             values="#21262d;#21262d;#388bfd;#388bfd;#21262d;#21262d"
+             keyTimes="0.0;0.5714;0.5884;0.6973;0.7143;1.0" dur="22.4s" repeatCount="indefinite"/>
+    <animate attributeName="r"
+             values="3;3;5;5;3;3"
+             keyTimes="0.0;0.5714;0.5884;0.6973;0.7143;1.0" dur="22.4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="432" cy="173" r="3" fill="#21262d">
+    <animate attributeName="fill"
+             values="#21262d;#21262d;#388bfd;#388bfd;#21262d;#21262d"
+             keyTimes="0.0;0.7143;0.7312;0.8402;0.8571;1.0" dur="22.4s" repeatCount="indefinite"/>
+    <animate attributeName="r"
+             values="3;3;5;5;3;3"
+             keyTimes="0.0;0.7143;0.7312;0.8402;0.8571;1.0" dur="22.4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="448" cy="173" r="3" fill="#21262d">
+    <animate attributeName="fill"
+             values="#21262d;#21262d;#388bfd;#388bfd;#21262d;#21262d"
+             keyTimes="0.0;0.8571;0.8741;0.983;1.0;1.0" dur="22.4s" repeatCount="indefinite"/>
+    <animate attributeName="r"
+             values="3;3;5;5;3;3"
+             keyTimes="0.0;0.8571;0.8741;0.983;1.0;1.0" dur="22.4s" repeatCount="indefinite"/>
+  </circle>
+
 </svg>
