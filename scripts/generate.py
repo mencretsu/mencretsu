@@ -490,40 +490,5 @@ def main():
     print("✓ done.", flush=True)
 
 
-# ─── Local preview dengan dummy data ─────────────────────────────────────────
-
 if __name__ == "__main__":
-    from datetime import date
-
-    today = date.today()
-    cbd   = {}
-    for i in range(365):
-        d = today - timedelta(days=i)
-        if random.random() > 0.38:
-            cbd[d.strftime("%Y-%m-%d")] = random.randint(1, 14)
-
-    by_hour = {h: random.randint(0, 40) for h in range(24)}
-    by_hour[2]  = 55   # peak jam 2 pagi biar dramatis
-    by_dow  = {d: random.randint(5, 60) for d in range(7)}
-
-    data = {
-        "repos": [],
-        "commits_by_date":     cbd,
-        "commits_by_hour":     by_hour,
-        "commits_by_dow":      by_dow,
-        "commit_messages":     [],
-        "repo_commit_counts":  {},
-        "total_commits":       sum(cbd.values()),
-    }
-
-    os.makedirs("assets", exist_ok=True)
-
-    with open("assets/chapter1.svg", "w") as f:
-        f.write(ch1(data))
-    print("→ assets/chapter1.svg")
-
-    with open("assets/chapter2.svg", "w") as f:
-        f.write(ch2(data))
-    print("→ assets/chapter2.svg")
-
-    print("✓ buka di browser.")
+    main()
