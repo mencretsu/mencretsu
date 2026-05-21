@@ -1,0 +1,99 @@
+<svg width="100%" viewBox="0 0 800 150" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes drawLine {
+      to { stroke-dashoffset: 0; }
+    }
+    @keyframes appear {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes glitch1 {
+      0%,100% { clip-path: inset(0 0 95% 0); transform: translate(-4px, 0); opacity: 0.7; }
+      20%     { clip-path: inset(30% 0 50% 0); transform: translate(4px, 0); }
+      40%     { clip-path: inset(60% 0 20% 0); transform: translate(-2px, 0); }
+      60%     { clip-path: inset(80% 0 5% 0);  transform: translate(3px, 0); }
+      80%     { clip-path: inset(10% 0 70% 0); transform: translate(-3px, 0); }
+    }
+    @keyframes glitch2 {
+      0%,100% { clip-path: inset(50% 0 30% 0); transform: translate(4px, 0); opacity: 0.5; }
+      25%     { clip-path: inset(20% 0 65% 0); transform: translate(-4px, 0); }
+      50%     { clip-path: inset(75% 0 10% 0); transform: translate(2px, 0); }
+      75%     { clip-path: inset(5% 0 85% 0);  transform: translate(-2px, 0); }
+    }
+
+    .name {
+      font-family: 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 80px;
+      font-weight: 900;
+      letter-spacing: -4px;
+      fill: #ffffff;
+      animation: fadeUp 0.55s cubic-bezier(0.16,1,0.3,1) 0.05s both;
+    }
+    .name-glitch-r {
+      font-family: 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 80px;
+      font-weight: 900;
+      letter-spacing: -4px;
+      fill: #4493F8;
+      opacity: 0;
+      animation: fadeUp 0.55s cubic-bezier(0.16,1,0.3,1) 0.05s both,
+                 glitch1 0.15s steps(1) 1.1s 3;
+    }
+    .name-glitch-g {
+      font-family: 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 80px;
+      font-weight: 900;
+      letter-spacing: -4px;
+      fill: #3fb950;
+      opacity: 0;
+      animation: fadeUp 0.55s cubic-bezier(0.16,1,0.3,1) 0.05s both,
+                 glitch2 0.15s steps(1) 1.1s 3;
+    }
+    .accent {
+      stroke-dasharray: 760;
+      stroke-dashoffset: 760;
+      animation: drawLine 0.9s cubic-bezier(0.4,0,0.2,1) 0.45s forwards;
+    }
+    .sub {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 12.5px;
+      fill: #8b949e;
+      letter-spacing: 0.8px;
+      animation: appear 0.5s ease 1.0s both;
+    }
+    .dot {
+      fill: #4493F8;
+    }
+  </style>
+
+  <rect width="800" height="150" fill="#0d1117"/>
+
+  <!-- glitch layers (behind) -->
+  <text class="name-glitch-r" x="40" y="100">IZ.</text>
+  <text class="name-glitch-g" x="40" y="100">IZ.</text>
+
+  <!-- main name -->
+  <text class="name" x="40" y="100">IZ.</text>
+
+  <!-- blue line draws across -->
+  <line class="accent"
+    x1="40" y1="115" x2="760" y2="115"
+    stroke="#4493F8" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- dot riding the line -->
+  <circle class="dot" r="3.5" cy="115">
+    <animate attributeName="cx" from="40" to="760"
+      dur="0.9s" begin="0.45s" fill="freeze"/>
+    <animate attributeName="opacity" values="0;1;1;0"
+      keyTimes="0;0.05;0.88;1" dur="0.9s" begin="0.45s" fill="freeze"/>
+  </circle>
+
+  <!-- tagline -->
+  <text class="sub" x="40" y="138">
+    builds things · breaks things · fixes things · repeat
+  </text>
+</svg>
