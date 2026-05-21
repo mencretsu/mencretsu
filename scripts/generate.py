@@ -1,4 +1,3 @@
-
 import math
 import os
 import sys
@@ -498,8 +497,6 @@ def main():
     print("✓ done.", flush=True)
 
 
-# ─── Local preview dengan dummy data ─────────────────────────────────────────
-
 if __name__ == "__main__":
     from datetime import date
 
@@ -511,7 +508,7 @@ if __name__ == "__main__":
             cbd[d.strftime("%Y-%m-%d")] = random.randint(1, 14)
 
     by_hour = {h: random.randint(0, 40) for h in range(24)}
-    by_hour[2]  = 55   # peak jam 2 pagi biar dramatis
+    by_hour[2]  = 55 
     by_dow  = {d: random.randint(5, 60) for d in range(7)}
 
     data = {
