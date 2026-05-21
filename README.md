@@ -26,14 +26,6 @@
 
 &nbsp;
 
-<img src="assets/chapter3.svg" width="100%" alt="the journey" />
-
-&nbsp;
-
-<img src="assets/chapter4.svg" width="100%" alt="in your own words" />
-
-&nbsp;
-
 ---
 
 <sub>auto-updated daily via github actions &nbsp;&middot;&nbsp; data pulled from github api &nbsp;&middot;&nbsp; all svgs hand-coded</sub>
