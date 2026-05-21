@@ -19,7 +19,7 @@
 &nbsp;
 
 ---
-**mencretsu** &mdash; software person. writes code at weird hours. ships things. sometimes breaks things. usually fixes them.
+**mencretsu** &mdash; ~~software person. writes code at weird hours. ships things. sometimes breaks things. usually fixes them.~~ Full-Stack Copy-Paste Engineer.
 
 ![followers](https://img.shields.io/github/followers/mencretsu?style=flat-square&color=gray&labelColor=0d1117&label=followers)
 &nbsp;
