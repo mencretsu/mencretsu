@@ -40,7 +40,7 @@ jobs:
       - name: Generate SVG chapters
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # GH_TOKEN: ${{ secrets.GH_TOKEN }}   # ← uncomment if you add a PAT
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}   # ← uncomment if you add a PAT
         run: python scripts/generate.py
 
       # ── 4. commit & push ──────────────────────────────────────────────────
