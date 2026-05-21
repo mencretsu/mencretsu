@@ -12,12 +12,7 @@
 
 <!-- ── stats in <details> ──────────────────────── -->
 
-&nbsp;
-
 ---
-
-&nbsp;
-
 <img src="assets/chapter1.svg" width="100%" alt="the numbers" />
 
 &nbsp;
