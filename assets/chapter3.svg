@@ -1,4 +1,4 @@
-<svg width="800" height="300" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+<svg width="800" height="710" viewBox="0 0 800 710" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="tlg" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%"   style="stop-color:#388bfd;stop-opacity:0.7"/>
@@ -6,16 +6,177 @@
     </linearGradient>
   </defs>
 
-  <rect width="800" height="300" fill="#010409" rx="12"/>
-  <rect x="1" y="1" width="798" height="298" fill="none" stroke="#21262d" stroke-width="1" rx="11"/>
+  <rect width="800" height="710" fill="#010409" rx="12"/>
+  <rect x="1" y="1" width="798" height="708" fill="none" stroke="#21262d" stroke-width="1" rx="11"/>
 
   <text x="36" y="48" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="11" fill="#8b949e" letter-spacing="3">THE JOURNEY</text>
   <text x="764" y="48" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="11" fill="#8b949e"
-        letter-spacing="2" text-anchor="end">0 PROJECTS</text>
+        letter-spacing="2" text-anchor="end">8 PROJECTS</text>
   <rect x="36" y="58" width="145" height="1" fill="#388bfd" opacity="0.4"/>
 
-  <line x1="132" y1="88" x2="132" y2="68"
+  <line x1="132" y1="88" x2="132" y2="628"
         stroke="url(#tlg)" stroke-width="1" stroke-dasharray="3,4"/>
 
+  <!-- mencretsu -->
+  <circle cx="132" cy="96" r="6" fill="#388bfd" opacity="0.18"/>
+  <circle cx="132" cy="96" r="3" fill="#388bfd"/>
+
+  <text x="121" y="95" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#8b949e" text-anchor="end">Sep</text>
+  <text x="121" y="107" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#8b949e" text-anchor="end">2022</text>
+
+  <text x="152" y="102" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="14"
+        font-weight="700" fill="#e6edf3">mencretsu</text>
+  <text x="152" y="118" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10"
+        fill="#8b949e">yea</text>
+
+  <text x="152" y="137" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#388bfd">21 commits</text>
+  <circle cx="224" cy="133" r="4" fill="#3572A5"/>
+  <text x="232" y="137" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#8b949e">Python</text>
+  <text x="287" y="137" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9" fill="#f0883e">★ 1</text>
+  <line x1="152" y1="148" x2="764" y2="148" stroke="#21262d" stroke-width="1" opacity="0.35"/>
+  <!-- playground -->
+  <circle cx="132" cy="166" r="6" fill="#388bfd" opacity="0.18"/>
+  <circle cx="132" cy="166" r="3" fill="#388bfd"/>
+
+  <text x="121" y="165" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#8b949e" text-anchor="end">Jul</text>
+  <text x="121" y="177" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#8b949e" text-anchor="end">2025</text>
+
+  <text x="152" y="172" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="14"
+        font-weight="700" fill="#e6edf3">playground</text>
+  <text x="152" y="188" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10"
+        fill="#8b949e">no description.</text>
+
+  <text x="152" y="207" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#388bfd">245 commits</text>
+  <circle cx="224" cy="203" r="4" fill="#e34c26"/>
+  <text x="232" y="207" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#8b949e">HTML</text>
+  <text x="287" y="207" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9" fill="#f0883e">★ 1</text>
+  <line x1="152" y1="218" x2="764" y2="218" stroke="#21262d" stroke-width="1" opacity="0.35"/>
+  <!-- kecoaxx_project -->
+  <circle cx="132" cy="236" r="6" fill="#388bfd" opacity="0.18"/>
+  <circle cx="132" cy="236" r="3" fill="#388bfd"/>
+
+  <text x="121" y="235" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#8b949e" text-anchor="end">Sep</text>
+  <text x="121" y="247" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#8b949e" text-anchor="end">2025</text>
+
+  <text x="152" y="242" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="14"
+        font-weight="700" fill="#e6edf3">kecoaxx_project</text>
+  <text x="152" y="258" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10"
+        fill="#8b949e">no description.</text>
+
+  <text x="152" y="277" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#388bfd">219 commits</text>
+  <circle cx="224" cy="273" r="4" fill="#F18E33"/>
+  <text x="232" y="277" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#8b949e">Kotlin</text>
+  <line x1="152" y1="288" x2="764" y2="288" stroke="#21262d" stroke-width="1" opacity="0.35"/>
+  <!-- ORCA -->
+  <circle cx="132" cy="306" r="6" fill="#388bfd" opacity="0.18"/>
+  <circle cx="132" cy="306" r="3" fill="#388bfd"/>
+
+  <text x="121" y="305" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#8b949e" text-anchor="end">Dec</text>
+  <text x="121" y="317" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#8b949e" text-anchor="end">2025</text>
+
+  <text x="152" y="312" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="14"
+        font-weight="700" fill="#e6edf3">ORCA</text>
+  <text x="152" y="328" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10"
+        fill="#8b949e">no description.</text>
+
+  <text x="152" y="347" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#388bfd">52 commits</text>
+  <circle cx="224" cy="343" r="4" fill="#e34c26"/>
+  <text x="232" y="347" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#8b949e">HTML</text>
+  <line x1="152" y1="358" x2="764" y2="358" stroke="#21262d" stroke-width="1" opacity="0.35"/>
+  <!-- kecoaxx-payment-bot -->
+  <circle cx="132" cy="376" r="6" fill="#388bfd" opacity="0.18"/>
+  <circle cx="132" cy="376" r="3" fill="#388bfd"/>
+
+  <text x="121" y="375" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#8b949e" text-anchor="end">Dec</text>
+  <text x="121" y="387" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#8b949e" text-anchor="end">2025</text>
+
+  <text x="152" y="382" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="14"
+        font-weight="700" fill="#e6edf3">kecoaxx-payment-bot</text>
+  <text x="152" y="398" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10"
+        fill="#8b949e">no description.</text>
+
+  <text x="152" y="417" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#388bfd">53 commits</text>
+  <circle cx="224" cy="413" r="4" fill="#f1e05a"/>
+  <text x="232" y="417" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#8b949e">JavaScript</text>
+  <line x1="152" y1="428" x2="764" y2="428" stroke="#21262d" stroke-width="1" opacity="0.35"/>
+  <!-- kecoaxx -->
+  <circle cx="132" cy="446" r="6" fill="#388bfd" opacity="0.18"/>
+  <circle cx="132" cy="446" r="3" fill="#388bfd"/>
+
+  <text x="121" y="445" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#8b949e" text-anchor="end">Jan</text>
+  <text x="121" y="457" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#8b949e" text-anchor="end">2026</text>
+
+  <text x="152" y="452" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="14"
+        font-weight="700" fill="#e6edf3">kecoaxx</text>
+  <text x="152" y="468" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10"
+        fill="#8b949e">no description.</text>
+
+  <text x="152" y="487" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#388bfd">215 commits</text>
+  <circle cx="224" cy="483" r="4" fill="#F18E33"/>
+  <text x="232" y="487" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#8b949e">Kotlin</text>
+  <line x1="152" y1="498" x2="764" y2="498" stroke="#21262d" stroke-width="1" opacity="0.35"/>
+  <!-- tg-relay-bot -->
+  <circle cx="132" cy="516" r="6" fill="#388bfd" opacity="0.18"/>
+  <circle cx="132" cy="516" r="3" fill="#388bfd"/>
+
+  <text x="121" y="515" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#8b949e" text-anchor="end">Apr</text>
+  <text x="121" y="527" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#8b949e" text-anchor="end">2026</text>
+
+  <text x="152" y="522" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="14"
+        font-weight="700" fill="#e6edf3">tg-relay-bot</text>
+  <text x="152" y="538" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10"
+        fill="#8b949e">A simple bot that forwards messages between users and admin.</text>
+
+  <text x="152" y="557" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#388bfd">3 commits</text>
+  <circle cx="224" cy="553" r="4" fill="#f1e05a"/>
+  <text x="232" y="557" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#8b949e">JavaScript</text>
+  <line x1="152" y1="568" x2="764" y2="568" stroke="#21262d" stroke-width="1" opacity="0.35"/>
+  <!-- aipodcast -->
+  <circle cx="132" cy="586" r="6" fill="#388bfd" opacity="0.18"/>
+  <circle cx="132" cy="586" r="3" fill="#388bfd"/>
+
+  <text x="121" y="585" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#8b949e" text-anchor="end">May</text>
+  <text x="121" y="597" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#8b949e" text-anchor="end">2026</text>
+
+  <text x="152" y="592" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="14"
+        font-weight="700" fill="#e6edf3">aipodcast</text>
+  <text x="152" y="608" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10"
+        fill="#8b949e">no description.</text>
+
+  <text x="152" y="627" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#388bfd">3 commits</text>
+  <circle cx="224" cy="623" r="4" fill="#3572A5"/>
+  <text x="232" y="627" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9"
+        fill="#8b949e">Python</text>
 
 </svg>
