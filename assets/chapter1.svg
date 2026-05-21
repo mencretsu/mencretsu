@@ -13,50 +13,50 @@
   <text x="764" y="48" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="11" fill="#8b949e" letter-spacing="2" text-anchor="end">LAST 365 DAYS</text>
   <rect x="36" y="58" width="220" height="1" fill="url(#lg1)"/>
   <text x="145" y="160" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="58" font-weight="700"
-        fill="#e6edf3" text-anchor="middle" filter="url(#glow1)">1,630</text>
+        fill="#e6edf3" text-anchor="middle" filter="url(#glow1)">934</text>
   <text x="145" y="182" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" fill="#8b949e"
         text-anchor="middle" letter-spacing="3">COMMITS</text>
   <line x1="272" y1="105" x2="272" y2="200" stroke="#21262d" stroke-width="1"/>
   <text x="450" y="152" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="46" font-weight="700"
-        fill="#388bfd" text-anchor="middle" filter="url(#glow1)">2 AM</text>
+        fill="#388bfd" text-anchor="middle" filter="url(#glow1)">3 PM</text>
   <text x="450" y="174" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" fill="#8b949e"
         text-anchor="middle" letter-spacing="3">PEAK HOUR</text>
   <text x="450" y="192" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" fill="#a371f7"
-        text-anchor="middle">— late night. just you and the compiler —</text>
+        text-anchor="middle">— afternoon grind —</text>
   <line x1="590" y1="105" x2="590" y2="200" stroke="#21262d" stroke-width="1"/>
   <text x="700" y="152" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="26" font-weight="700"
-        fill="#f0883e" text-anchor="middle" filter="url(#glow1)">Saturday</text>
+        fill="#f0883e" text-anchor="middle" filter="url(#glow1)">Tuesday</text>
   <text x="700" y="174" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" fill="#8b949e"
         text-anchor="middle" letter-spacing="2">MOST ACTIVE</text>
   <rect x="36" y="213" width="728" height="1" fill="#21262d"/>
   <text x="400" y="252" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="13" fill="#8b949e"
-        text-anchor="middle" font-style="italic">&quot;still coding this late.&quot;</text>
+        text-anchor="middle" font-style="italic">&quot;coding through work hours.&quot;</text>
   <text x="36" y="294" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" fill="#8b949e" letter-spacing="2">HOURLY ACTIVITY</text>
   <rect x="36" y="300" width="728" height="1" fill="#21262d" opacity="0.35"/>
-  <rect x="43" y="326" width="24" height="12" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="73" y="320" width="24" height="18" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="103" y="306" width="24" height="32" fill="#388bfd" rx="3" opacity="1"/>
-  <rect x="133" y="317" width="24" height="21" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="163" y="330" width="24" height="8" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="193" y="325" width="24" height="13" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="223" y="320" width="24" height="18" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="253" y="337" width="24" height="1" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="283" y="321" width="24" height="17" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="313" y="321" width="24" height="17" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="343" y="329" width="24" height="9" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="373" y="326" width="24" height="12" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="403" y="336" width="24" height="2" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="433" y="323" width="24" height="15" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="463" y="329" width="24" height="9" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="493" y="332" width="24" height="6" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="523" y="324" width="24" height="14" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="553" y="329" width="24" height="9" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="583" y="326" width="24" height="12" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="613" y="333" width="24" height="5" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="643" y="317" width="24" height="21" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="673" y="326" width="24" height="12" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="703" y="328" width="24" height="10" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="733" y="331" width="24" height="7" fill="#21262d" rx="3" opacity="0.65"/>
+  <rect x="43" y="334" width="24" height="4" fill="#21262d" rx="3" opacity="0.65"/>
+  <rect x="73" y="336" width="24" height="2" fill="#21262d" rx="3" opacity="0.65"/>
+  <rect x="103" y="335" width="24" height="3" fill="#21262d" rx="3" opacity="0.65"/>
+  <rect x="133" y="336" width="24" height="2" fill="#21262d" rx="3" opacity="0.65"/>
+  <rect x="163" y="333" width="24" height="5" fill="#21262d" rx="3" opacity="0.65"/>
+  <rect x="193" y="326" width="24" height="12" fill="#21262d" rx="3" opacity="0.65"/>
+  <rect x="223" y="328" width="24" height="10" fill="#21262d" rx="3" opacity="0.65"/>
+  <rect x="253" y="333" width="24" height="5" fill="#21262d" rx="3" opacity="0.65"/>
+  <rect x="283" y="332" width="24" height="6" fill="#21262d" rx="3" opacity="0.65"/>
+  <rect x="313" y="330" width="24" height="8" fill="#21262d" rx="3" opacity="0.65"/>
+  <rect x="343" y="330" width="24" height="8" fill="#21262d" rx="3" opacity="0.65"/>
+  <rect x="373" y="328" width="24" height="10" fill="#21262d" rx="3" opacity="0.65"/>
+  <rect x="403" y="331" width="24" height="7" fill="#21262d" rx="3" opacity="0.65"/>
+  <rect x="433" y="320" width="24" height="18" fill="#21262d" rx="3" opacity="0.65"/>
+  <rect x="463" y="311" width="24" height="27" fill="#21262d" rx="3" opacity="0.65"/>
+  <rect x="493" y="306" width="24" height="32" fill="#388bfd" rx="3" opacity="1"/>
+  <rect x="523" y="318" width="24" height="20" fill="#21262d" rx="3" opacity="0.65"/>
+  <rect x="553" y="331" width="24" height="7" fill="#21262d" rx="3" opacity="0.65"/>
+  <rect x="583" y="327" width="24" height="11" fill="#21262d" rx="3" opacity="0.65"/>
+  <rect x="613" y="320" width="24" height="18" fill="#21262d" rx="3" opacity="0.65"/>
+  <rect x="643" y="324" width="24" height="14" fill="#21262d" rx="3" opacity="0.65"/>
+  <rect x="673" y="329" width="24" height="9" fill="#21262d" rx="3" opacity="0.65"/>
+  <rect x="703" y="325" width="24" height="13" fill="#21262d" rx="3" opacity="0.65"/>
+  <rect x="733" y="328" width="24" height="10" fill="#21262d" rx="3" opacity="0.65"/>
   <text x="55" y="353" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9" fill="#8b949e" text-anchor="middle">00</text>
   <text x="235" y="353" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9" fill="#8b949e" text-anchor="middle">06</text>
   <text x="415" y="353" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9" fill="#8b949e" text-anchor="middle">12</text>
