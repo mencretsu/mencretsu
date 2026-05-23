@@ -261,7 +261,7 @@ def ch2(data):
         if v <= 0: return CL_Y_BOT
         log_v   = math.log1p(v)
         log_max = math.log1p(max_val)
-        log_min = math.log1p(min_val) * 0.3
+        log_min = 0
         return CL_Y_BOT - int(((log_v - log_min) / (log_max - log_min)) * CL_H)
 
     cw_full = (CL_X2 - CL_X1) / len(weeks)
