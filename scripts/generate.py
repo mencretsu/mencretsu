@@ -259,7 +259,11 @@ def ch2(data):
     min_val = max(min_val - 25, 0)
     
     def to_y(v):
-        return CL_Y_BOT - int(((v - min_val) / (max_val - min_val)) * CL_H)
+        if v <= 0: return CL_Y_BOT
+        log_v   = math.log1p(v)
+        log_max = math.log1p(max_val)
+        log_min = math.log1p(min_val)
+        return CL_Y_BOT - int(((log_v - log_min) / (log_max - log_min)) * CL_H)
 
     cw_full = (CL_X2 - CL_X1) / len(weeks)
     cw_body = max(cw_full * 0.6, 3)
