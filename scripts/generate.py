@@ -254,6 +254,8 @@ def ch2(data):
         # kunci: kalau nganggur, prev_close TIDAK direset ke 0
         if total_w > 0:
             prev_close = total_w
+        else:
+            prev_close = prev_close // 2
 
     CL_X1, CL_X2       = 36, 764
     CL_Y_TOP, CL_Y_BOT = 72, 235
