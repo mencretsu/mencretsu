@@ -251,13 +251,14 @@ def ch2(data):
 
     # ── chart dimensions ──────────────────────────────────────────────────
     CL_X1, CL_X2       = 36, 764
-    CL_Y_TOP, CL_Y_BOT = 72, 235
+    CL_Y_TOP, CL_Y_BOT = 62, 235
     CL_H                = CL_Y_BOT - CL_Y_TOP
 
     max_val = max((max(w["open"], w["close"]) for w in weeks), default=1)
+    min_val = min((w["close"] for w in weeks if w["total"] > 0), default=0)
 
     def to_y(v):
-        return CL_Y_BOT - int((v / max_val) * CL_H)
+        return CL_Y_BOT - int(((v - min_val) / (max_val - min_val)) * CL_H)
 
     cw_full = (CL_X2 - CL_X1) / len(weeks)
     cw_body = max(cw_full * 0.6, 3)
