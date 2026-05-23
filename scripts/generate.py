@@ -256,13 +256,12 @@ def ch2(data):
 
     max_val = max((max(w["open"], w["close"]) for w in weeks), default=1)
     min_val = min((w["close"] for w in weeks if w["total"] > 0), default=0)
-    min_val = max(min_val - 25, 0)
     
     def to_y(v):
         if v <= 0: return CL_Y_BOT
         log_v   = math.log1p(v)
         log_max = math.log1p(max_val)
-        log_min = math.log1p(min_val)
+        log_min = math.log1p(min_val) * 0.3
         return CL_Y_BOT - int(((log_v - log_min) / (log_max - log_min)) * CL_H)
 
     cw_full = (CL_X2 - CL_X1) / len(weeks)
