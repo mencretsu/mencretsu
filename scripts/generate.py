@@ -255,13 +255,12 @@ def ch2(data):
     by_hour = data["commits_by_hour"]
     total   = data["total_commits"]
 
-    W, H = 800, 320
+    W, H = 800, 360
 
     today     = datetime.now(timezone.utc).date()
     start_raw = today - timedelta(days=363)
     start     = start_raw - timedelta(days=(start_raw.isoweekday() % 7))
 
-    # ── build weeks ───────────────────────────────────────────────────────
     last_active_close = 0
     weeks = []
     for w in range(52):
@@ -279,13 +278,23 @@ def ch2(data):
         if total_w > 0:
             last_active_close = total_w
 
-    # ── chart dimensions ──────────────────────────────────────────────────
+    active_week = max(weeks, key=lambda w: w["total"])
+    lazy_week   = min((w for w in weeks if w["total"] > 0), key=lambda w: w["total"])
+
+    def week_label(w):
+        d = w["date"]
+        week_num = (d.day - 1) // 7 + 1
+        return f"week {week_num} of {d.strftime('%b')}"
+
+    active_label = week_label(active_week)
+    lazy_label   = week_label(lazy_week)
+
     CL_X1, CL_X2       = 36, 764
     CL_Y_TOP, CL_Y_BOT = 75, 255
     CL_H                = CL_Y_BOT - CL_Y_TOP
 
-    max_val  = max((max(w["open"], w["close"]) for w in weeks), default=1)
-    min_val  = min((w["close"] for w in weeks if w["total"] > 0), default=0)
+    max_val = max((max(w["open"], w["close"]) for w in weeks), default=1)
+    min_val = min((w["close"] for w in weeks if w["total"] > 0), default=0)
 
     def to_y(v):
         if v <= 0: return CL_Y_BOT
@@ -298,7 +307,6 @@ def ch2(data):
     cw_body = max(cw_full * 0.6, 3)
     cw_gap  = cw_full - cw_body
 
-    # ── candles (no wick) ─────────────────────────────────────────────────
     candles_svg = ""
     for i, wk in enumerate(weeks):
         cx    = CL_X1 + i * cw_full + cw_gap / 2
@@ -336,7 +344,6 @@ def ch2(data):
             f'</rect>\n'
         )
 
-    # ── month labels ──────────────────────────────────────────────────────
     month_labels = ""
     prev_month   = None
     for i, wk in enumerate(weeks):
@@ -349,7 +356,6 @@ def ch2(data):
             )
             prev_month = wk["date"].month
 
-    # ── grid lines ────────────────────────────────────────────────────────
     grid_lines = ""
     for pct in [0.25, 0.5, 0.75, 1.0]:
         gy  = CL_Y_BOT - int(pct * CL_H)
@@ -360,6 +366,8 @@ def ch2(data):
             f'<text x="{CL_X1-4}" y="{gy+4}" font-family="{FONT}" font-size="8" '
             f'fill="{DIM}" text-anchor="end">{val}</text>\n'
         )
+
+    LG_Y = CL_Y_BOT + 34
 
     return f'''\
 <svg width="{W}" height="{H}" viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">
@@ -377,17 +385,22 @@ def ch2(data):
   <text x="{W-36}" y="44" font-family="{FONT}" font-size="11" fill="{DIM}" letter-spacing="2" text-anchor="end">52 WEEKS</text>
   <rect x="36" y="54" width="110" height="1" fill="url(#hdrg)"/>
 
-  <rect x="{W-36-130}" y="58" width="10" height="10" fill="{GREEN}" rx="2" opacity="0.85"/>
-  <text x="{W-36-116}" y="68" font-family="{FONT}" font-size="9" fill="{DIM}">more than last week</text>
-  <rect x="{W-36-55}" y="58" width="10" height="10" fill="{RED}" rx="2" opacity="0.85"/>
-  <text x="{W-36-41}" y="68" font-family="{FONT}" font-size="9" fill="{DIM}">less</text>
-
   <line x1="{CL_X1}" y1="{CL_Y_BOT}" x2="{CL_X2}" y2="{CL_Y_BOT}"
         stroke="{BORDER}" stroke-width="1"/>
 
   {grid_lines}
   {candles_svg}
   {month_labels}
+
+  <line x1="36" y1="{CL_Y_BOT+24}" x2="764" y2="{CL_Y_BOT+24}" stroke="{BORDER}" stroke-width="1" opacity="0.4"/>
+
+  <rect x="36" y="{LG_Y}" width="9" height="9" fill="{GREEN}" rx="2" opacity="0.85"/>
+  <text x="50" y="{LG_Y+9}" font-family="{FONT}" font-size="9" fill="{DIM}">most active —</text>
+  <text x="134" y="{LG_Y+9}" font-family="{FONT}" font-size="9" font-weight="700" fill="{GREEN}">{esc(active_label)} · {active_week["total"]} commits</text>
+
+  <rect x="400" y="{LG_Y}" width="9" height="9" fill="{RED}" rx="2" opacity="0.85"/>
+  <text x="414" y="{LG_Y+9}" font-family="{FONT}" font-size="9" fill="{DIM}">most lazy —</text>
+  <text x="490" y="{LG_Y+9}" font-family="{FONT}" font-size="9" font-weight="700" fill="{RED}">{esc(lazy_label)} · {lazy_week["total"]} commits</text>
 </svg>'''
 # ─── Main ─────────────────────────────────────────────────────────────────────
 
