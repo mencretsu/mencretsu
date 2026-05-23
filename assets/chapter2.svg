@@ -9,28 +9,28 @@
   <rect width="800" height="360" fill="#010409" rx="12"/>
   <rect x="1" y="1" width="798" height="358" fill="none" stroke="#21262d" stroke-width="1" rx="11"/>
 
-  <text x="36" y="44" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="13" fill="#8b949e" letter-spacing="3">THE GRIND</text>
-  <text x="764" y="44" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="13" fill="#8b949e" letter-spacing="2" text-anchor="end">52 WEEKS</text>
+  <text x="36" y="44" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="13" fill="#cad6e6" letter-spacing="3">THE GRIND</text>
+  <text x="764" y="44" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="13" fill="#cad6e6" letter-spacing="2" text-anchor="end">52 WEEKS</text>
   <rect x="36" y="54" width="110" height="1" fill="url(#hdrg)"/>
 
   <line x1="36" y1="255" x2="764" y2="255"
         stroke="#21262d" stroke-width="1"/>
 
   <line x1="36" y1="210" x2="764" y2="210" stroke="#21262d" stroke-width="1" opacity="0.4"/>
-<text x="32" y="214" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#8b949e" text-anchor="end">34</text>
+<text x="32" y="214" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#cad6e6" text-anchor="end">34</text>
 <line x1="36" y1="165" x2="764" y2="165" stroke="#21262d" stroke-width="1" opacity="0.4"/>
-<text x="32" y="169" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#8b949e" text-anchor="end">68</text>
+<text x="32" y="169" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#cad6e6" text-anchor="end">68</text>
 <line x1="36" y1="120" x2="764" y2="120" stroke="#21262d" stroke-width="1" opacity="0.4"/>
-<text x="32" y="124" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#8b949e" text-anchor="end">102</text>
+<text x="32" y="124" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#cad6e6" text-anchor="end">102</text>
 <line x1="36" y1="75" x2="764" y2="75" stroke="#21262d" stroke-width="1" opacity="0.4"/>
-<text x="32" y="79" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#8b949e" text-anchor="end">137</text>
+<text x="32" y="79" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#cad6e6" text-anchor="end">137</text>
 
-  <line x1="38.8" y1="255" x2="47.2" y2="255" stroke="#8b949e" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+  <line x1="38.8" y1="255" x2="47.2" y2="255" stroke="#cad6e6" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
 <rect x="52.8" y="207" width="8.4" height="0" fill="#3fb950" rx="1" opacity="0.88"><animate attributeName="y" from="207" to="159" dur="0.3s" begin="0.025s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/><animate attributeName="height" from="0" to="96" dur="0.3s" begin="0.025s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/></rect>
 <rect x="66.8" y="171" width="8.4" height="0" fill="#f85149" rx="1" opacity="0.88"><animate attributeName="y" from="171" to="159" dur="0.3s" begin="0.05s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/><animate attributeName="height" from="0" to="25" dur="0.3s" begin="0.05s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/></rect>
-<line x1="80.8" y1="184" x2="89.2" y2="184" stroke="#8b949e" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+<line x1="80.8" y1="184" x2="89.2" y2="184" stroke="#cad6e6" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
 <rect x="94.8" y="190" width="8.4" height="0" fill="#f85149" rx="1" opacity="0.88"><animate attributeName="y" from="190" to="184" dur="0.3s" begin="0.1s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/><animate attributeName="height" from="0" to="13" dur="0.3s" begin="0.1s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/></rect>
-<line x1="108.8" y1="197" x2="117.2" y2="197" stroke="#8b949e" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+<line x1="108.8" y1="197" x2="117.2" y2="197" stroke="#cad6e6" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
 <rect x="122.8" y="182" width="8.4" height="0" fill="#3fb950" rx="1" opacity="0.88"><animate attributeName="y" from="182" to="168" dur="0.3s" begin="0.15s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/><animate attributeName="height" from="0" to="29" dur="0.3s" begin="0.15s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/></rect>
 <rect x="136.8" y="168" width="8.4" height="0" fill="#3fb950" rx="1" opacity="0.88"><animate attributeName="y" from="168" to="168" dur="0.3s" begin="0.175s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/><animate attributeName="height" from="0" to="2" dur="0.3s" begin="0.175s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/></rect>
 <rect x="150.8" y="160" width="8.4" height="0" fill="#3fb950" rx="1" opacity="0.88"><animate attributeName="y" from="160" to="152" dur="0.3s" begin="0.2s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/><animate attributeName="height" from="0" to="16" dur="0.3s" begin="0.2s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/></rect>
@@ -39,7 +39,7 @@
 <rect x="192.8" y="154" width="8.4" height="0" fill="#f85149" rx="1" opacity="0.88"><animate attributeName="y" from="154" to="146" dur="0.3s" begin="0.275s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/><animate attributeName="height" from="0" to="16" dur="0.3s" begin="0.275s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/></rect>
 <rect x="206.8" y="183" width="8.4" height="0" fill="#f85149" rx="1" opacity="0.88"><animate attributeName="y" from="183" to="162" dur="0.3s" begin="0.3s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/><animate attributeName="height" from="0" to="43" dur="0.3s" begin="0.3s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/></rect>
 <rect x="220.8" y="174" width="8.4" height="0" fill="#3fb950" rx="1" opacity="0.88"><animate attributeName="y" from="174" to="143" dur="0.3s" begin="0.325s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/><animate attributeName="height" from="0" to="62" dur="0.3s" begin="0.325s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/></rect>
-<line x1="234.8" y1="143" x2="243.2" y2="143" stroke="#8b949e" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+<line x1="234.8" y1="143" x2="243.2" y2="143" stroke="#cad6e6" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
 <rect x="248.8" y="179" width="8.4" height="0" fill="#f85149" rx="1" opacity="0.88"><animate attributeName="y" from="179" to="143" dur="0.3s" begin="0.375s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/><animate attributeName="height" from="0" to="72" dur="0.3s" begin="0.375s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/></rect>
 <rect x="262.8" y="145" width="8.4" height="0" fill="#3fb950" rx="1" opacity="0.88"><animate attributeName="y" from="145" to="75" dur="0.3s" begin="0.4s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/><animate attributeName="height" from="0" to="140" dur="0.3s" begin="0.4s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/></rect>
 <rect x="276.8" y="83" width="8.4" height="0" fill="#f85149" rx="1" opacity="0.88"><animate attributeName="y" from="83" to="75" dur="0.3s" begin="0.425s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/><animate attributeName="height" from="0" to="17" dur="0.3s" begin="0.425s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/></rect>
@@ -56,7 +56,7 @@
 <rect x="430.8" y="172" width="8.4" height="0" fill="#3fb950" rx="1" opacity="0.88"><animate attributeName="y" from="172" to="129" dur="0.3s" begin="0.7s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/><animate attributeName="height" from="0" to="86" dur="0.3s" begin="0.7s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/></rect>
 <rect x="444.8" y="124" width="8.4" height="0" fill="#3fb950" rx="1" opacity="0.88"><animate attributeName="y" from="124" to="119" dur="0.3s" begin="0.725s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/><animate attributeName="height" from="0" to="10" dur="0.3s" begin="0.725s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/></rect>
 <rect x="458.8" y="106" width="8.4" height="0" fill="#3fb950" rx="1" opacity="0.88"><animate attributeName="y" from="106" to="93" dur="0.3s" begin="0.75s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/><animate attributeName="height" from="0" to="26" dur="0.3s" begin="0.75s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/></rect>
-<line x1="472.8" y1="93" x2="481.2" y2="93" stroke="#8b949e" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+<line x1="472.8" y1="93" x2="481.2" y2="93" stroke="#cad6e6" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
 <rect x="486.8" y="145" width="8.4" height="0" fill="#f85149" rx="1" opacity="0.88"><animate attributeName="y" from="145" to="93" dur="0.3s" begin="0.8s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/><animate attributeName="height" from="0" to="104" dur="0.3s" begin="0.8s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/></rect>
 <rect x="500.8" y="159" width="8.4" height="0" fill="#3fb950" rx="1" opacity="0.88"><animate attributeName="y" from="159" to="121" dur="0.3s" begin="0.825s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/><animate attributeName="height" from="0" to="76" dur="0.3s" begin="0.825s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/></rect>
 <rect x="514.8" y="133" width="8.4" height="0" fill="#f85149" rx="1" opacity="0.88"><animate attributeName="y" from="133" to="121" dur="0.3s" begin="0.85s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/><animate attributeName="height" from="0" to="25" dur="0.3s" begin="0.85s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/></rect>
@@ -67,39 +67,39 @@
 <rect x="584.8" y="171" width="8.4" height="0" fill="#3fb950" rx="1" opacity="0.88"><animate attributeName="y" from="171" to="152" dur="0.3s" begin="0.975s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/><animate attributeName="height" from="0" to="38" dur="0.3s" begin="0.975s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/></rect>
 <rect x="598.8" y="178" width="8.4" height="0" fill="#f85149" rx="1" opacity="0.88"><animate attributeName="y" from="178" to="152" dur="0.3s" begin="1.0s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/><animate attributeName="height" from="0" to="53" dur="0.3s" begin="1.0s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/></rect>
 <rect x="612.8" y="201" width="8.4" height="0" fill="#3fb950" rx="1" opacity="0.88"><animate attributeName="y" from="201" to="197" dur="0.3s" begin="1.025s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/><animate attributeName="height" from="0" to="8" dur="0.3s" begin="1.025s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/></rect>
-<line x1="626.8" y1="197" x2="635.2" y2="197" stroke="#8b949e" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
-<line x1="640.8" y1="197" x2="649.2" y2="197" stroke="#8b949e" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
-<line x1="654.8" y1="197" x2="663.2" y2="197" stroke="#8b949e" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
-<line x1="668.8" y1="197" x2="677.2" y2="197" stroke="#8b949e" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+<line x1="626.8" y1="197" x2="635.2" y2="197" stroke="#cad6e6" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+<line x1="640.8" y1="197" x2="649.2" y2="197" stroke="#cad6e6" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+<line x1="654.8" y1="197" x2="663.2" y2="197" stroke="#cad6e6" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+<line x1="668.8" y1="197" x2="677.2" y2="197" stroke="#cad6e6" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
 <rect x="682.8" y="213" width="8.4" height="0" fill="#f85149" rx="1" opacity="0.88"><animate attributeName="y" from="213" to="197" dur="0.3s" begin="1.15s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/><animate attributeName="height" from="0" to="33" dur="0.3s" begin="1.15s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/></rect>
-<line x1="696.8" y1="230" x2="705.2" y2="230" stroke="#8b949e" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+<line x1="696.8" y1="230" x2="705.2" y2="230" stroke="#cad6e6" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
 <rect x="710.8" y="197" width="8.4" height="0" fill="#3fb950" rx="1" opacity="0.88"><animate attributeName="y" from="197" to="165" dur="0.3s" begin="1.2s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/><animate attributeName="height" from="0" to="65" dur="0.3s" begin="1.2s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/></rect>
 <rect x="724.8" y="170" width="8.4" height="0" fill="#f85149" rx="1" opacity="0.88"><animate attributeName="y" from="170" to="165" dur="0.3s" begin="1.225s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/><animate attributeName="height" from="0" to="10" dur="0.3s" begin="1.225s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/></rect>
 <rect x="738.8" y="186" width="8.4" height="0" fill="#f85149" rx="1" opacity="0.88"><animate attributeName="y" from="186" to="175" dur="0.3s" begin="1.25s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/><animate attributeName="height" from="0" to="22" dur="0.3s" begin="1.25s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/></rect>
-<rect x="752.8" y="140" width="8.4" height="0" fill="#3fb950" rx="1" opacity="0.88"><animate attributeName="y" from="140" to="84" dur="0.3s" begin="1.275s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/><animate attributeName="height" from="0" to="113" dur="0.3s" begin="1.275s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/></rect>
+<rect x="752.8" y="140" width="8.4" height="0" fill="#3fb950" rx="1" opacity="0.88"><animate attributeName="y" from="140" to="83" dur="0.3s" begin="1.275s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/><animate attributeName="height" from="0" to="114" dur="0.3s" begin="1.275s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/></rect>
 
-  <text x="40.2" y="271" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#8b949e" text-anchor="middle">May</text>
-<text x="54.2" y="271" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#8b949e" text-anchor="middle">Jun</text>
-<text x="124.2" y="271" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#8b949e" text-anchor="middle">Jul</text>
-<text x="180.2" y="271" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#8b949e" text-anchor="middle">Aug</text>
-<text x="250.2" y="271" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#8b949e" text-anchor="middle">Sep</text>
-<text x="306.2" y="271" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#8b949e" text-anchor="middle">Oct</text>
-<text x="362.2" y="271" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#8b949e" text-anchor="middle">Nov</text>
-<text x="432.2" y="271" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#8b949e" text-anchor="middle">Dec</text>
-<text x="488.2" y="271" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#8b949e" text-anchor="middle">Jan</text>
-<text x="544.2" y="271" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#8b949e" text-anchor="middle">Feb</text>
-<text x="600.2" y="271" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#8b949e" text-anchor="middle">Mar</text>
-<text x="670.2" y="271" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#8b949e" text-anchor="middle">Apr</text>
-<text x="726.2" y="271" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#8b949e" text-anchor="middle">May</text>
+  <text x="40.2" y="271" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#cad6e6" text-anchor="middle">May</text>
+<text x="54.2" y="271" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#cad6e6" text-anchor="middle">Jun</text>
+<text x="124.2" y="271" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#cad6e6" text-anchor="middle">Jul</text>
+<text x="180.2" y="271" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#cad6e6" text-anchor="middle">Aug</text>
+<text x="250.2" y="271" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#cad6e6" text-anchor="middle">Sep</text>
+<text x="306.2" y="271" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#cad6e6" text-anchor="middle">Oct</text>
+<text x="362.2" y="271" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#cad6e6" text-anchor="middle">Nov</text>
+<text x="432.2" y="271" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#cad6e6" text-anchor="middle">Dec</text>
+<text x="488.2" y="271" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#cad6e6" text-anchor="middle">Jan</text>
+<text x="544.2" y="271" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#cad6e6" text-anchor="middle">Feb</text>
+<text x="600.2" y="271" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#cad6e6" text-anchor="middle">Mar</text>
+<text x="670.2" y="271" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#cad6e6" text-anchor="middle">Apr</text>
+<text x="726.2" y="271" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#cad6e6" text-anchor="middle">May</text>
 
 
   <line x1="36" y1="279" x2="764" y2="279" stroke="#21262d" stroke-width="1" opacity="0.4"/>
 
   <rect x="36" y="289" width="9" height="9" fill="#3fb950" rx="2" opacity="0.85"/>
-  <text x="50" y="298" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#8b949e">most active —</text>
+  <text x="50" y="298" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#cad6e6">most active —</text>
   <text x="134" y="298" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" font-weight="700" fill="#3fb950">week 2 of Sep · 137 commits</text>
 
   <rect x="400" y="289" width="9" height="9" fill="#f85149" rx="2" opacity="0.85"/>
-  <text x="414" y="298" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#8b949e">most lazy —</text>
+  <text x="414" y="298" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#cad6e6">most lazy —</text>
   <text x="490" y="298" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" font-weight="700" fill="#f85149">week 4 of Jan · 1 commits</text>
 </svg>
