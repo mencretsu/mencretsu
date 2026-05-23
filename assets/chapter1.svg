@@ -14,7 +14,7 @@
 
   <!-- row 1: total / peak hour / most active day -->
   <text x="145" y="148" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="58" font-weight="700"
-        fill="#e6edf3" text-anchor="middle">1,005</text>
+        fill="#e6edf3" text-anchor="middle">1,006</text>
   <text x="145" y="168" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10" fill="#8b949e"
         text-anchor="middle" letter-spacing="3">COMMITS</text>
 
@@ -72,7 +72,7 @@
   <rect x="313" y="362" width="24" height="8" fill="#21262d" rx="3" opacity="0.65"/>
   <rect x="343" y="359" width="24" height="11" fill="#21262d" rx="3" opacity="0.65"/>
   <rect x="373" y="359" width="24" height="11" fill="#21262d" rx="3" opacity="0.65"/>
-  <rect x="403" y="364" width="24" height="6" fill="#21262d" rx="3" opacity="0.65"/>
+  <rect x="403" y="363" width="24" height="7" fill="#21262d" rx="3" opacity="0.65"/>
   <rect x="433" y="352" width="24" height="18" fill="#21262d" rx="3" opacity="0.65"/>
   <rect x="463" y="344" width="24" height="26" fill="#21262d" rx="3" opacity="0.65"/>
   <rect x="493" y="342" width="24" height="28" fill="#388bfd" rx="3" opacity="1"/>

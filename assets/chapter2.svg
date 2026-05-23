@@ -1,4 +1,4 @@
-<svg width="800" height="320" viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
+<svg width="800" height="360" viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="hdrg" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#388bfd" stop-opacity="0.7"/>
@@ -6,17 +6,12 @@
     </linearGradient>
   </defs>
 
-  <rect width="800" height="320" fill="#010409" rx="12"/>
-  <rect x="1" y="1" width="798" height="318" fill="none" stroke="#21262d" stroke-width="1" rx="11"/>
+  <rect width="800" height="360" fill="#010409" rx="12"/>
+  <rect x="1" y="1" width="798" height="358" fill="none" stroke="#21262d" stroke-width="1" rx="11"/>
 
   <text x="36" y="44" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="11" fill="#8b949e" letter-spacing="3">THE GRIND</text>
   <text x="764" y="44" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="11" fill="#8b949e" letter-spacing="2" text-anchor="end">52 WEEKS</text>
   <rect x="36" y="54" width="110" height="1" fill="url(#hdrg)"/>
-
-  <rect x="634" y="58" width="10" height="10" fill="#3fb950" rx="2" opacity="0.85"/>
-  <text x="648" y="68" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9" fill="#8b949e">more than last week</text>
-  <rect x="709" y="58" width="10" height="10" fill="#f85149" rx="2" opacity="0.85"/>
-  <text x="723" y="68" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9" fill="#8b949e">less</text>
 
   <line x1="36" y1="255" x2="764" y2="255"
         stroke="#21262d" stroke-width="1"/>
@@ -97,4 +92,14 @@
 <text x="670.2" y="271" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9" fill="#8b949e" text-anchor="middle">Apr</text>
 <text x="726.2" y="271" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9" fill="#8b949e" text-anchor="middle">May</text>
 
+
+  <line x1="36" y1="279" x2="764" y2="279" stroke="#21262d" stroke-width="1" opacity="0.4"/>
+
+  <rect x="36" y="289" width="9" height="9" fill="#3fb950" rx="2" opacity="0.85"/>
+  <text x="50" y="298" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9" fill="#8b949e">most active —</text>
+  <text x="134" y="298" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9" font-weight="700" fill="#3fb950">week 2 of Sep · 137 commits</text>
+
+  <rect x="400" y="289" width="9" height="9" fill="#f85149" rx="2" opacity="0.85"/>
+  <text x="414" y="298" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9" fill="#8b949e">most lazy —</text>
+  <text x="490" y="298" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9" font-weight="700" fill="#f85149">week 4 of Jan · 1 commits</text>
 </svg>
