@@ -6,7 +6,7 @@
 <mask id="imagine-text-gaps-h7lorp" maskUnits="userSpaceOnUse"><rect x="0" y="0" width="810" height="194.77" fill="white"/><rect x="32" y="-5.817217826843262" width="163.33804321289062" height="173.0480194091797" fill="black" rx="2"/><rect x="32" y="-5.817217826843262" width="163.33804321289062" height="173.0480194091797" fill="black" rx="2"/><rect x="32" y="-5.817217826843262" width="163.33804321289062" height="173.0480194091797" fill="black" rx="2"/><rect x="32" y="153.9376220703125" width="494.6419982910156" height="18.08733558654785" fill="black" rx="2"/></mask></defs>
 
 <g clip-path="url(#c1)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-  <rect width="800" height="180" fill="#0c0c0c" style="fill:rgb(12, 12, 12);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <rect width="800" height="180" fill="transparent" style="fill:transparent;stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
 
   <!-- scanline -->
   <rect width="800" height="14" fill="white" opacity="0.02" style="animation: scanline 3s linear infinite;;fill:rgb(255, 255, 255);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.02;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
@@ -22,6 +22,6 @@
   <line x1="36" y1="143" x2="764" y2="143" mask="url(#imagine-text-gaps-h7lorp)" style="fill:none;stroke:rgb(240, 240, 240);color:rgb(251, 251, 254);stroke-width:0.8px;stroke-dasharray:760px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
 
   <!-- tagline -->
-  <text x="36" y="166" style="fill:rgb(68, 68, 68);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Courier New&quot;, monospace;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:auto">builds things · breaks things · fixes things · repeat</text>
+  <text x="36" y="166" style="fill:rgb(68, 68, 68);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Courier New&quot;, monospace;font-size:15px;font-weight:400;text-anchor:start;dominant-baseline:auto">builds things · breaks things · fixes things · repeat</text>
 </g>
 </svg>
