@@ -116,7 +116,6 @@ def collect():
 
 
 # ─── Chapter 1 — The Numbers ─────────────────────────────────────────────────
-
 def ch1(data):
     total   = data["total_commits"]
     by_hour = data["commits_by_hour"]
@@ -125,6 +124,11 @@ def ch1(data):
     fav_hour = max(by_hour, key=by_hour.get) if by_hour else 2
     fav_dow  = max(by_dow,  key=by_dow.get)  if by_dow  else 6
     DAYS = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+
+    night   = sum(v for k,v in by_hour.items() if k>=22 or k<6)
+    night_p = round(night/total*100) if total else 0
+    weekend = sum(v for k,v in by_dow.items() if k>=5)
+    wknd_p  = round(weekend/total*100) if total else 0
 
     def _hlabel(h):
         if h == 0:  return "12 AM"
@@ -155,8 +159,8 @@ def ch1(data):
 
     BAR_W, BAR_GAP = 24, 6
     BAR_STEP = BAR_W + BAR_GAP
-    BAR_MAX  = 32
-    BAR_Y    = 306
+    BAR_MAX  = 28
+    BAR_Y    = 342
     GRID_X   = (800 - (24*BAR_STEP - BAR_GAP)) // 2
     max_h    = max(by_hour.values(), default=1)
 
@@ -180,52 +184,78 @@ def ch1(data):
         )
 
     return f'''\
-<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+<svg width="800" height="440" viewBox="0 0 800 440" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <filter id="glow1"><feGaussianBlur stdDeviation="4" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
     <linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:{ACCENT};stop-opacity:1"/>
       <stop offset="100%" style="stop-color:{PURPLE};stop-opacity:0"/>
     </linearGradient>
   </defs>
-  <rect width="800" height="400" fill="{BG}" rx="12"/>
-  <rect x="1" y="1" width="798" height="398" fill="none" stroke="{BORDER}" stroke-width="1" rx="11"/>
+  <rect width="800" height="440" fill="{BG}" rx="12"/>
+  <rect x="1" y="1" width="798" height="438" fill="none" stroke="{BORDER}" stroke-width="1" rx="11"/>
+
   <text x="36" y="48" font-family="{FONT}" font-size="11" fill="{DIM}" letter-spacing="3">THE NUMBERS</text>
   <text x="764" y="48" font-family="{FONT}" font-size="11" fill="{DIM}" letter-spacing="2" text-anchor="end">LAST 365 DAYS</text>
   <rect x="36" y="58" width="220" height="1" fill="url(#lg1)"/>
-  <text x="145" y="160" font-family="{FONT}" font-size="58" font-weight="700"
-        fill="{TEXT}" text-anchor="middle" filter="url(#glow1)">{esc(total_str)}</text>
-  <text x="145" y="182" font-family="{FONT}" font-size="10" fill="{DIM}"
+
+  <!-- row 1: total / peak hour / most active day -->
+  <text x="145" y="148" font-family="{FONT}" font-size="58" font-weight="700"
+        fill="{TEXT}" text-anchor="middle">{esc(total_str)}</text>
+  <text x="145" y="168" font-family="{FONT}" font-size="10" fill="{DIM}"
         text-anchor="middle" letter-spacing="3">COMMITS</text>
-  <line x1="272" y1="105" x2="272" y2="200" stroke="{BORDER}" stroke-width="1"/>
-  <text x="450" y="152" font-family="{FONT}" font-size="46" font-weight="700"
-        fill="{ACCENT}" text-anchor="middle" filter="url(#glow1)">{esc(hour_str)}</text>
-  <text x="450" y="174" font-family="{FONT}" font-size="10" fill="{DIM}"
+
+  <line x1="272" y1="100" x2="272" y2="188" stroke="{BORDER}" stroke-width="1"/>
+
+  <text x="450" y="140" font-family="{FONT}" font-size="46" font-weight="700"
+        fill="{ACCENT}" text-anchor="middle">{esc(hour_str)}</text>
+  <text x="450" y="162" font-family="{FONT}" font-size="10" fill="{DIM}"
         text-anchor="middle" letter-spacing="3">PEAK HOUR</text>
-  <text x="450" y="192" font-family="{FONT}" font-size="10" fill="{PURPLE}"
+  <text x="450" y="180" font-family="{FONT}" font-size="10" fill="{PURPLE}"
         text-anchor="middle">— {esc(_hvibe(fav_hour))} —</text>
-  <line x1="590" y1="105" x2="590" y2="200" stroke="{BORDER}" stroke-width="1"/>
-  <text x="700" y="152" font-family="{FONT}" font-size="26" font-weight="700"
-        fill="{ORANGE}" text-anchor="middle" filter="url(#glow1)">{esc(day_str)}</text>
-  <text x="700" y="174" font-family="{FONT}" font-size="10" fill="{DIM}"
+
+  <line x1="590" y1="100" x2="590" y2="188" stroke="{BORDER}" stroke-width="1"/>
+
+  <text x="700" y="140" font-family="{FONT}" font-size="26" font-weight="700"
+        fill="{ORANGE}" text-anchor="middle">{esc(day_str)}</text>
+  <text x="700" y="162" font-family="{FONT}" font-size="10" fill="{DIM}"
         text-anchor="middle" letter-spacing="2">MOST ACTIVE</text>
-  <rect x="36" y="213" width="728" height="1" fill="{BORDER}"/>
-  <text x="400" y="252" font-family="{FONT}" font-size="13" fill="{DIM}"
+
+  <!-- separator -->
+  <rect x="36" y="198" width="728" height="1" fill="{BORDER}"/>
+
+  <!-- vibe text -->
+  <text x="400" y="224" font-family="{FONT}" font-size="13" fill="{DIM}"
         text-anchor="middle" font-style="italic">&quot;{esc(_vibe(fav_hour))}&quot;</text>
-  <text x="36" y="294" font-family="{FONT}" font-size="10" fill="{DIM}" letter-spacing="2">HOURLY ACTIVITY</text>
-  <rect x="36" y="300" width="728" height="1" fill="{BORDER}" opacity="0.35"/>
+
+  <!-- row 2: night% and weekend% — no glow, tegas -->
+  <rect x="36" y="238" width="728" height="1" fill="{BORDER}" opacity="0.4"/>
+
+  <text x="200" y="282" font-family="{FONT}" font-size="36" font-weight="700"
+        fill="{GREEN}" text-anchor="middle">{night_p}%</text>
+  <text x="200" y="300" font-family="{FONT}" font-size="9" fill="{DIM}"
+        text-anchor="middle" letter-spacing="2">NIGHT COMMITS</text>
+
+  <line x1="400" y1="246" x2="400" y2="310" stroke="{BORDER}" stroke-width="1"/>
+
+  <text x="600" y="282" font-family="{FONT}" font-size="36" font-weight="700"
+        fill="{ORANGE}" text-anchor="middle">{wknd_p}%</text>
+  <text x="600" y="300" font-family="{FONT}" font-size="9" fill="{DIM}"
+        text-anchor="middle" letter-spacing="2">WEEKEND COMMITS</text>
+
+  <!-- separator + hourly bar chart -->
+  <rect x="36" y="316" width="728" height="1" fill="{BORDER}"/>
+  <text x="36" y="336" font-family="{FONT}" font-size="10" fill="{DIM}" letter-spacing="2">HOURLY ACTIVITY</text>
+  <rect x="36" y="342" width="728" height="1" fill="{BORDER}" opacity="0.35"/>
 {bars}
 </svg>'''
 
 
-# ─── Chapter 2 — THE GRIND ────────────────
 def ch2(data):
     cbd     = data["commits_by_date"]
     by_hour = data["commits_by_hour"]
     total   = data["total_commits"]
 
-    W, H = 800, 480
+    W, H = 800, 320
 
     today     = datetime.now(timezone.utc).date()
     start_raw = today - timedelta(days=363)
@@ -247,16 +277,16 @@ def ch2(data):
         })
 
         if total_w > 0:
-            last_active_close = total_w  # hanya update kalau ada commit
+            last_active_close = total_w
 
     # ── chart dimensions ──────────────────────────────────────────────────
     CL_X1, CL_X2       = 36, 764
-    CL_Y_TOP, CL_Y_BOT = 72, 235
+    CL_Y_TOP, CL_Y_BOT = 75, 255
     CL_H                = CL_Y_BOT - CL_Y_TOP
 
-    max_val = max((max(w["open"], w["close"]) for w in weeks), default=1)
-    min_val = min((w["close"] for w in weeks if w["total"] > 0), default=0)
-    
+    max_val  = max((max(w["open"], w["close"]) for w in weeks), default=1)
+    min_val  = min((w["close"] for w in weeks if w["total"] > 0), default=0)
+
     def to_y(v):
         if v <= 0: return CL_Y_BOT
         log_v   = math.log1p(v)
@@ -277,7 +307,6 @@ def ch2(data):
         o = wk["open"]
         c = wk["close"]
 
-        # doji — minggu kosong
         if wk["total"] == 0:
             doji_y = to_y(o)
             candles_svg += (
@@ -332,77 +361,9 @@ def ch2(data):
             f'fill="{DIM}" text-anchor="end">{val}</text>\n'
         )
 
-    # ── clock ─────────────────────────────────────────────────────────────
-    fav_hour    = max(by_hour, key=by_hour.get) if by_hour else 0
-    max_h_count = max(by_hour.values(), default=1)
-    CX, CY, BASE_R = 400, 395, 44
-
-    def _hlabel(h):
-        if h == 0:  return "12 AM"
-        if h < 12:  return f"{h} AM"
-        if h == 12: return "12 PM"
-        return f"{h-12} PM"
-
-    clock_svg = (
-        f'<circle cx="{CX}" cy="{CY}" r="{BASE_R+4}" fill="none" '
-        f'stroke="{BORDER}" stroke-width="1"/>\n'
-        f'<circle cx="{CX}" cy="{CY}" r="{BASE_R}" fill="{SURFACE}" opacity="0.6"/>\n'
-    )
-
-    for h in range(24):
-        cnt_h   = by_hour.get(h, 0)
-        angle   = (h / 24) * 2 * math.pi - math.pi / 2
-        bar_l   = 5 + int((cnt_h / max_h_count) * 26) if cnt_h > 0 else 2
-        x1 = CX + math.cos(angle) * (BASE_R + 6)
-        y1 = CY + math.sin(angle) * (BASE_R + 6)
-        x2 = CX + math.cos(angle) * (BASE_R + 6 + bar_l)
-        y2 = CY + math.sin(angle) * (BASE_R + 6 + bar_l)
-        is_peak = (h == fav_hour)
-        col_r   = ACCENT if is_peak else ("#1a4fbb" if cnt_h > 0 else BORDER)
-        sw      = 5 if is_peak else (2 if cnt_h > 0 else 1)
-        delay_r = round(1.8 + h * 0.04, 3)
-
-        anim = (
-            f'<animate attributeName="stroke-opacity" values="1;0.4;1" '
-            f'dur="1.8s" begin="{delay_r}s" repeatCount="indefinite"/>'
-            if is_peak else ""
-        )
-        clock_svg += (
-            f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x1:.1f}" y2="{y1:.1f}" '
-            f'stroke="{col_r}" stroke-width="{sw}" stroke-linecap="round">'
-            f'<animate attributeName="x2" to="{x2:.1f}" dur="0.3s" begin="{delay_r}s" fill="freeze"/>'
-            f'<animate attributeName="y2" to="{y2:.1f}" dur="0.3s" begin="{delay_r}s" fill="freeze"/>'
-            f'{anim}</line>\n'
-        )
-
-    for h, label in [(0,"12a"),(6,"6a"),(12,"12p"),(18,"6p")]:
-        angle = (h / 24) * 2 * math.pi - math.pi / 2
-        lx = CX + math.cos(angle) * (BASE_R + 40)
-        ly = CY + math.sin(angle) * (BASE_R + 40)
-        clock_svg += (
-            f'<text x="{lx:.1f}" y="{ly:.1f}" font-family="{FONT}" font-size="9" '
-            f'fill="{DIM}" text-anchor="middle" dominant-baseline="middle">{label}</text>\n'
-        )
-
-    clock_svg += (
-        f'<text x="{CX}" y="{CY-8}" font-family="{FONT}" font-size="17" font-weight="700" '
-        f'fill="{ACCENT}" text-anchor="middle" filter="url(#glw)">{_hlabel(fav_hour)}</text>\n'
-        f'<text x="{CX}" y="{CY+10}" font-family="{FONT}" font-size="8" '
-        f'fill="{DIM}" text-anchor="middle" letter-spacing="2">PEAK HOUR</text>\n'
-    )
-
-    night   = sum(v for k, v in by_hour.items() if k >= 22 or k < 6)
-    night_p = round(night / total * 100) if total else 0
-    weekend_commits = sum(v for k, v in data["commits_by_dow"].items() if k >= 5)
-    wknd_p  = round(weekend_commits / total * 100) if total else 0
-
     return f'''\
 <svg width="{W}" height="{H}" viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <filter id="glw">
-      <feGaussianBlur stdDeviation="3" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
     <linearGradient id="hdrg" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="{ACCENT}" stop-opacity="0.7"/>
       <stop offset="100%" stop-color="{ACCENT}" stop-opacity="0"/>
@@ -427,22 +388,6 @@ def ch2(data):
   {grid_lines}
   {candles_svg}
   {month_labels}
-
-  <line x1="36" y1="272" x2="764" y2="272" stroke="{BORDER}" stroke-width="1" opacity="0.4"/>
-  <text x="{CX}" y="296" font-family="{FONT}" font-size="9" fill="{DIM}"
-        text-anchor="middle" letter-spacing="3">24H ACTIVITY PATTERN</text>
-
-  {clock_svg}
-
-  <text x="100" y="{CY-6}" font-family="{FONT}" font-size="22" font-weight="700"
-        fill="{PURPLE}" text-anchor="middle">{night_p}%</text>
-  <text x="100" y="{CY+12}" font-family="{FONT}" font-size="9" fill="{DIM}"
-        text-anchor="middle" letter-spacing="1">night commits</text>
-
-  <text x="700" y="{CY-6}" font-family="{FONT}" font-size="22" font-weight="700"
-        fill="{ORANGE}" text-anchor="middle">{wknd_p}%</text>
-  <text x="700" y="{CY+12}" font-family="{FONT}" font-size="9" fill="{DIM}"
-        text-anchor="middle" letter-spacing="1">weekend commits</text>
 </svg>'''
 # ─── Main ─────────────────────────────────────────────────────────────────────
 
