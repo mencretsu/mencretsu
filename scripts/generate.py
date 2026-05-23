@@ -247,8 +247,23 @@ def ch2(data):
         })
 
     # patch open minggu pertama
-    if weeks:
-        weeks[0]["open"] = weeks[0]["close"]
+    prev_close = 0
+    weeks = []
+    for w in range(52):
+        week_days   = [start + timedelta(days=w*7+d) for d in range(7)]
+        week_counts = [cbd.get(d.strftime("%Y-%m-%d"), 0) for d in week_days]
+        total_w     = sum(week_counts)
+        nonzero     = [c for c in week_counts if c > 0]
+    
+        weeks.append({
+            "total": total_w,
+            "open":  prev_close,
+            "close": total_w,
+            "high":  max(nonzero) if nonzero else prev_close,
+            "low":   min(nonzero) if nonzero else prev_close,
+            "date":  week_days[0],
+        })
+        prev_close = total_w
 
     CL_X1, CL_X2       = 36, 764
     CL_Y_TOP, CL_Y_BOT = 72, 235
@@ -290,11 +305,11 @@ def ch2(data):
         # wick bawah: dari bottom of body ke low
         wick_bot_y = to_y(l) if l > 0 else body_bot
 
-        # kalau minggu kosong (total=0), gambar garis tipis aja
         if wk["total"] == 0:
             candles_svg += (
-                f'<line x1="{cx_mid:.1f}" y1="{CL_Y_BOT-1}" x2="{cx_mid:.1f}" y2="{CL_Y_BOT}" '
-                f'stroke="{BORDER}" stroke-width="{cw_body:.1f}" stroke-linecap="round" opacity="0.3"/>\n'
+                f'<line x1="{cx:.1f}" y1="{to_y(wk["open"])}" '
+                f'x2="{cx+cw_body:.1f}" y2="{to_y(wk["open"])}" '
+                f'stroke="{DIM}" stroke-width="2" stroke-linecap="round" opacity="0.4"/>\n'
             )
             continue
 
