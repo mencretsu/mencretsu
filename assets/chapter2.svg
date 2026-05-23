@@ -18,9 +18,9 @@
   <rect x="36" y="54" width="110" height="1" fill="url(#hdrg)"/>
 
   <rect x="634" y="58" width="10" height="10" fill="#3fb950" rx="2" opacity="0.85"/>
-  <text x="648" y="68" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9" fill="#8b949e">bullish week</text>
+  <text x="648" y="68" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9" fill="#8b949e">more than last week</text>
   <rect x="709" y="58" width="10" height="10" fill="#f85149" rx="2" opacity="0.85"/>
-  <text x="723" y="68" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9" fill="#8b949e">bearish</text>
+  <text x="723" y="68" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9" fill="#8b949e">less</text>
 
   <line x1="36" y1="235" x2="764" y2="235"
         stroke="#21262d" stroke-width="1"/>
@@ -167,9 +167,9 @@
 <line x1="743.0" y1="233" x2="743.0" y2="226" stroke="#f85149" stroke-width="1.5" opacity="0.5"><animate attributeName="opacity" from="0" to="0.5" dur="0.15s" begin="1.25s" fill="freeze"/></line>
 <line x1="743.0" y1="231" x2="743.0" y2="233" stroke="#f85149" stroke-width="1.5" opacity="0.5"><animate attributeName="opacity" from="0" to="0.5" dur="0.15s" begin="1.25s" fill="freeze"/></line>
 <rect x="738.8" y="228" width="8.4" height="0" fill="#f85149" rx="1" opacity="0.88"><animate attributeName="y" from="228" to="226" dur="0.3s" begin="1.25s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/><animate attributeName="height" from="0" to="5" dur="0.3s" begin="1.25s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/></rect>
-<line x1="757.0" y1="175" x2="757.0" y2="124" stroke="#3fb950" stroke-width="1.5" opacity="0.5"><animate attributeName="opacity" from="0" to="0.5" dur="0.15s" begin="1.275s" fill="freeze"/></line>
-<line x1="757.0" y1="231" x2="757.0" y2="233" stroke="#3fb950" stroke-width="1.5" opacity="0.5"><animate attributeName="opacity" from="0" to="0.5" dur="0.15s" begin="1.275s" fill="freeze"/></line>
-<rect x="752.8" y="177" width="8.4" height="0" fill="#3fb950" rx="1" opacity="0.88"><animate attributeName="y" from="177" to="124" dur="0.3s" begin="1.275s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/><animate attributeName="height" from="0" to="107" dur="0.3s" begin="1.275s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/></rect>
+<line x1="757.0" y1="175" x2="757.0" y2="121" stroke="#3fb950" stroke-width="1.5" opacity="0.5"><animate attributeName="opacity" from="0" to="0.5" dur="0.15s" begin="1.275s" fill="freeze"/></line>
+<line x1="757.0" y1="231" x2="757.0" y2="231" stroke="#3fb950" stroke-width="1.5" opacity="0.5"><animate attributeName="opacity" from="0" to="0.5" dur="0.15s" begin="1.275s" fill="freeze"/></line>
+<rect x="752.8" y="176" width="8.4" height="0" fill="#3fb950" rx="1" opacity="0.88"><animate attributeName="y" from="176" to="121" dur="0.3s" begin="1.275s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/><animate attributeName="height" from="0" to="110" dur="0.3s" begin="1.275s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/></rect>
 
   <text x="40.2" y="251" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9" fill="#8b949e" text-anchor="middle">May</text>
 <text x="54.2" y="251" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9" fill="#8b949e" text-anchor="middle">Jun</text>
@@ -202,7 +202,7 @@
 <line x1="448.3" y1="407.9" x2="448.3" y2="407.9" stroke="#1a4fbb" stroke-width="2" stroke-linecap="round"><animate attributeName="x2" to="457.0" dur="0.3s" begin="2.08s" fill="freeze"/><animate attributeName="y2" to="410.3" dur="0.3s" begin="2.08s" fill="freeze"/></line>
 <line x1="443.3" y1="420.0" x2="443.3" y2="420.0" stroke="#1a4fbb" stroke-width="2" stroke-linecap="round"><animate attributeName="x2" to="452.0" dur="0.3s" begin="2.12s" fill="freeze"/><animate attributeName="y2" to="425.0" dur="0.3s" begin="2.12s" fill="freeze"/></line>
 <line x1="435.4" y1="430.4" x2="435.4" y2="430.4" stroke="#1a4fbb" stroke-width="2" stroke-linecap="round"><animate attributeName="x2" to="443.8" dur="0.3s" begin="2.16s" fill="freeze"/><animate attributeName="y2" to="438.8" dur="0.3s" begin="2.16s" fill="freeze"/></line>
-<line x1="425.0" y1="438.3" x2="425.0" y2="438.3" stroke="#1a4fbb" stroke-width="2" stroke-linecap="round"><animate attributeName="x2" to="432.0" dur="0.3s" begin="2.2s" fill="freeze"/><animate attributeName="y2" to="450.4" dur="0.3s" begin="2.2s" fill="freeze"/></line>
+<line x1="425.0" y1="438.3" x2="425.0" y2="438.3" stroke="#1a4fbb" stroke-width="2" stroke-linecap="round"><animate attributeName="x2" to="432.5" dur="0.3s" begin="2.2s" fill="freeze"/><animate attributeName="y2" to="451.3" dur="0.3s" begin="2.2s" fill="freeze"/></line>
 <line x1="412.9" y1="443.3" x2="412.9" y2="443.3" stroke="#1a4fbb" stroke-width="2" stroke-linecap="round"><animate attributeName="x2" to="416.3" dur="0.3s" begin="2.24s" fill="freeze"/><animate attributeName="y2" to="455.9" dur="0.3s" begin="2.24s" fill="freeze"/></line>
 <line x1="400.0" y1="445.0" x2="400.0" y2="445.0" stroke="#1a4fbb" stroke-width="2" stroke-linecap="round"><animate attributeName="x2" to="400.0" dur="0.3s" begin="2.28s" fill="freeze"/><animate attributeName="y2" to="455.0" dur="0.3s" begin="2.28s" fill="freeze"/></line>
 <line x1="387.1" y1="443.3" x2="387.1" y2="443.3" stroke="#1a4fbb" stroke-width="2" stroke-linecap="round"><animate attributeName="x2" to="381.6" dur="0.3s" begin="2.32s" fill="freeze"/><animate attributeName="y2" to="463.6" dur="0.3s" begin="2.32s" fill="freeze"/></line>
