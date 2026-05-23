@@ -16,9 +16,9 @@ HEADERS = {
     "X-GitHub-Api-Version": "2022-11-28",
 }
 
-BG      = "#010409"
+BG      = "transparent"
 SURFACE = "#0d1117"
-BORDER  = "#21262d"
+BORDER  = "transparent"
 TEXT    = "#e6edf3"
 DIM     = "#cad6e6"
 ACCENT  = "#388bfd"
