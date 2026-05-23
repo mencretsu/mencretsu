@@ -232,22 +232,29 @@ def ch2(data):
     start     = start_raw - timedelta(days=(start_raw.isoweekday() % 7))
 
     prev_close = 0
+    cumulative = 0
+    prev_total = 0
     weeks = []
     for w in range(52):
         week_days   = [start + timedelta(days=w*7+d) for d in range(7)]
         week_counts = [cbd.get(d.strftime("%Y-%m-%d"), 0) for d in week_days]
         total_w     = sum(week_counts)
         nonzero     = [c for c in week_counts if c > 0]
-
+    
+        open_val   = cumulative
+        cumulative += total_w
+        close_val  = cumulative
+    
         weeks.append({
-            "total": total_w,
-            "open":  prev_close,
-            "close": total_w,
-            "high":  max(nonzero) if nonzero else prev_close,
-            "low":   min(nonzero) if nonzero else prev_close,
-            "date":  week_days[0],
+            "total":      total_w,
+            "prev_total": prev_total,
+            "open":       open_val,
+            "close":      close_val,
+            "high":       close_val,
+            "low":        open_val,
+            "date":       week_days[0],
         })
-        prev_close = total_w
+        prev_total = total_w
 
     CL_X1, CL_X2       = 36, 764
     CL_Y_TOP, CL_Y_BOT = 72, 235
@@ -276,14 +283,14 @@ def ch2(data):
 
         # minggu kosong — gambar doji flat
         if wk["total"] == 0:
-            doji_y = to_y(o)
+            doji_y = to_y(wk["open"])  # tetap di posisi cumulative saat itu, bukan 0
             candles_svg += (
                 f'<line x1="{cx:.1f}" y1="{doji_y}" x2="{cx+cw_body:.1f}" y2="{doji_y}" '
                 f'stroke="{DIM}" stroke-width="2" stroke-linecap="round" opacity="0.4"/>\n'
             )
             continue
 
-        is_up = c >= o
+        is_up = wk["total"] >= wk["prev_total"]
         col   = GREEN if is_up else RED
 
         open_y   = to_y(o)
