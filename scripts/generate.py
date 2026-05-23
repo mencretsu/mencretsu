@@ -231,37 +231,36 @@ def ch2(data):
     start_raw = today - timedelta(days=363)
     start     = start_raw - timedelta(days=(start_raw.isoweekday() % 7))
 
+    # prev_close hanya diupdate kalau minggu ada commit-nya
+    # supaya minggu nganggur ga reset posisi ke 0
     prev_close = 0
-    cumulative = 0
-    prev_total = 0
     weeks = []
     for w in range(52):
         week_days   = [start + timedelta(days=w*7+d) for d in range(7)]
         week_counts = [cbd.get(d.strftime("%Y-%m-%d"), 0) for d in week_days]
         total_w     = sum(week_counts)
         nonzero     = [c for c in week_counts if c > 0]
-    
-        open_val   = cumulative
-        cumulative += total_w
-        close_val  = cumulative
-    
+
         weeks.append({
             "total":      total_w,
-            "prev_total": prev_total,
-            "open":       open_val,
-            "close":      close_val,
-            "high":       close_val,
-            "low":        open_val,
+            "prev_total": prev_close,
+            "open":       prev_close,
+            "close":      total_w,
+            "high":       max(nonzero) if nonzero else prev_close,
+            "low":        min(nonzero) if nonzero else (total_w if total_w else prev_close),
             "date":       week_days[0],
         })
-        prev_total = total_w
+
+        # kunci: kalau nganggur, prev_close TIDAK direset ke 0
+        if total_w > 0:
+            prev_close = total_w
 
     CL_X1, CL_X2       = 36, 764
     CL_Y_TOP, CL_Y_BOT = 72, 235
     CL_H                = CL_Y_BOT - CL_Y_TOP
 
-    all_vals  = [w["total"] for w in weeks] + [w["high"] for w in weeks]
-    max_val   = max(all_vals) if any(v > 0 for v in all_vals) else 1
+    all_vals = [w["open"] for w in weeks] + [w["close"] for w in weeks] + [w["high"] for w in weeks]
+    max_val  = max(all_vals) if any(v > 0 for v in all_vals) else 1
 
     def to_y(v):
         return CL_Y_BOT - int((v / max_val) * CL_H)
@@ -281,15 +280,16 @@ def ch2(data):
         h = wk["high"]
         l = wk["low"]
 
-        # minggu kosong — gambar doji flat
+        # minggu kosong — doji flat di posisi prev_close
         if wk["total"] == 0:
-            doji_y = to_y(wk["open"])  # tetap di posisi cumulative saat itu, bukan 0
+            doji_y = to_y(o)
             candles_svg += (
                 f'<line x1="{cx:.1f}" y1="{doji_y}" x2="{cx+cw_body:.1f}" y2="{doji_y}" '
                 f'stroke="{DIM}" stroke-width="2" stroke-linecap="round" opacity="0.4"/>\n'
             )
             continue
 
+        # warna dari perbandingan minggu ini vs minggu aktif sebelumnya
         is_up = wk["total"] >= wk["prev_total"]
         col   = GREEN if is_up else RED
 
