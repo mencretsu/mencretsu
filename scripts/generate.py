@@ -27,7 +27,9 @@ ORANGE  = "#f0883e"
 PURPLE  = "#a371f7"
 RED     = "#f85149"
 FONT    = "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace"
-
+FS_SM  = 12   # label kecil, bulan, grid
+FS_MED = 13  # header THE GRIND, 52 WEEKS
+FS_LG  = 15  # most active/lazy text
 
 def esc(s):
     return (s.replace("&","&amp;").replace("<","&lt;")
@@ -180,7 +182,7 @@ def ch1(data):
         lx = GRID_X + h*BAR_STEP + BAR_W//2
         bars += (
             f'  <text x="{lx}" y="{BAR_Y+BAR_MAX+15}" '
-            f'font-family="{FONT}" font-size="9" fill="{DIM}" text-anchor="middle">{h:02d}</text>\n'
+            f'font-family="{FONT}" font-size="{FS_SM}" fill="{DIM}" text-anchor="middle">{h:02d}</text>\n'
         )
 
     return f'''\
@@ -194,8 +196,8 @@ def ch1(data):
   <rect width="800" height="440" fill="{BG}" rx="12"/>
   <rect x="1" y="1" width="798" height="438" fill="none" stroke="{BORDER}" stroke-width="1" rx="11"/>
 
-  <text x="36" y="48" font-family="{FONT}" font-size="11" fill="{DIM}" letter-spacing="3">THE NUMBERS</text>
-  <text x="764" y="48" font-family="{FONT}" font-size="11" fill="{DIM}" letter-spacing="2" text-anchor="end">LAST 365 DAYS</text>
+  <text x="36" y="48" font-family="{FONT}" font-size="{FS_MED}" fill="{DIM}" letter-spacing="3">THE NUMBERS</text>
+  <text x="764" y="48" font-family="{FONT}" font-size="{FS_MED}" fill="{DIM}" letter-spacing="2" text-anchor="end">LAST 365 DAYS</text>
   <rect x="36" y="58" width="220" height="1" fill="url(#lg1)"/>
 
   <!-- row 1: total / peak hour / most active day -->
@@ -224,7 +226,7 @@ def ch1(data):
   <rect x="36" y="198" width="728" height="1" fill="{BORDER}"/>
 
   <!-- vibe text -->
-  <text x="400" y="224" font-family="{FONT}" font-size="13" fill="{DIM}"
+  <text x="400" y="224" font-family="{FONT}" font-size="{FS_LG}" fill="{DIM}"
         text-anchor="middle" font-style="italic">&quot;{esc(_vibe(fav_hour))}&quot;</text>
 
   <!-- row 2: night% and weekend% — no glow, tegas -->
@@ -232,14 +234,14 @@ def ch1(data):
 
   <text x="200" y="282" font-family="{FONT}" font-size="36" font-weight="700"
         fill="{GREEN}" text-anchor="middle">{night_p}%</text>
-  <text x="200" y="300" font-family="{FONT}" font-size="9" fill="{DIM}"
+  <text x="200" y="300" font-family="{FONT}" font-size="{FS_SM}" fill="{DIM}"
         text-anchor="middle" letter-spacing="2">NIGHT COMMITS</text>
 
   <line x1="400" y1="246" x2="400" y2="310" stroke="{BORDER}" stroke-width="1"/>
 
   <text x="600" y="282" font-family="{FONT}" font-size="36" font-weight="700"
         fill="{ORANGE}" text-anchor="middle">{wknd_p}%</text>
-  <text x="600" y="300" font-family="{FONT}" font-size="9" fill="{DIM}"
+  <text x="600" y="300" font-family="{FONT}" font-size="{FS_SM}" fill="{DIM}"
         text-anchor="middle" letter-spacing="2">WEEKEND COMMITS</text>
 
   <!-- separator + hourly bar chart -->
@@ -352,7 +354,7 @@ def ch2(data):
             abbr = wk["date"].strftime("%b")
             month_labels += (
                 f'<text x="{x:.1f}" y="{CL_Y_BOT+16}" font-family="{FONT}" '
-                f'font-size="9" fill="{DIM}" text-anchor="middle">{abbr}</text>\n'
+                f'font-size="{FS_SM}" fill="{DIM}" text-anchor="middle">{abbr}</text>\n'
             )
             prev_month = wk["date"].month
 
@@ -363,7 +365,7 @@ def ch2(data):
         grid_lines += (
             f'<line x1="{CL_X1}" y1="{gy}" x2="{CL_X2}" y2="{gy}" '
             f'stroke="{BORDER}" stroke-width="1" opacity="0.4"/>\n'
-            f'<text x="{CL_X1-4}" y="{gy+4}" font-family="{FONT}" font-size="8" '
+            f'<text x="{CL_X1-4}" y="{gy+4}" font-family="{FONT}" font-size="12" '
             f'fill="{DIM}" text-anchor="end">{val}</text>\n'
         )
 
@@ -381,8 +383,8 @@ def ch2(data):
   <rect width="{W}" height="{H}" fill="{BG}" rx="12"/>
   <rect x="1" y="1" width="{W-2}" height="{H-2}" fill="none" stroke="{BORDER}" stroke-width="1" rx="11"/>
 
-  <text x="36" y="44" font-family="{FONT}" font-size="11" fill="{DIM}" letter-spacing="3">THE GRIND</text>
-  <text x="{W-36}" y="44" font-family="{FONT}" font-size="11" fill="{DIM}" letter-spacing="2" text-anchor="end">52 WEEKS</text>
+  <text x="36" y="44" font-family="{FONT}" font-size="{FS_MED}" fill="{DIM}" letter-spacing="3">THE GRIND</text>
+  <text x="{W-36}" y="44" font-family="{FONT}" font-size="{FS_MED}" fill="{DIM}" letter-spacing="2" text-anchor="end">52 WEEKS</text>
   <rect x="36" y="54" width="110" height="1" fill="url(#hdrg)"/>
 
   <line x1="{CL_X1}" y1="{CL_Y_BOT}" x2="{CL_X2}" y2="{CL_Y_BOT}"
@@ -395,12 +397,12 @@ def ch2(data):
   <line x1="36" y1="{CL_Y_BOT+24}" x2="764" y2="{CL_Y_BOT+24}" stroke="{BORDER}" stroke-width="1" opacity="0.4"/>
 
   <rect x="36" y="{LG_Y}" width="9" height="9" fill="{GREEN}" rx="2" opacity="0.85"/>
-  <text x="50" y="{LG_Y+9}" font-family="{FONT}" font-size="9" fill="{DIM}">most active —</text>
-  <text x="134" y="{LG_Y+9}" font-family="{FONT}" font-size="9" font-weight="700" fill="{GREEN}">{esc(active_label)} · {active_week["total"]} commits</text>
+  <text x="50" y="{LG_Y+9}" font-family="{FONT}" font-size="{FS_SM}" fill="{DIM}">most active —</text>
+  <text x="134" y="{LG_Y+9}" font-family="{FONT}" font-size="{FS_SM}" font-weight="700" fill="{GREEN}">{esc(active_label)} · {active_week["total"]} commits</text>
 
   <rect x="400" y="{LG_Y}" width="9" height="9" fill="{RED}" rx="2" opacity="0.85"/>
-  <text x="414" y="{LG_Y+9}" font-family="{FONT}" font-size="9" fill="{DIM}">most lazy —</text>
-  <text x="490" y="{LG_Y+9}" font-family="{FONT}" font-size="9" font-weight="700" fill="{RED}">{esc(lazy_label)} · {lazy_week["total"]} commits</text>
+  <text x="414" y="{LG_Y+9}" font-family="{FONT}" font-size="{FS_SM}" fill="{DIM}">most lazy —</text>
+  <text x="490" y="{LG_Y+9}" font-family="{FONT}" font-size="{FS_SM}" font-weight="700" fill="{RED}">{esc(lazy_label)} · {lazy_week["total"]} commits</text>
 </svg>'''
 # ─── Main ─────────────────────────────────────────────────────────────────────
 
