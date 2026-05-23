@@ -231,37 +231,60 @@ def ch2(data):
     start_raw = today - timedelta(days=363)
     start     = start_raw - timedelta(days=(start_raw.isoweekday() % 7))
 
-    # prev_close hanya diupdate kalau minggu ada commit-nya
-    # supaya minggu nganggur ga reset posisi ke 0
+    # ── cumulative total per date ──────────────────────────────────────────
+    running = 0
+    cumulative = {}
+    for d in sorted(cbd.keys()):
+        running += cbd[d]
+        cumulative[d] = running
+
+    def cum_at(date_obj):
+        """Cumulative commit count on or before date_obj."""
+        key = date_obj.strftime("%Y-%m-%d")
+        if key in cumulative:
+            return cumulative[key]
+        # cari nilai terakhir sebelum tanggal ini
+        past = [v for k, v in cumulative.items() if k <= key]
+        return past[-1] if past else 0
+
+    # ── build weeks ───────────────────────────────────────────────────────
     prev_close = 0
     weeks = []
     for w in range(52):
         week_days   = [start + timedelta(days=w*7+d) for d in range(7)]
         week_counts = [cbd.get(d.strftime("%Y-%m-%d"), 0) for d in week_days]
         total_w     = sum(week_counts)
-        nonzero     = [c for c in week_counts if c > 0]
+
+        day_cum_vals = [cum_at(d) for d in week_days]
+        close_val    = day_cum_vals[-1] if day_cum_vals else prev_close
+
+        # kalau minggu kosong, close = open = prev_close (flat doji)
+        if total_w == 0:
+            close_val = prev_close
+
+        high_val = max(day_cum_vals) if day_cum_vals else prev_close
+        low_val  = min(
+            (cum_at(d) for d in week_days if cbd.get(d.strftime("%Y-%m-%d"), 0) > 0),
+            default=prev_close
+        )
 
         weeks.append({
-            "total":      total_w,
-            "prev_total": prev_close,
-            "open":       prev_close,
-            "close":      total_w,
-            "high":       max(nonzero) if nonzero else prev_close,
-            "low":        min(nonzero) if nonzero else (total_w if total_w else prev_close),
-            "date":       week_days[0],
+            "total": total_w,
+            "open":  prev_close,
+            "close": close_val,
+            "high":  high_val,
+            "low":   low_val,
+            "date":  week_days[0],
         })
 
-        # kunci: kalau nganggur, prev_close TIDAK direset ke 0
-        if total_w > 0:
-            prev_close = total_w
-        else:
-            prev_close = prev_close // 2
+        prev_close = close_val  # ga pernah balik ke 0
 
+    # ── chart dimensions ──────────────────────────────────────────────────
     CL_X1, CL_X2       = 36, 764
     CL_Y_TOP, CL_Y_BOT = 72, 235
     CL_H                = CL_Y_BOT - CL_Y_TOP
 
-    all_vals = [w["open"] for w in weeks] + [w["close"] for w in weeks] + [w["high"] for w in weeks]
+    all_vals = [w["high"] for w in weeks] + [w["close"] for w in weeks]
     max_val  = max(all_vals) if any(v > 0 for v in all_vals) else 1
 
     def to_y(v):
@@ -271,6 +294,7 @@ def ch2(data):
     cw_body = max(cw_full * 0.6, 3)
     cw_gap  = cw_full - cw_body
 
+    # ── candles ───────────────────────────────────────────────────────────
     candles_svg = ""
     for i, wk in enumerate(weeks):
         cx     = CL_X1 + i * cw_full + cw_gap / 2
@@ -282,27 +306,25 @@ def ch2(data):
         h = wk["high"]
         l = wk["low"]
 
-        # minggu kosong — doji flat di posisi prev_close
+        # minggu kosong → doji flat
         if wk["total"] == 0:
             doji_y = to_y(o)
             candles_svg += (
                 f'<line x1="{cx:.1f}" y1="{doji_y}" x2="{cx+cw_body:.1f}" y2="{doji_y}" '
-                f'stroke="{DIM}" stroke-width="2" stroke-linecap="round" opacity="0.4"/>\n'
+                f'stroke="{DIM}" stroke-width="2" stroke-linecap="round" opacity="0.35"/>\n'
             )
             continue
 
-        # warna dari perbandingan minggu ini vs minggu aktif sebelumnya
-        is_up = wk["total"] >= wk["prev_total"]
-        col   = GREEN if is_up else RED
-
+        is_up    = c >= o
+        col      = GREEN if is_up else RED
         open_y   = to_y(o)
         close_y  = to_y(c)
         body_top = min(open_y, close_y)
         body_bot = max(open_y, close_y)
         body_h   = max(body_bot - body_top, 2)
 
-        wick_top_y = to_y(h) if h > 0 else body_top
-        wick_bot_y = to_y(l) if l > 0 else body_bot
+        wick_top_y = to_y(h)
+        wick_bot_y = to_y(l)
 
         # upper wick
         candles_svg += (
@@ -311,7 +333,6 @@ def ch2(data):
             f'<animate attributeName="opacity" from="0" to="0.5" dur="0.15s" begin="{delay}s" fill="freeze"/>'
             f'</line>\n'
         )
-
         # lower wick
         candles_svg += (
             f'<line x1="{cx_mid:.1f}" y1="{body_bot}" x2="{cx_mid:.1f}" y2="{wick_bot_y}" '
@@ -319,8 +340,7 @@ def ch2(data):
             f'<animate attributeName="opacity" from="0" to="0.5" dur="0.15s" begin="{delay}s" fill="freeze"/>'
             f'</line>\n'
         )
-
-        # body — animasi grow dari midpoint
+        # body
         mid_y = (body_top + body_bot) // 2
         candles_svg += (
             f'<rect x="{cx:.1f}" y="{mid_y}" width="{cw_body:.1f}" height="0" '
@@ -334,6 +354,7 @@ def ch2(data):
             f'</rect>\n'
         )
 
+    # ── month labels ──────────────────────────────────────────────────────
     month_labels = ""
     prev_month   = None
     for i, wk in enumerate(weeks):
@@ -346,6 +367,7 @@ def ch2(data):
             )
             prev_month = wk["date"].month
 
+    # ── grid lines (Y axis) ───────────────────────────────────────────────
     grid_lines = ""
     for pct in [0.25, 0.5, 0.75, 1.0]:
         gy  = CL_Y_BOT - int(pct * CL_H)
@@ -357,6 +379,7 @@ def ch2(data):
             f'fill="{DIM}" text-anchor="end">{val}</text>\n'
         )
 
+    # ── clock (sama persis kayak sebelumnya) ──────────────────────────────
     fav_hour    = max(by_hour, key=by_hour.get) if by_hour else 0
     max_h_count = max(by_hour.values(), default=1)
     CX, CY, BASE_R = 400, 395, 44
@@ -382,8 +405,8 @@ def ch2(data):
         x2 = CX + math.cos(angle) * (BASE_R + 6 + bar_l)
         y2 = CY + math.sin(angle) * (BASE_R + 6 + bar_l)
         is_peak = (h == fav_hour)
-        col_r = ACCENT if is_peak else ("#1a4fbb" if cnt_h > 0 else BORDER)
-        sw  = 5 if is_peak else (2 if cnt_h > 0 else 1)
+        col_r   = ACCENT if is_peak else ("#1a4fbb" if cnt_h > 0 else BORDER)
+        sw      = 5 if is_peak else (2 if cnt_h > 0 else 1)
         delay_r = round(1.8 + h * 0.04, 3)
 
         anim = (
@@ -415,10 +438,10 @@ def ch2(data):
         f'fill="{DIM}" text-anchor="middle" letter-spacing="2">PEAK HOUR</text>\n'
     )
 
-    night   = sum(v for k,v in by_hour.items() if k>=22 or k<6)
-    night_p = round(night/total*100) if total else 0
-    weekend_commits = sum(v for k,v in data["commits_by_dow"].items() if k>=5)
-    wknd_p  = round(weekend_commits/total*100) if total else 0
+    night   = sum(v for k, v in by_hour.items() if k >= 22 or k < 6)
+    night_p = round(night / total * 100) if total else 0
+    weekend_commits = sum(v for k, v in data["commits_by_dow"].items() if k >= 5)
+    wknd_p  = round(weekend_commits / total * 100) if total else 0
 
     return f'''\
 <svg width="{W}" height="{H}" viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">
@@ -468,7 +491,6 @@ def ch2(data):
   <text x="700" y="{CY+12}" font-family="{FONT}" font-size="9" fill="{DIM}"
         text-anchor="middle" letter-spacing="1">weekend commits</text>
 </svg>'''
-
 
 # ─── Main ─────────────────────────────────────────────────────────────────────
 
