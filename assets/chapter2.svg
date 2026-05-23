@@ -6,23 +6,23 @@
     </linearGradient>
   </defs>
 
-  <rect width="800" height="360" fill="#010409" rx="12"/>
-  <rect x="1" y="1" width="798" height="358" fill="none" stroke="#21262d" stroke-width="1" rx="11"/>
+  <rect width="800" height="360" fill="transparent" rx="12"/>
+  <rect x="1" y="1" width="798" height="358" fill="none" stroke="transparent" stroke-width="1" rx="11"/>
 
   <text x="36" y="44" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="13" fill="#cad6e6" letter-spacing="3">THE GRIND</text>
   <text x="764" y="44" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="13" fill="#cad6e6" letter-spacing="2" text-anchor="end">52 WEEKS</text>
   <rect x="36" y="54" width="110" height="1" fill="url(#hdrg)"/>
 
   <line x1="36" y1="255" x2="764" y2="255"
-        stroke="#21262d" stroke-width="1"/>
+        stroke="transparent" stroke-width="1"/>
 
-  <line x1="36" y1="210" x2="764" y2="210" stroke="#21262d" stroke-width="1" opacity="0.4"/>
+  <line x1="36" y1="210" x2="764" y2="210" stroke="transparent" stroke-width="1" opacity="0.4"/>
 <text x="32" y="214" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#cad6e6" text-anchor="end">34</text>
-<line x1="36" y1="165" x2="764" y2="165" stroke="#21262d" stroke-width="1" opacity="0.4"/>
+<line x1="36" y1="165" x2="764" y2="165" stroke="transparent" stroke-width="1" opacity="0.4"/>
 <text x="32" y="169" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#cad6e6" text-anchor="end">68</text>
-<line x1="36" y1="120" x2="764" y2="120" stroke="#21262d" stroke-width="1" opacity="0.4"/>
+<line x1="36" y1="120" x2="764" y2="120" stroke="transparent" stroke-width="1" opacity="0.4"/>
 <text x="32" y="124" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#cad6e6" text-anchor="end">102</text>
-<line x1="36" y1="75" x2="764" y2="75" stroke="#21262d" stroke-width="1" opacity="0.4"/>
+<line x1="36" y1="75" x2="764" y2="75" stroke="transparent" stroke-width="1" opacity="0.4"/>
 <text x="32" y="79" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#cad6e6" text-anchor="end">137</text>
 
   <line x1="38.8" y1="255" x2="47.2" y2="255" stroke="#cad6e6" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
@@ -93,7 +93,7 @@
 <text x="726.2" y="271" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#cad6e6" text-anchor="middle">May</text>
 
 
-  <line x1="36" y1="279" x2="764" y2="279" stroke="#21262d" stroke-width="1" opacity="0.4"/>
+  <line x1="36" y1="279" x2="764" y2="279" stroke="transparent" stroke-width="1" opacity="0.4"/>
 
   <rect x="36" y="289" width="9" height="9" fill="#3fb950" rx="2" opacity="0.85"/>
   <text x="50" y="298" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" fill="#cad6e6">most active —</text>
