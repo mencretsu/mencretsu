@@ -231,22 +231,6 @@ def ch2(data):
     start_raw = today - timedelta(days=363)
     start     = start_raw - timedelta(days=(start_raw.isoweekday() % 7))
 
-    weeks = []
-    for w in range(52):
-        week_days   = [start + timedelta(days=w*7+d) for d in range(7)]
-        week_counts = [cbd.get(d.strftime("%Y-%m-%d"), 0) for d in week_days]
-        total_w     = sum(week_counts)
-        nonzero     = [c for c in week_counts if c > 0]
-        weeks.append({
-            "total": total_w,
-            "open":  weeks[-1]["total"] if weeks else total_w,  # open = close minggu lalu
-            "close": total_w,
-            "high":  max(nonzero) if nonzero else 0,
-            "low":   min(nonzero) if nonzero else 0,
-            "date":  week_days[0],
-        })
-
-    # patch open minggu pertama
     prev_close = 0
     weeks = []
     for w in range(52):
@@ -254,7 +238,7 @@ def ch2(data):
         week_counts = [cbd.get(d.strftime("%Y-%m-%d"), 0) for d in week_days]
         total_w     = sum(week_counts)
         nonzero     = [c for c in week_counts if c > 0]
-    
+
         weeks.append({
             "total": total_w,
             "open":  prev_close,
@@ -281,37 +265,35 @@ def ch2(data):
 
     candles_svg = ""
     for i, wk in enumerate(weeks):
-        cx    = CL_X1 + i * cw_full + cw_gap / 2
+        cx     = CL_X1 + i * cw_full + cw_gap / 2
         cx_mid = cx + cw_body / 2
-        delay = round(i * 0.025, 3)
+        delay  = round(i * 0.025, 3)
 
         o = wk["open"]
         c = wk["close"]
         h = wk["high"]
         l = wk["low"]
 
+        # minggu kosong — gambar doji flat
+        if wk["total"] == 0:
+            doji_y = to_y(o)
+            candles_svg += (
+                f'<line x1="{cx:.1f}" y1="{doji_y}" x2="{cx+cw_body:.1f}" y2="{doji_y}" '
+                f'stroke="{DIM}" stroke-width="2" stroke-linecap="round" opacity="0.4"/>\n'
+            )
+            continue
+
         is_up = c >= o
         col   = GREEN if is_up else RED
 
-        # body: antara open dan close
-        open_y  = to_y(o)
-        close_y = to_y(c)
+        open_y   = to_y(o)
+        close_y  = to_y(c)
         body_top = min(open_y, close_y)
         body_bot = max(open_y, close_y)
         body_h   = max(body_bot - body_top, 2)
 
-        # wick atas: dari high ke top of body
         wick_top_y = to_y(h) if h > 0 else body_top
-        # wick bawah: dari bottom of body ke low
         wick_bot_y = to_y(l) if l > 0 else body_bot
-
-        if wk["total"] == 0:
-            candles_svg += (
-                f'<line x1="{cx:.1f}" y1="{to_y(wk["open"])}" '
-                f'x2="{cx+cw_body:.1f}" y2="{to_y(wk["open"])}" '
-                f'stroke="{DIM}" stroke-width="2" stroke-linecap="round" opacity="0.4"/>\n'
-            )
-            continue
 
         # upper wick
         candles_svg += (
@@ -450,9 +432,9 @@ def ch2(data):
   <rect x="36" y="54" width="110" height="1" fill="url(#hdrg)"/>
 
   <rect x="{W-36-130}" y="58" width="10" height="10" fill="{GREEN}" rx="2" opacity="0.85"/>
-  <text x="{W-36-116}" y="68" font-family="{FONT}" font-size="9" fill="{DIM}">bullish week</text>
+  <text x="{W-36-116}" y="68" font-family="{FONT}" font-size="9" fill="{DIM}">more than last week</text>
   <rect x="{W-36-55}" y="58" width="10" height="10" fill="{RED}" rx="2" opacity="0.85"/>
-  <text x="{W-36-41}" y="68" font-family="{FONT}" font-size="9" fill="{DIM}">bearish</text>
+  <text x="{W-36-41}" y="68" font-family="{FONT}" font-size="9" fill="{DIM}">less</text>
 
   <line x1="{CL_X1}" y1="{CL_Y_BOT}" x2="{CL_X2}" y2="{CL_Y_BOT}"
         stroke="{BORDER}" stroke-width="1"/>
@@ -477,6 +459,7 @@ def ch2(data):
   <text x="700" y="{CY+12}" font-family="{FONT}" font-size="9" fill="{DIM}"
         text-anchor="middle" letter-spacing="1">weekend commits</text>
 </svg>'''
+
 
 # ─── Main ─────────────────────────────────────────────────────────────────────
 
