@@ -16,20 +16,23 @@ HEADERS = {
     "X-GitHub-Api-Version": "2022-11-28",
 }
 
-BG      = "transparent"
-SURFACE = "#0d1117"
-BORDER  = "transparent"
-TEXT    = "#e6edf3"
-DIM     = "#cad6e6"
+# Accent colors stay hardcoded — these are semantic and must be visible in both modes
 ACCENT  = "#388bfd"
 GREEN   = "#3fb950"
 ORANGE  = "#f0883e"
 PURPLE  = "#a371f7"
 RED     = "#f85149"
 FONT    = "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace"
-FS_SM  = 12   # label kecil, bulan, grid
-FS_MED = 13  # header THE GRIND, 52 WEEKS
-FS_LG  = 15  # most active/lazy text
+
+# Shared CSS injected into every SVG
+SVG_STYLE = """<style>
+  text { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace; }
+  .t-primary { fill: var(--color-text-primary); }
+  .t-dim     { fill: var(--color-text-secondary); }
+  .sep       { stroke: var(--color-border-primary); fill: none; }
+  .bg-card   { fill: var(--color-background-secondary); }
+</style>"""
+
 
 def esc(s):
     return (s.replace("&","&amp;").replace("<","&lt;")
@@ -77,10 +80,10 @@ def collect():
     print(f"  {len(own)} own repos found", flush=True)
 
     since = (datetime.now(timezone.utc) - timedelta(days=365)).strftime("%Y-%m-%dT%H:%M:%SZ")
-    commits_by_date  = defaultdict(int)
-    commits_by_hour  = defaultdict(int)
-    commits_by_dow   = defaultdict(int)
-    commit_messages  = []
+    commits_by_date    = defaultdict(int)
+    commits_by_hour    = defaultdict(int)
+    commits_by_dow     = defaultdict(int)
+    commit_messages    = []
     repo_commit_counts = {}
 
     for i, repo in enumerate(own):
@@ -117,7 +120,7 @@ def collect():
     }
 
 
-# ─── Chapter 1 — The Numbers ─────────────────────────────────────────────────
+# ─── Chapter 1 — The Numbers ──────────────────────────────────────────────────
 def ch1(data):
     total   = data["total_commits"]
     by_hour = data["commits_by_hour"]
@@ -159,10 +162,11 @@ def ch1(data):
     hour_str  = _hlabel(fav_hour)
     day_str   = DAYS[fav_dow]
 
+    # ── hourly bar chart ──────────────────────────────────────────────────────
     BAR_W, BAR_GAP = 24, 6
     BAR_STEP = BAR_W + BAR_GAP
-    BAR_MAX  = 28
-    BAR_Y    = 342
+    BAR_MAX  = 52
+    BAR_Y    = 378   # baseline y
     GRID_X   = (800 - (24*BAR_STEP - BAR_GAP)) // 2
     max_h    = max(by_hour.values(), default=1)
 
@@ -171,160 +175,212 @@ def ch1(data):
         cnt = by_hour.get(h, 0)
         bh  = max(int((cnt/max_h)*BAR_MAX), 1 if cnt>0 else 0)
         x   = GRID_X + h*BAR_STEP
-        col = ACCENT if h == fav_hour else BORDER
-        opa = "1" if h == fav_hour else "0.65"
+        is_peak = (h == fav_hour)
+        col = ACCENT
+        opa = "1" if is_peak else "0.3"
         if bh:
             bars += (
-                f'  <rect x="{x}" y="{BAR_Y+BAR_MAX-bh}" '
+                f'<rect x="{x}" y="{BAR_Y - bh}" '
                 f'width="{BAR_W}" height="{bh}" fill="{col}" rx="3" opacity="{opa}"/>\n'
             )
-    for h in [0,6,12,18,23]:
+        if is_peak:
+            bars += (
+                f'<text x="{x + BAR_W//2}" y="{BAR_Y - bh - 6}" '
+                f'class="t-dim" font-size="9" text-anchor="middle" letter-spacing="1">PEAK</text>\n'
+            )
+
+    for h in [0, 6, 12, 18, 23]:
         lx = GRID_X + h*BAR_STEP + BAR_W//2
         bars += (
-            f'  <text x="{lx}" y="{BAR_Y+BAR_MAX+15}" '
-            f'font-family="{FONT}" font-size="{FS_SM}" fill="{DIM}" text-anchor="middle">{h:02d}</text>\n'
+            f'<text x="{lx}" y="{BAR_Y + 16}" '
+            f'class="t-dim" font-size="10" text-anchor="middle">{h:02d}</text>\n'
         )
 
     return f'''\
-<svg width="800" height="440" viewBox="0 0 800 440" xmlns="http://www.w3.org/2000/svg">
+<svg width="800" height="460" viewBox="0 0 800 460" xmlns="http://www.w3.org/2000/svg">
+  {SVG_STYLE}
   <defs>
-    <linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:{ACCENT};stop-opacity:1"/>
-      <stop offset="100%" style="stop-color:{PURPLE};stop-opacity:0"/>
+    <linearGradient id="hdrg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="{ACCENT}" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="{ACCENT}" stop-opacity="0"/>
     </linearGradient>
   </defs>
-  <rect width="800" height="440" fill="{BG}" rx="12"/>
-  <rect x="1" y="1" width="798" height="438" fill="none" stroke="{BORDER}" stroke-width="1" rx="11"/>
 
-  <text x="36" y="48" font-family="{FONT}" font-size="{FS_MED}" fill="{DIM}" letter-spacing="3">THE NUMBERS</text>
-  <text x="764" y="48" font-family="{FONT}" font-size="{FS_MED}" fill="{DIM}" letter-spacing="2" text-anchor="end">LAST 365 DAYS</text>
-  <rect x="36" y="58" width="220" height="1" fill="url(#lg1)"/>
+  <!-- header -->
+  <text x="36" y="46" class="t-dim" font-size="11" letter-spacing="3">THE NUMBERS</text>
+  <text x="764" y="46" class="t-dim" font-size="11" letter-spacing="2" text-anchor="end">LAST 365 DAYS</text>
+  <rect x="36" y="54" width="220" height="1" fill="url(#hdrg)"/>
 
-  <!-- row 1: total / peak hour / most active day -->
-  <text x="145" y="148" font-family="{FONT}" font-size="58" font-weight="700"
-        fill="{TEXT}" text-anchor="middle">{esc(total_str)}</text>
-  <text x="145" y="168" font-family="{FONT}" font-size="10" fill="{DIM}"
-        text-anchor="middle" letter-spacing="3">COMMITS</text>
+  <!-- ── row 1: 3 stat cards ─────────────────────────────────────────── -->
+  <!-- COMMITS -->
+  <rect x="36" y="68" width="224" height="106" rx="8" class="bg-card"/>
+  <text x="148" y="130" class="t-primary" font-size="52" font-weight="700"
+        text-anchor="middle">{esc(total_str)}</text>
+  <text x="148" y="150" class="t-dim" font-size="9" text-anchor="middle"
+        letter-spacing="3">COMMITS</text>
 
-  <line x1="272" y1="100" x2="272" y2="188" stroke="{BORDER}" stroke-width="1"/>
+  <!-- PEAK HOUR -->
+  <rect x="270" y="68" width="260" height="106" rx="8" class="bg-card"/>
+  <text x="400" y="122" fill="{ACCENT}" font-size="38" font-weight="700"
+        text-anchor="middle">{esc(hour_str)}</text>
+  <text x="400" y="143" class="t-dim" font-size="9" text-anchor="middle"
+        letter-spacing="3">PEAK HOUR</text>
+  <text x="400" y="160" fill="{PURPLE}" font-size="10" text-anchor="middle"
+        >— {esc(_hvibe(fav_hour))} —</text>
 
-  <text x="450" y="140" font-family="{FONT}" font-size="46" font-weight="700"
-        fill="{ACCENT}" text-anchor="middle">{esc(hour_str)}</text>
-  <text x="450" y="162" font-family="{FONT}" font-size="10" fill="{DIM}"
-        text-anchor="middle" letter-spacing="3">PEAK HOUR</text>
-  <text x="450" y="180" font-family="{FONT}" font-size="10" fill="{PURPLE}"
-        text-anchor="middle">— {esc(_hvibe(fav_hour))} —</text>
+  <!-- MOST ACTIVE DAY -->
+  <rect x="540" y="68" width="224" height="106" rx="8" class="bg-card"/>
+  <text x="652" y="120" fill="{ORANGE}" font-size="22" font-weight="700"
+        text-anchor="middle">{esc(day_str)}</text>
+  <text x="652" y="143" class="t-dim" font-size="9" text-anchor="middle"
+        letter-spacing="2">MOST ACTIVE</text>
 
-  <line x1="590" y1="100" x2="590" y2="188" stroke="{BORDER}" stroke-width="1"/>
+  <!-- vibe quote -->
+  <text x="400" y="204" class="t-dim" font-size="13" text-anchor="middle"
+        font-style="italic">&quot;{esc(_vibe(fav_hour))}&quot;</text>
 
-  <text x="700" y="140" font-family="{FONT}" font-size="26" font-weight="700"
-        fill="{ORANGE}" text-anchor="middle">{esc(day_str)}</text>
-  <text x="700" y="162" font-family="{FONT}" font-size="10" fill="{DIM}"
-        text-anchor="middle" letter-spacing="2">MOST ACTIVE</text>
+  <!-- ── separator ───────────────────────────────────────────────────── -->
+  <line x1="36" y1="216" x2="764" y2="216" class="sep" stroke-width="1"/>
 
-  <!-- separator -->
-  <rect x="36" y="198" width="728" height="1" fill="{BORDER}"/>
+  <!-- ── row 2: night% + weekend% cards ─────────────────────────────── -->
+  <rect x="36" y="224" width="352" height="78" rx="8" class="bg-card"/>
+  <text x="212" y="270" fill="{GREEN}" font-size="34" font-weight="700"
+        text-anchor="middle">{night_p}%</text>
+  <text x="212" y="289" class="t-dim" font-size="10" text-anchor="middle"
+        letter-spacing="2">NIGHT COMMITS</text>
 
-  <!-- vibe text -->
-  <text x="400" y="224" font-family="{FONT}" font-size="{FS_LG}" fill="{DIM}"
-        text-anchor="middle" font-style="italic">&quot;{esc(_vibe(fav_hour))}&quot;</text>
+  <rect x="400" y="224" width="364" height="78" rx="8" class="bg-card"/>
+  <text x="582" y="270" fill="{ORANGE}" font-size="34" font-weight="700"
+        text-anchor="middle">{wknd_p}%</text>
+  <text x="582" y="289" class="t-dim" font-size="10" text-anchor="middle"
+        letter-spacing="2">WEEKEND COMMITS</text>
 
-  <!-- row 2: night% and weekend% — no glow, tegas -->
-  <rect x="36" y="238" width="728" height="1" fill="{BORDER}" opacity="0.4"/>
-
-  <text x="200" y="282" font-family="{FONT}" font-size="36" font-weight="700"
-        fill="{GREEN}" text-anchor="middle">{night_p}%</text>
-  <text x="200" y="300" font-family="{FONT}" font-size="{FS_SM}" fill="{DIM}"
-        text-anchor="middle" letter-spacing="2">NIGHT COMMITS</text>
-
-  <line x1="400" y1="246" x2="400" y2="310" stroke="{BORDER}" stroke-width="1"/>
-
-  <text x="600" y="282" font-family="{FONT}" font-size="36" font-weight="700"
-        fill="{ORANGE}" text-anchor="middle">{wknd_p}%</text>
-  <text x="600" y="300" font-family="{FONT}" font-size="{FS_SM}" fill="{DIM}"
-        text-anchor="middle" letter-spacing="2">WEEKEND COMMITS</text>
-
-  <!-- separator + hourly bar chart -->
-  <rect x="36" y="316" width="728" height="1" fill="{BORDER}"/>
-  <text x="36" y="336" font-family="{FONT}" font-size="10" fill="{DIM}" letter-spacing="2">HOURLY ACTIVITY</text>
-  <rect x="36" y="342" width="728" height="1" fill="{BORDER}" opacity="0.35"/>
+  <!-- ── hourly bar chart ─────────────────────────────────────────────── -->
+  <line x1="36" y1="316" x2="764" y2="316" class="sep" stroke-width="1"/>
+  <text x="36" y="334" class="t-dim" font-size="9" letter-spacing="2">HOURLY ACTIVITY</text>
+  <line x1="36" y1="340" x2="764" y2="340" class="sep" stroke-width="1" opacity="0.4"/>
 {bars}
 </svg>'''
 
 
+# ─── Chapter 2 — The Grind ────────────────────────────────────────────────────
 def ch2(data):
-    cbd     = data["commits_by_date"]
-    by_hour = data["commits_by_hour"]
-    total   = data["total_commits"]
+    cbd                = data["commits_by_date"]
+    total              = data["total_commits"]
+    repo_commit_counts = data["repo_commit_counts"]
 
-    W, H = 800, 360
+    W, H = 800, 560
 
     today     = datetime.now(timezone.utc).date()
     start_raw = today - timedelta(days=363)
     start     = start_raw - timedelta(days=(start_raw.isoweekday() % 7))
 
-    last_active_close = 0
+    # ── Build weeks with honest open/close ───────────────────────────────
+    # open  = avg commits/week of ALL previous active weeks
+    # close = total commits this week
+    # green = this week >= avg so far, red = below avg
+    running_totals = []
     weeks = []
     for w in range(52):
         week_days   = [start + timedelta(days=w*7+d) for d in range(7)]
         week_counts = [cbd.get(d.strftime("%Y-%m-%d"), 0) for d in week_days]
         total_w     = sum(week_counts)
 
+        if running_totals:
+            avg_prev = sum(running_totals) / len(running_totals)
+        else:
+            avg_prev = 0.0
+
         weeks.append({
-            "total": total_w,
-            "open":  last_active_close,
-            "close": total_w if total_w > 0 else last_active_close,
-            "date":  week_days[0],
+            "total":    total_w,
+            "open":     avg_prev,
+            "close":    float(total_w),
+            "date":     week_days[0],
+            "days":     week_days,
+            "counts":   week_counts,
         })
-
         if total_w > 0:
-            last_active_close = total_w
+            running_totals.append(total_w)
 
+    # ── Streak calculation ────────────────────────────────────────────────
+    all_dates = sorted(cbd.keys())
+    current_streak = 0
+    longest_streak = 0
+    streak = 0
+    d = today
+    while cbd.get(d.strftime("%Y-%m-%d"), 0) > 0:
+        current_streak += 1
+        d -= timedelta(days=1)
+
+    streak = 0
+    if all_dates:
+        prev = datetime.strptime(all_dates[0], "%Y-%m-%d").date()
+        streak = 1
+        for ds in all_dates[1:]:
+            cur = datetime.strptime(ds, "%Y-%m-%d").date()
+            if (cur - prev).days == 1:
+                streak += 1
+                longest_streak = max(longest_streak, streak)
+            else:
+                streak = 1
+            prev = cur
+        longest_streak = max(longest_streak, streak)
+
+    active_weeks = sum(1 for w in weeks if w["total"] > 0)
+    avg_per_week = round(total / max(active_weeks, 1), 1)
+
+    active_weeks_list = [w for w in weeks if w["total"] > 0]
     active_week = max(weeks, key=lambda w: w["total"])
-    lazy_week   = min((w for w in weeks if w["total"] > 0), key=lambda w: w["total"])
+    lazy_week   = min(active_weeks_list, key=lambda w: w["total"]) if active_weeks_list else active_week
 
     def week_label(w):
         d = w["date"]
-        week_num = (d.day - 1) // 7 + 1
-        return f"week {week_num} of {d.strftime('%b')}"
+        return f"week {(d.day-1)//7+1} of {d.strftime('%b')}"
 
-    active_label = week_label(active_week)
-    lazy_label   = week_label(lazy_week)
+    # ── Top repos (max 5) ─────────────────────────────────────────────────
+    top_repos = sorted(
+        [(k, v) for k, v in repo_commit_counts.items() if v > 0],
+        key=lambda x: x[1], reverse=True
+    )[:5]
+    max_repo_count = top_repos[0][1] if top_repos else 1
 
-    CL_X1, CL_X2       = 36, 764
-    CL_Y_TOP, CL_Y_BOT = 75, 255
+    # ── Candle chart geometry ─────────────────────────────────────────────
+    CL_X1, CL_X2       = 56, 764
+    CL_Y_TOP, CL_Y_BOT = 168, 318
     CL_H                = CL_Y_BOT - CL_Y_TOP
 
-    max_val = max((max(w["open"], w["close"]) for w in weeks), default=1)
-    min_val = min((w["close"] for w in weeks if w["total"] > 0), default=0)
+    max_val = max((max(w["open"], w["close"]) for w in weeks if w["total"] > 0), default=1)
 
     def to_y(v):
         if v <= 0: return CL_Y_BOT
         log_v   = math.log1p(v)
         log_max = math.log1p(max_val)
-        log_min = 0
-        return CL_Y_BOT - int(((log_v - log_min) / (log_max - log_min)) * CL_H)
+        return CL_Y_BOT - int((log_v / log_max) * CL_H)
 
     cw_full = (CL_X2 - CL_X1) / len(weeks)
-    cw_body = max(cw_full * 0.6, 3)
+    cw_body = max(cw_full * 0.62, 3)
     cw_gap  = cw_full - cw_body
+
+    # avg reference line
+    avg_y = to_y(avg_per_week)
 
     candles_svg = ""
     for i, wk in enumerate(weeks):
         cx    = CL_X1 + i * cw_full + cw_gap / 2
-        delay = round(i * 0.025, 3)
-
-        o = wk["open"]
-        c = wk["close"]
+        delay = round(i * 0.018, 3)
 
         if wk["total"] == 0:
-            doji_y = to_y(o)
+            doji_y = to_y(wk["open"])
             candles_svg += (
-                f'<line x1="{cx:.1f}" y1="{doji_y}" x2="{cx+cw_body:.1f}" y2="{doji_y}" '
-                f'stroke="{DIM}" stroke-width="2" stroke-linecap="round" opacity="0.35"/>\n'
+                f'<line x1="{cx:.1f}" y1="{doji_y}" '
+                f'x2="{cx+cw_body:.1f}" y2="{doji_y}" '
+                f'stroke="var(--color-border-secondary)" stroke-width="1.5" '
+                f'stroke-linecap="round" opacity="0.4"/>\n'
             )
             continue
 
+        o = wk["open"]
+        c = wk["close"]
         is_up    = c >= o
         col      = GREEN if is_up else RED
         open_y   = to_y(o)
@@ -332,20 +388,21 @@ def ch2(data):
         body_top = min(open_y, close_y)
         body_bot = max(open_y, close_y)
         body_h   = max(body_bot - body_top, 2)
+        mid_y    = (body_top + body_bot) // 2
 
-        mid_y = (body_top + body_bot) // 2
         candles_svg += (
             f'<rect x="{cx:.1f}" y="{mid_y}" width="{cw_body:.1f}" height="0" '
-            f'fill="{col}" rx="1" opacity="0.88">'
+            f'fill="{col}" rx="1" opacity="0.85">'
             f'<animate attributeName="y" from="{mid_y}" to="{body_top}" '
-            f'dur="0.3s" begin="{delay}s" fill="freeze" '
+            f'dur="0.28s" begin="{delay}s" fill="freeze" '
             f'calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/>'
             f'<animate attributeName="height" from="0" to="{body_h}" '
-            f'dur="0.3s" begin="{delay}s" fill="freeze" '
+            f'dur="0.28s" begin="{delay}s" fill="freeze" '
             f'calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/>'
             f'</rect>\n'
         )
 
+    # month labels
     month_labels = ""
     prev_month   = None
     for i, wk in enumerate(weeks):
@@ -353,59 +410,119 @@ def ch2(data):
             x    = CL_X1 + i * cw_full + cw_body / 2
             abbr = wk["date"].strftime("%b")
             month_labels += (
-                f'<text x="{x:.1f}" y="{CL_Y_BOT+16}" font-family="{FONT}" '
-                f'font-size="{FS_SM}" fill="{DIM}" text-anchor="middle">{abbr}</text>\n'
+                f'<text x="{x:.1f}" y="{CL_Y_BOT+15}" class="t-dim" '
+                f'font-size="10" text-anchor="middle">{abbr}</text>\n'
             )
             prev_month = wk["date"].month
 
+    # y-axis grid lines (right side, inside chart)
     grid_lines = ""
     for pct in [0.25, 0.5, 0.75, 1.0]:
         gy  = CL_Y_BOT - int(pct * CL_H)
         val = int(pct * max_val)
         grid_lines += (
             f'<line x1="{CL_X1}" y1="{gy}" x2="{CL_X2}" y2="{gy}" '
-            f'stroke="{BORDER}" stroke-width="1" opacity="0.4"/>\n'
-            f'<text x="{CL_X1-4}" y="{gy+4}" font-family="{FONT}" font-size="12" '
-            f'fill="{DIM}" text-anchor="end">{val}</text>\n'
+            f'stroke="var(--color-border-tertiary)" stroke-width="1" opacity="0.4"/>\n'
+            f'<text x="{CL_X1-4}" y="{gy+4}" class="t-dim" font-size="10" '
+            f'text-anchor="end">{val}</text>\n'
         )
 
-    LG_Y = CL_Y_BOT + 34
+    # ── Top repos bars ────────────────────────────────────────────────────
+    REPO_Y0    = 388
+    REPO_BAR_H = 13
+    REPO_STEP  = 24
+    REPO_X0    = 200   # label column ends, bar starts
+    REPO_X1    = 740   # bar max right edge
+    REPO_BAR_W = REPO_X1 - REPO_X0
+
+    repos_svg = ""
+    for idx, (rname, rcount) in enumerate(top_repos):
+        ry      = REPO_Y0 + idx * REPO_STEP
+        bar_w   = int((rcount / max_repo_count) * REPO_BAR_W)
+        name_tr = esc(rname[:22] + "…" if len(rname) > 22 else rname)
+        repos_svg += (
+            f'<text x="36" y="{ry+10}" class="t-primary" font-size="11">{name_tr}</text>\n'
+            f'<rect x="{REPO_X0}" y="{ry}" width="{REPO_BAR_W}" height="{REPO_BAR_H}" '
+            f'rx="3" fill="{ACCENT}" opacity="0.1"/>\n'
+            f'<rect x="{REPO_X0}" y="{ry}" width="{bar_w}" height="{REPO_BAR_H}" '
+            f'rx="3" fill="{ACCENT}" opacity="0.7"/>\n'
+            f'<text x="{REPO_X1+8}" y="{ry+10}" class="t-dim" font-size="11">{rcount}</text>\n'
+        )
+
+    LG_Y = CL_Y_BOT + 30
 
     return f'''\
 <svg width="{W}" height="{H}" viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">
+  {SVG_STYLE}
   <defs>
-    <linearGradient id="hdrg" x1="0" y1="0" x2="1" y2="0">
+    <linearGradient id="hdrg2" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="{ACCENT}" stop-opacity="0.7"/>
       <stop offset="100%" stop-color="{ACCENT}" stop-opacity="0"/>
     </linearGradient>
   </defs>
 
-  <rect width="{W}" height="{H}" fill="{BG}" rx="12"/>
-  <rect x="1" y="1" width="{W-2}" height="{H-2}" fill="none" stroke="{BORDER}" stroke-width="1" rx="11"/>
+  <!-- ── HEADER ──────────────────────────────────────────────────────── -->
+  <text x="36" y="44" class="t-dim" font-size="11" letter-spacing="3">THE GRIND</text>
+  <text x="{W-36}" y="44" class="t-dim" font-size="11" letter-spacing="2"
+        text-anchor="end">52 WEEKS</text>
+  <rect x="36" y="52" width="110" height="1" fill="url(#hdrg2)"/>
 
-  <text x="36" y="44" font-family="{FONT}" font-size="{FS_MED}" fill="{DIM}" letter-spacing="3">THE GRIND</text>
-  <text x="{W-36}" y="44" font-family="{FONT}" font-size="{FS_MED}" fill="{DIM}" letter-spacing="2" text-anchor="end">52 WEEKS</text>
-  <rect x="36" y="54" width="110" height="1" fill="url(#hdrg)"/>
+  <!-- ── ROW 1: 4 stat mini-cards ────────────────────────────────────── -->
+  <rect x="36"  y="62" width="168" height="72" rx="8" class="bg-card"/>
+  <text x="120" y="98"  fill="{ACCENT}"  font-size="30" font-weight="700" text-anchor="middle">{avg_per_week}</text>
+  <text x="120" y="118" class="t-dim" font-size="9" text-anchor="middle" letter-spacing="2">AVG / WEEK</text>
+
+  <rect x="214" y="62" width="168" height="72" rx="8" class="bg-card"/>
+  <text x="298" y="98"  fill="{GREEN}"  font-size="30" font-weight="700" text-anchor="middle">{current_streak}d</text>
+  <text x="298" y="118" class="t-dim" font-size="9" text-anchor="middle" letter-spacing="2">CURRENT STREAK</text>
+
+  <rect x="392" y="62" width="168" height="72" rx="8" class="bg-card"/>
+  <text x="476" y="98"  fill="{ORANGE}" font-size="30" font-weight="700" text-anchor="middle">{longest_streak}d</text>
+  <text x="476" y="118" class="t-dim" font-size="9" text-anchor="middle" letter-spacing="2">LONGEST STREAK</text>
+
+  <rect x="570" y="62" width="194" height="72" rx="8" class="bg-card"/>
+  <text x="667" y="98"  fill="{PURPLE}" font-size="30" font-weight="700" text-anchor="middle">{active_weeks}/52</text>
+  <text x="667" y="118" class="t-dim" font-size="9" text-anchor="middle" letter-spacing="2">ACTIVE WEEKS</text>
+
+  <!-- ── CANDLE CHART ─────────────────────────────────────────────────── -->
+  <line x1="36" y1="148" x2="764" y2="148" class="sep" stroke-width="1"/>
+  <text x="36" y="164" class="t-dim" font-size="9" letter-spacing="2">WEEKLY COMMITS</text>
+  <text x="764" y="164" class="t-dim" font-size="9" text-anchor="end" letter-spacing="1">green = above avg · red = below</text>
+
+  <!-- avg baseline -->
+  <line x1="{CL_X1}" y1="{avg_y}" x2="{CL_X2}" y2="{avg_y}"
+        stroke="{ACCENT}" stroke-width="1" stroke-dasharray="3 4" opacity="0.5"/>
+  <text x="{CL_X1-4}" y="{avg_y+4}" fill="{ACCENT}" font-size="9"
+        text-anchor="end" opacity="0.7">avg</text>
 
   <line x1="{CL_X1}" y1="{CL_Y_BOT}" x2="{CL_X2}" y2="{CL_Y_BOT}"
-        stroke="{BORDER}" stroke-width="1"/>
+        stroke="var(--color-border-secondary)" stroke-width="1"/>
 
   {grid_lines}
   {candles_svg}
   {month_labels}
 
-  <line x1="36" y1="{CL_Y_BOT+24}" x2="764" y2="{CL_Y_BOT+24}" stroke="{BORDER}" stroke-width="1" opacity="0.4"/>
-
-  <rect x="36" y="{LG_Y}" width="9" height="9" fill="{GREEN}" rx="2" opacity="0.85"/>
-  <text x="50" y="{LG_Y+9}" font-family="{FONT}" font-size="{FS_SM}" fill="{DIM}">most active —</text>
-  <text x="134" y="{LG_Y+9}" font-family="{FONT}" font-size="{FS_SM}" font-weight="700" fill="{GREEN}">{esc(active_label)} · {active_week["total"]} commits</text>
-
+  <!-- ── LEGEND ──────────────────────────────────────────────────────── -->
+  <line x1="36" y1="{LG_Y-6}" x2="764" y2="{LG_Y-6}"
+        stroke="var(--color-border-tertiary)" stroke-width="1" opacity="0.5"/>
+  <rect x="36"  y="{LG_Y}" width="9" height="9" fill="{GREEN}" rx="2" opacity="0.85"/>
+  <text x="50"  y="{LG_Y+9}" class="t-dim" font-size="10">most active —</text>
+  <text x="132" y="{LG_Y+9}" fill="{GREEN}" font-size="10" font-weight="700"
+        >{esc(week_label(active_week))} · {active_week["total"]} commits</text>
   <rect x="400" y="{LG_Y}" width="9" height="9" fill="{RED}" rx="2" opacity="0.85"/>
-  <text x="414" y="{LG_Y+9}" font-family="{FONT}" font-size="{FS_SM}" fill="{DIM}">most lazy —</text>
-  <text x="490" y="{LG_Y+9}" font-family="{FONT}" font-size="{FS_SM}" font-weight="700" fill="{RED}">{esc(lazy_label)} · {lazy_week["total"]} commits</text>
-</svg>'''
-# ─── Main ─────────────────────────────────────────────────────────────────────
+  <text x="414" y="{LG_Y+9}" class="t-dim" font-size="10">most lazy —</text>
+  <text x="488" y="{LG_Y+9}" fill="{RED}" font-size="10" font-weight="700"
+        >{esc(week_label(lazy_week))} · {lazy_week["total"]} commits</text>
 
+  <!-- ── TOP REPOS ────────────────────────────────────────────────────── -->
+  <line x1="36" y1="374" x2="764" y2="374" class="sep" stroke-width="1"/>
+  <text x="36"  y="390" class="t-dim" font-size="9" letter-spacing="2">TOP REPOS</text>
+  <text x="764" y="390" class="t-dim" font-size="9" text-anchor="end">commits</text>
+{repos_svg}
+</svg>'''
+
+
+# ─── Main ─────────────────────────────────────────────────────────────────────
 def main():
     if not TOKEN:
         print("ERROR: no token. set GH_TOKEN or GITHUB_TOKEN.", file=sys.stderr)
