@@ -1,10 +1,16 @@
 <svg width="800" height="460" viewBox="0 0 800 460" xmlns="http://www.w3.org/2000/svg">
   <style>
-  text { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace; }
-  .t-primary { fill: var(--color-text-primary); }
-  .t-dim     { fill: var(--color-text-secondary); }
-  .sep       { stroke: var(--color-border-primary); fill: none; }
-  .bg-card   { fill: var(--color-background-secondary); }
+  text       { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace; }
+  .t-primary { fill: #e6edf3; }
+  .t-dim     { fill: #8b949e; }
+  .sep       { stroke: #30363d; fill: none; }
+  .bg-card   { fill: #161b22; }
+  @media (prefers-color-scheme: light) {
+    .t-primary { fill: #1f2328; }
+    .t-dim     { fill: #656d76; }
+    .sep       { stroke: #d0d7de; fill: none; }
+    .bg-card   { fill: #f6f8fa; }
+  }
 </style>
   <defs>
     <linearGradient id="hdrg" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -22,7 +28,7 @@
   <!-- COMMITS -->
   <rect x="36" y="68" width="224" height="106" rx="8" class="bg-card"/>
   <text x="148" y="130" class="t-primary" font-size="52" font-weight="700"
-        text-anchor="middle">1,049</text>
+        text-anchor="middle">1,051</text>
   <text x="148" y="150" class="t-dim" font-size="9" text-anchor="middle"
         letter-spacing="3">COMMITS</text>
 
@@ -90,7 +96,7 @@
 <rect x="643" y="357" width="24" height="21" fill="#388bfd" rx="3" opacity="0.3"/>
 <rect x="673" y="364" width="24" height="14" fill="#388bfd" rx="3" opacity="0.3"/>
 <rect x="703" y="359" width="24" height="19" fill="#388bfd" rx="3" opacity="0.3"/>
-<rect x="733" y="361" width="24" height="17" fill="#388bfd" rx="3" opacity="0.3"/>
+<rect x="733" y="360" width="24" height="18" fill="#388bfd" rx="3" opacity="0.3"/>
 <text x="55" y="394" class="t-dim" font-size="10" text-anchor="middle">00</text>
 <text x="235" y="394" class="t-dim" font-size="10" text-anchor="middle">06</text>
 <text x="415" y="394" class="t-dim" font-size="10" text-anchor="middle">12</text>
