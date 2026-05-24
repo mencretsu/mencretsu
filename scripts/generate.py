@@ -25,14 +25,19 @@ RED     = "#f85149"
 FONT    = "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace"
 
 # Shared CSS injected into every SVG
-SVG_STYLE = """<style>
-  text { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace; }
-  .t-primary { fill: var(--color-text-primary); }
-  .t-dim     { fill: var(--color-text-secondary); }
-  .sep       { stroke: var(--color-border-primary); fill: none; }
-  .bg-card   { fill: var(--color-background-secondary); }
+SSVG_STYLE = """<style>
+  text       { font-family: ui-monospace, ...; }
+  .t-primary { fill: #e6edf3; }
+  .t-dim     { fill: #8b949e; }
+  .sep       { stroke: #30363d; fill: none; }
+  .bg-card   { fill: #161b22; }
+  @media (prefers-color-scheme: light) {
+    .t-primary { fill: #1f2328; }
+    .t-dim     { fill: #656d76; }
+    .sep       { stroke: #d0d7de; }
+    .bg-card   { fill: #f6f8fa; }
+  }
 </style>"""
-
 
 def esc(s):
     return (s.replace("&","&amp;").replace("<","&lt;")
