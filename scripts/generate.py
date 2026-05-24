@@ -25,8 +25,9 @@ RED     = "#f85149"
 FONT    = "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace"
 
 # Shared CSS injected into every SVG
-SSVG_STYLE = """<style>
-  text       { font-family: ui-monospace, ...; }
+# Default = dark (GitHub dark mode), light override via media query
+SVG_STYLE = """<style>
+  text       { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace; }
   .t-primary { fill: #e6edf3; }
   .t-dim     { fill: #8b949e; }
   .sep       { stroke: #30363d; fill: none; }
@@ -34,10 +35,11 @@ SSVG_STYLE = """<style>
   @media (prefers-color-scheme: light) {
     .t-primary { fill: #1f2328; }
     .t-dim     { fill: #656d76; }
-    .sep       { stroke: #d0d7de; }
+    .sep       { stroke: #d0d7de; fill: none; }
     .bg-card   { fill: #f6f8fa; }
   }
 </style>"""
+
 
 def esc(s):
     return (s.replace("&","&amp;").replace("<","&lt;")
@@ -379,7 +381,7 @@ def ch2(data):
             candles_svg += (
                 f'<line x1="{cx:.1f}" y1="{doji_y}" '
                 f'x2="{cx+cw_body:.1f}" y2="{doji_y}" '
-                f'stroke="var(--color-border-secondary)" stroke-width="1.5" '
+                f'stroke="#30363d" stroke-width="1.5" '
                 f'stroke-linecap="round" opacity="0.4"/>\n'
             )
             continue
@@ -427,7 +429,7 @@ def ch2(data):
         val = int(pct * max_val)
         grid_lines += (
             f'<line x1="{CL_X1}" y1="{gy}" x2="{CL_X2}" y2="{gy}" '
-            f'stroke="var(--color-border-tertiary)" stroke-width="1" opacity="0.4"/>\n'
+            f'stroke="#21262d" stroke-width="1" opacity="0.4"/>\n'
             f'<text x="{CL_X1-4}" y="{gy+4}" class="t-dim" font-size="10" '
             f'text-anchor="end">{val}</text>\n'
         )
@@ -501,7 +503,7 @@ def ch2(data):
         text-anchor="end" opacity="0.7">avg</text>
 
   <line x1="{CL_X1}" y1="{CL_Y_BOT}" x2="{CL_X2}" y2="{CL_Y_BOT}"
-        stroke="var(--color-border-secondary)" stroke-width="1"/>
+        stroke="#30363d" stroke-width="1"/>
 
   {grid_lines}
   {candles_svg}
@@ -509,7 +511,7 @@ def ch2(data):
 
   <!-- ── LEGEND ──────────────────────────────────────────────────────── -->
   <line x1="36" y1="{LG_Y-6}" x2="764" y2="{LG_Y-6}"
-        stroke="var(--color-border-tertiary)" stroke-width="1" opacity="0.5"/>
+        stroke="#21262d" stroke-width="1" opacity="0.5"/>
   <rect x="36"  y="{LG_Y}" width="9" height="9" fill="{GREEN}" rx="2" opacity="0.85"/>
   <text x="50"  y="{LG_Y+9}" class="t-dim" font-size="10">most active —</text>
   <text x="132" y="{LG_Y+9}" fill="{GREEN}" font-size="10" font-weight="700"
