@@ -49,9 +49,9 @@
 
   <!-- avg baseline -->
   <line x1="56" y1="231" x2="764" y2="231"
-        stroke="#388bfd" stroke-width="1" stroke-dasharray="3 4" opacity="0.5"/>
+        stroke="#388bfd" stroke-width="1" stroke-dasharray="3 4" opacity="0.8"/>
   <text x="52" y="235" fill="#388bfd" font-size="9"
-        text-anchor="end" opacity="0.7">avg</text>
+        text-anchor="end" opacity="0.9">avg</text>
 
   <line x1="56" y1="330" x2="764" y2="330"
         stroke="#30363d" stroke-width="1"/>
@@ -163,8 +163,8 @@
 <text x="748" y="466" class="t-dim" font-size="11">215</text>
 <text x="36" y="490" class="t-primary" font-size="11">mencretsu</text>
 <rect x="200" y="480" width="540" height="13" rx="3" fill="#388bfd" opacity="0.1"/>
-<rect x="200" y="480" width="141" height="13" rx="3" fill="#388bfd" opacity="0.7"/>
-<text x="748" y="490" class="t-dim" font-size="11">64</text>
+<rect x="200" y="480" width="143" height="13" rx="3" fill="#388bfd" opacity="0.7"/>
+<text x="748" y="490" class="t-dim" font-size="11">65</text>
 <text x="36" y="514" class="t-primary" font-size="11">kecoaxx-payment-bot</text>
 <rect x="200" y="504" width="540" height="13" rx="3" fill="#388bfd" opacity="0.1"/>
 <rect x="200" y="504" width="116" height="13" rx="3" fill="#388bfd" opacity="0.7"/>
