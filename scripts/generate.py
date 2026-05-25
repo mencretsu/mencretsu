@@ -433,7 +433,7 @@ def ch2(data):
         )
 
     # ── Top repos bars ────────────────────────────────────────────────────
-    REPO_Y0    = 388
+    REPO_Y0    = 408
     REPO_BAR_H = 13
     REPO_STEP  = 24
     REPO_X0    = 200   # label column ends, bar starts
