@@ -351,7 +351,7 @@ def ch2(data):
 
     # ── Candle chart geometry ─────────────────────────────────────────────
     CL_X1, CL_X2       = 56, 764
-    CL_Y_TOP, CL_Y_BOT = 168, 318
+    CL_Y_TOP, CL_Y_BOT = 180, 330
     CL_H                = CL_Y_BOT - CL_Y_TOP
 
     max_val = max((max(w["open"], w["close"]) for w in weeks if w["total"] > 0), default=1)
