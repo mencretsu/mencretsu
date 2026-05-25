@@ -293,10 +293,8 @@ def ch2(data):
         week_counts = [cbd.get(d.strftime("%Y-%m-%d"), 0) for d in week_days]
         total_w     = sum(week_counts)
 
-        if running_totals:
-            avg_prev = sum(running_totals) / len(running_totals)
-        else:
-            avg_prev = 0.0
+        last4 = running_totals[-4:] if running_totals else []
+        avg_prev = sum(last4) / len(last4) if last4 else 0.0
 
         weeks.append({
             "total":    total_w,
