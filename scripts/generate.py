@@ -496,9 +496,9 @@ def ch2(data):
 
   <!-- avg baseline -->
   <line x1="{CL_X1}" y1="{avg_y}" x2="{CL_X2}" y2="{avg_y}"
-        stroke="{ACCENT}" stroke-width="1" stroke-dasharray="3 4" opacity="0.5"/>
+        stroke="{ACCENT}" stroke-width="1" stroke-dasharray="3 4" opacity="0.8"/>
   <text x="{CL_X1-4}" y="{avg_y+4}" fill="{ACCENT}" font-size="9"
-        text-anchor="end" opacity="0.7">avg</text>
+        text-anchor="end" opacity="0.9">avg</text>
 
   <line x1="{CL_X1}" y1="{CL_Y_BOT}" x2="{CL_X2}" y2="{CL_Y_BOT}"
         stroke="#30363d" stroke-width="1"/>
