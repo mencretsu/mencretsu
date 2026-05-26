@@ -31,7 +31,7 @@
   <text x="120" y="118" class="t-dim" font-size="9" text-anchor="middle" letter-spacing="2">AVG / WEEK</text>
 
   <rect x="214" y="62" width="168" height="72" rx="8" class="bg-card"/>
-  <text x="298" y="98"  fill="#3fb950"  font-size="30" font-weight="700" text-anchor="middle">5d</text>
+  <text x="298" y="98"  fill="#3fb950"  font-size="30" font-weight="700" text-anchor="middle">0d</text>
   <text x="298" y="118" class="t-dim" font-size="9" text-anchor="middle" letter-spacing="2">CURRENT STREAK</text>
 
   <rect x="392" y="62" width="168" height="72" rx="8" class="bg-card"/>
