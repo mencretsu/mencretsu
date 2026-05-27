@@ -27,7 +27,7 @@
 
   <!-- ── ROW 1: 4 stat mini-cards ────────────────────────────────────── -->
   <rect x="36"  y="62" width="168" height="72" rx="8" class="bg-card"/>
-  <text x="120" y="98"  fill="#388bfd"  font-size="30" font-weight="700" text-anchor="middle">25.1</text>
+  <text x="120" y="98"  fill="#388bfd"  font-size="30" font-weight="700" text-anchor="middle">25.2</text>
   <text x="120" y="118" class="t-dim" font-size="9" text-anchor="middle" letter-spacing="2">AVG / WEEK</text>
 
   <rect x="214" y="62" width="168" height="72" rx="8" class="bg-card"/>
