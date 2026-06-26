@@ -152,22 +152,22 @@
 <text x="36" y="418" class="t-primary" font-size="11">playground</text>
 <rect x="200" y="408" width="540" height="13" rx="3" fill="#388bfd" opacity="0.1"/>
 <rect x="200" y="408" width="540" height="13" rx="3" fill="#388bfd" opacity="0.7"/>
-<text x="748" y="418" class="t-dim" font-size="11">252</text>
+<text x="748" y="418" class="t-dim" font-size="11">254</text>
 <text x="36" y="442" class="t-primary" font-size="11">kecoaxx_project</text>
 <rect x="200" y="432" width="540" height="13" rx="3" fill="#388bfd" opacity="0.1"/>
-<rect x="200" y="432" width="471" height="13" rx="3" fill="#388bfd" opacity="0.7"/>
+<rect x="200" y="432" width="467" height="13" rx="3" fill="#388bfd" opacity="0.7"/>
 <text x="748" y="442" class="t-dim" font-size="11">220</text>
 <text x="36" y="466" class="t-primary" font-size="11">kecoaxx</text>
 <rect x="200" y="456" width="540" height="13" rx="3" fill="#388bfd" opacity="0.1"/>
-<rect x="200" y="456" width="460" height="13" rx="3" fill="#388bfd" opacity="0.7"/>
+<rect x="200" y="456" width="457" height="13" rx="3" fill="#388bfd" opacity="0.7"/>
 <text x="748" y="466" class="t-dim" font-size="11">215</text>
 <text x="36" y="490" class="t-primary" font-size="11">mencretsu</text>
 <rect x="200" y="480" width="540" height="13" rx="3" fill="#388bfd" opacity="0.1"/>
-<rect x="200" y="480" width="139" height="13" rx="3" fill="#388bfd" opacity="0.7"/>
+<rect x="200" y="480" width="138" height="13" rx="3" fill="#388bfd" opacity="0.7"/>
 <text x="748" y="490" class="t-dim" font-size="11">65</text>
 <text x="36" y="514" class="t-primary" font-size="11">kecoaxx-payment-bot</text>
 <rect x="200" y="504" width="540" height="13" rx="3" fill="#388bfd" opacity="0.1"/>
-<rect x="200" y="504" width="113" height="13" rx="3" fill="#388bfd" opacity="0.7"/>
+<rect x="200" y="504" width="112" height="13" rx="3" fill="#388bfd" opacity="0.7"/>
 <text x="748" y="514" class="t-dim" font-size="11">53</text>
 
 </svg>
