@@ -28,7 +28,7 @@
   <!-- COMMITS -->
   <rect x="36" y="68" width="224" height="106" rx="8" class="bg-card"/>
   <text x="148" y="130" class="t-primary" font-size="52" font-weight="700"
-        text-anchor="middle">1,140</text>
+        text-anchor="middle">1,138</text>
   <text x="148" y="150" class="t-dim" font-size="9" text-anchor="middle"
         letter-spacing="3">COMMITS</text>
 
