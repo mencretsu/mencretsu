@@ -28,7 +28,7 @@
   <!-- COMMITS -->
   <rect x="36" y="68" width="224" height="106" rx="8" class="bg-card"/>
   <text x="148" y="130" class="t-primary" font-size="52" font-weight="700"
-        text-anchor="middle">1,092</text>
+        text-anchor="middle">1,089</text>
   <text x="148" y="150" class="t-dim" font-size="9" text-anchor="middle"
         letter-spacing="3">COMMITS</text>
 
@@ -94,7 +94,7 @@
 <rect x="583" y="362" width="24" height="16" fill="#388bfd" rx="3" opacity="0.3"/>
 <rect x="613" y="351" width="24" height="27" fill="#388bfd" rx="3" opacity="0.3"/>
 <rect x="643" y="358" width="24" height="20" fill="#388bfd" rx="3" opacity="0.3"/>
-<rect x="673" y="366" width="24" height="12" fill="#388bfd" rx="3" opacity="0.3"/>
+<rect x="673" y="368" width="24" height="10" fill="#388bfd" rx="3" opacity="0.3"/>
 <rect x="703" y="359" width="24" height="19" fill="#388bfd" rx="3" opacity="0.3"/>
 <rect x="733" y="361" width="24" height="17" fill="#388bfd" rx="3" opacity="0.3"/>
 <text x="55" y="394" class="t-dim" font-size="10" text-anchor="middle">00</text>
