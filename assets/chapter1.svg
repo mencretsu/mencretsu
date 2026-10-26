@@ -28,7 +28,7 @@
   <!-- COMMITS -->
   <rect x="36" y="68" width="224" height="106" rx="8" class="bg-card"/>
   <text x="148" y="130" class="t-primary" font-size="52" font-weight="700"
-        text-anchor="middle">676</text>
+        text-anchor="middle">674</text>
   <text x="148" y="150" class="t-dim" font-size="9" text-anchor="middle"
         letter-spacing="3">COMMITS</text>
 
@@ -85,7 +85,7 @@
 <rect x="343" y="347" width="24" height="31" fill="#388bfd" rx="3" opacity="0.3"/>
 <rect x="373" y="358" width="24" height="20" fill="#388bfd" rx="3" opacity="0.3"/>
 <rect x="403" y="351" width="24" height="27" fill="#388bfd" rx="3" opacity="0.3"/>
-<rect x="433" y="332" width="24" height="46" fill="#388bfd" rx="3" opacity="0.3"/>
+<rect x="433" y="334" width="24" height="44" fill="#388bfd" rx="3" opacity="0.3"/>
 <rect x="463" y="326" width="24" height="52" fill="#388bfd" rx="3" opacity="1"/>
 <text x="475" y="320" class="t-dim" font-size="9" text-anchor="middle" letter-spacing="1">PEAK</text>
 <rect x="493" y="336" width="24" height="42" fill="#388bfd" rx="3" opacity="0.3"/>
